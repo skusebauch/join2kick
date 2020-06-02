@@ -5,11 +5,35 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+
+puts 'Cleaning database Statistics ...'
 Statistic.destroy_all
+puts 'Cleaning database Clubs ...'
+Club.destroy_all
+puts 'Cleaning database Players ...'
 Player.destroy_all
+puts 'Cleaning database Users ...'
 User.destroy_all
+puts ''
+puts 'Creating User ...'
+
 user = User.create!(email: "bob@gmail.com", password: "123456")
+
 Player.create!(name: "George", user_id: User.first.id)
+
+clubs = [{ name: 'VfR Aalen',
+           user_id: User.first.id },
+         { name: 'SC Charlottenburg',
+           user_id: User.first.id },
+         { name: 'FSV Salmrohr',
+           user_id: User.first.id },
+         { name: 'Wormatia Worms',
+           user_id: User.first.id }]
+clubs.each do |attributes|
+  club = Club.create!(attributes)
+  puts "Created #{club.name}"
+end
+
 Tournament.create!(state: "Bayern", season_year: 2020)
 Player.first.statistics.create!(
   [
@@ -19,3 +43,5 @@ Player.first.statistics.create!(
       {game_qty: 600, goal_qty: 50 , starting_eleven_avg: 80, tournament_id: Tournament.first.id }
   ]
 )
+
+puts 'Finished!'
