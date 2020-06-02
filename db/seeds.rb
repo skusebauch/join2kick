@@ -36,47 +36,6 @@ users.each do |attributes|
 end
 
 
-## Players ##
-puts ''
-puts 'Creating Players ...'
-players = [{ name: 'Joshua Kimmich',
-           birth: Date.new(1995,8,2),
-           citizenship: 'Germany',
-           height: 176,
-           position: 'Midfield',
-           skill: 'speed',
-           address: "Margaretenstr. 37, 12203 Berlin",
-           user_id: User.first.id },
-         { name: 'Thiago Alcántara do Nascimento',
-           birth: Date.new(1991,11),
-           citizenship: 'Spain',
-           height: 174,
-           position: 'Midfield',
-           skill: 'strong',
-           address: "Rudi-Dutschke-Straße 26, 12203 Berlin",
-           user_id: User.second.id },
-         { name: 'Marc-André ter Stegen',
-           birth: Date.new(1992,4,30),
-           citizenship: 'Germany',
-           height: 187,
-           position: 'Goalkeeper',
-           skill: 'endurance',
-           address: "Friedrichstraße 140, 12203 Berlin",
-           user_id: User.third.id },
-         { name: 'Emre Can',
-           birth: Date.new(1994,1,12),
-           citizenship: 'Germany',
-           height: 184,
-           position: 'Defender',
-           skill: 'passing',
-           address: "Olympischer Platz 3, 14053 Berlin",
-           user_id: User.fourth.id }]
-
-players.each do |attributes|
-  player = Player.create!(attributes)
-  puts "Created #{player.name}"
-end
-
 ## Clubs ##
 puts ''
 puts 'Creating Clubs ...'
@@ -91,6 +50,52 @@ clubs = [{ name: 'VfR Aalen',
 clubs.each do |attributes|
   club = Club.create!(attributes)
   puts "Created #{club.name}"
+end
+
+
+## Players ##
+puts ''
+puts 'Creating Players ...'
+players = [{ name: 'Joshua Kimmich',
+           birth: Date.new(1995,8,2),
+           citizenship: 'Germany',
+           height: 176,
+           position: 'Midfield',
+           skill: 'speed',
+           address: "Margaretenstr. 37, 12203 Berlin",
+           user_id: User.first.id,
+           club_id: Club.first.id },
+         { name: 'Thiago Alcántara do Nascimento',
+           birth: Date.new(1991,11),
+           citizenship: 'Spain',
+           height: 174,
+           position: 'Midfield',
+           skill: 'strong',
+           address: "Rudi-Dutschke-Straße 26, 12203 Berlin",
+           user_id: User.second.id,
+           club_id: Club.second.id },
+         { name: 'Marc-André ter Stegen',
+           birth: Date.new(1992,4,30),
+           citizenship: 'Germany',
+           height: 187,
+           position: 'Goalkeeper',
+           skill: 'endurance',
+           address: "Friedrichstraße 140, 12203 Berlin",
+           user_id: User.third.id,
+           club_id: Club.third.id },
+         { name: 'Emre Can',
+           birth: Date.new(1994,1,12),
+           citizenship: 'Germany',
+           height: 184,
+           position: 'Defender',
+           skill: 'passing',
+           address: "Olympischer Platz 3, 14053 Berlin",
+           user_id: User.fourth.id,
+           club_id: Club.fourth.id }]
+
+players.each do |attributes|
+  player = Player.create!(attributes)
+  puts "Created #{player.name}"
 end
 
 ## Tournaments ##
