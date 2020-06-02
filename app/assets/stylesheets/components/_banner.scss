@@ -1,0 +1,19 @@
+.banner {
+  position: relative;
+  background-color: #E6E8E6;
+  background-size: cover;
+  background-position: center;
+  height: 575px;
+  img {
+    background-image: url(join2kick.gif);
+  }
+  h1 {
+    font-weight: bold;
+    margin-bottom: 25px;
+  }
+  h2 {
+    opacity: 0.6;
+    margin-bottom: 25px;
+  }
+}
+

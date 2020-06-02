@@ -1,2 +1,27 @@
+<% if user_signed_in? %>
+
+
+<% else %>
+
+  <div class="banner">
+    <div class="container">
+      <div class="banner-intro">
+        <h1>Welcome to Join2Kick</h1>
+        <h2>We bring clubs and <br> players together!</h2>
+        <%= link_to "Register", new_user_registration_path, class: "button"  %>
+      </div>
+        <div class="banner-image"></div>
+    </div>
+  </div>
+
+<% end %>
+
 <h1>Pages#home</h1>
 <p>Find me in app/views/pages/home.html.erb</p>
+
+<p>Are you logged in?</p>
+<% if user_signed_in? %>
+  <p>Yes, your are logged in - with: <%= current_user.email %>!</p>
+<% else %>
+  <p>Please log in </p>
+<% end %>
