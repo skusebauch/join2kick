@@ -4,11 +4,30 @@
   padding: 8px 24px;
   border: none;
   border-radius: 5px;
-  background: #167FFB;
+  background: #F05D5E;
   transition: background 0.2s ease;
   opacity: 1;
   &:hover {
-    background: #0061d0;
+    background: #F05D5E;
+    opacity: 0.6;
     color: white;
+    text-decoration: none;
+  }
+}
+
+.button-light {
+  color: #F05D5E;
+  border: solid #F05D5E;
+  width: 100px;
+  padding: 8px 24px;
+  border-radius: 5px;
+  background: white;
+  transition: background 0.2s ease;
+  opacity: 1;
+  &:hover {
+    background: white;
+    opacity: 0.6;
+    color: #F05D5E;
+    text-decoration: none;
   }
 }
