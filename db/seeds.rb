@@ -21,7 +21,7 @@ User.destroy_all
 puts ''
 puts 'Creating Users ...'
 
-users = [{ email: 'JoshuaK@gmail.com',
+users = [{ email: 'boris@gmail.com',
            password: '123456'},
          { email: 'ThiagoN@gmail.com',
            password: '123456'},
@@ -39,18 +39,18 @@ end
 ## Clubs ##
 puts ''
 puts 'Creating Clubs ...'
-clubs = [{ name: 'VfR Aalen',
+clubs = [{ name: 'FC LeWagon 2013',
           budget: 20000,
            user_id: User.first.id },
          { name: 'SC Charlottenburg',
           budget: 25000,
-           user_id: User.first.id },
+           user_id: User.second.id },
          { name: 'FSV Salmrohr',
           budget: 15000,
-           user_id: User.first.id },
+           user_id: User.third.id },
          { name: 'Wormatia Worms',
           budget: 30000,
-           user_id: User.first.id }]
+           user_id: User.fourth.id }]
 clubs.each do |attributes|
   club = Club.create!(attributes)
   puts "Created #{club.name}"

@@ -1,34 +1,35 @@
-<% if user_signed_in? == false %>
-
-  <div class="banner">
-    <div class="container">
-      <div class="banner-intro">
-        <h1>Welcome to Join2Kick</h1>
-        <h2>We bring clubs and <br> players together!</h2>
-        <%= link_to "Get started", new_user_registration_path, class: "button"  %>
-      </div>
-        <div class="banner-image"></div>
-    </div>
-  </div>
-
+<div class="banner">
   <div class="container">
-    <div class="cards-info">
-      <div class="card-info">
-        <h3>Value proposition 1</h3>
-        <p>Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem.</p>
-      </div>
-      <div class="card-info">
-        <h3>Value proposition 2</h3>
-        <p>Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem.</p>
-      </div>
-      <div class="card-info">
-        <h3>Value proposition 3</h3>
-        <p>Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem.</p>
-      </div>
-      <div class="card-info">
-        <h3>Value proposition 4</h3>
-        <p>Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem.</p>
-      </div>
+    <div class="banner-intro">
+      <h1>Welcome to Join2Kick</h1>
+      <h2>We bring clubs and <br> players together!</h2>
+      <% if user_signed_in? %>
+        <%= link_to "Get started", club_path(current_user.clubs.first), class: "button" %>
+      <% else %>
+        <%= link_to "Get started", new_user_registration_path, class: "button" %>
+      <% end %>
+    </div>
+    <div class="banner-image"></div>
+  </div>
+</div>
+
+<div class="container">
+  <div class="cards-info">
+    <div class="card-info">
+      <h3>Value proposition 1</h3>
+      <p>Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem.</p>
+    </div>
+    <div class="card-info">
+      <h3>Value proposition 2</h3>
+      <p>Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem.</p>
+    </div>
+    <div class="card-info">
+      <h3>Value proposition 3</h3>
+      <p>Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem.</p>
+    </div>
+    <div class="card-info">
+      <h3>Value proposition 4</h3>
+      <p>Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem.</p>
     </div>
   </div>
-<% end %>
+</div>
