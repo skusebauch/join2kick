@@ -1,4 +1,77 @@
 <div class="container">
+
+  <div class="players-search">
+    <div class="player-position">
+      <%= form_tag players_path, method: :get do %>
+      <%= text_field_tag :query,
+        params[:query],
+        class: "form-control",
+        placeholder: "Select a position"
+      %>
+      <% end %>
+    </div>
+  </div>
+
+  <div class="players-search">
+    <div class="player-skill">
+      <%= form_tag players_path, method: :get do %>
+      <%= text_field_tag :query,
+        params[:query],
+        class: "form-control",
+        placeholder: "Select a skill"
+      %>
+      <% end %>
+    </div>
+  </div>
+
+  <div class="players-search">
+    <div class="player-age">
+      <%= form_tag players_path, method: :get do %>
+      <%= text_field_tag :query,
+        params[:query],
+        class: "form-control",
+        placeholder: "Select a range"
+      %>
+      <% end %>
+    </div>
+  </div>
+
+  <div class="players-search">
+    <div class="player-location">
+      <%= form_tag players_path, method: :get do %>
+      <%= text_field_tag :query,
+        params[:query],
+        class: "form-control",
+        placeholder: "Select a range"
+      %>
+      <% end %>
+    </div>
+  </div>
+
+  <div class="players-search">
+    <div class="player-starting-eleven">
+      <%= form_tag players_path, method: :get do %>
+      <%= text_field_tag :query,
+        params[:query],
+        class: "form-control",
+        placeholder: "Select a range"
+      %>
+      <% end %>
+    </div>
+  </div>
+
+  <div class="players-search">
+    <div class="player-league">
+      <%= form_tag players_path, method: :get do %>
+      <%= text_field_tag :query,
+        params[:query],
+        class: "form-control",
+        placeholder: "Select a range"
+      %>
+      <% end %>
+    </div>
+  </div>
+
   <div class="row">
     <div class="col-sm-8 offset-sm-2">
       <div id="players">
