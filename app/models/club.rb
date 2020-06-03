@@ -3,4 +3,5 @@ class Club < ApplicationRecord
   has_many :players
   has_many :club_tournaments
   has_many :tournaments, through: :club_tournaments
+  validates :budget, presence: true
 end

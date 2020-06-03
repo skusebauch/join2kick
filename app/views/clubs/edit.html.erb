@@ -1,0 +1,4 @@
+<%= simple_form_for @club, url: club_path(@club) do |f| %>
+<%= f.input :budget, as: :numeric %>
+<%= f.submit 'Save' %>
+<% end %>
