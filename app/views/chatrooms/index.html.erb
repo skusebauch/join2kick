@@ -1,0 +1,9 @@
+<h1>Your chatroom</h1>
+<div id="chatrooms">
+<!-- data-chatroom-name="<%#= @chatrooms.name %>" -->
+  <% @chatrooms.each do |chatroom| %>
+    <div class="chatrooms-container" id="chatroom-<%= chatroom.id %>">
+      <%= link_to @chatrooms.name, chatroom_path(chatroom) %>
+    </div>
+  <% end %>
+</div>
