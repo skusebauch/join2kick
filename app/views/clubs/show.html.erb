@@ -1,10 +1,18 @@
-<h1>Clubs#show</h1>
-<h1>My Team</h1>
-<div>
- <% @club.players.each do |player| %>
+<div class="container">
+  <h1>Clubs#show</h1>
+  <h1>My Team</h1>
+
   <div>
-    <h4><%=  player.name %></h4>
-    <p><%= player.position %></p>
+    player
   </div>
- <% end %>
+
+
+  <div>
+   <% @club.players.each do |player| %>
+    <div>
+      <p><%=  player.name %>  <%= player.position %> <%= player.salary %>€/month</p>
+    </div>
+   <% end %>
+  </div>
 </div>
+
