@@ -1,6 +1,10 @@
 <h1>Clubs#show</h1>
-<h1>Current Players</h1>
-
-<h5>
-  <% @club.players.all %>
-</h5>
+<h1>My Team</h1>
+<div>
+ <% @club.players.each do |player| %>
+  <div>
+    <h4><%=  player.name %></h4>
+    <p><%= player.position %></p>
+  </div>
+ <% end %>
+</div>
