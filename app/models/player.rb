@@ -7,6 +7,14 @@ class Player < ApplicationRecord
   geocoded_by :address
   after_validation :geocode, if: :will_save_change_to_address?
   # skills
-  SKILL = ["speed", "strong", "endurance", "passing", "shooting", "technique", "teamplayer", "tactic"]
-  validates :skill, inclusion: { in: SKILL }
+  validate :valid_skillset
+
+  def valid_skillset
+    skillset = ["endurance",
+                "passing",
+                "shooting", "speed", "strong",
+                "tactic", "teamplayer", "technique"]
+    errors.add(:skill, "Not valid skill") unless (skill - skillset).empty?
+    # skills.bsearch { |i| skill <=> i }
+  end
 end
