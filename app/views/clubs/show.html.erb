@@ -3,9 +3,11 @@
 
 <div class="container">
   <div>
-    <p><%= @club.players.sum(:salary) %> <%= @club.budget %></p>
+    <p> <%= @club.budget %> <%= @club.players.sum(:salary) %></p>
     <p> <%=(@club.budget) - (@club.players.sum(:salary))%></p>
+    <%= link_to "Edit Profile", edit_club_path(@club), class: "button"  %>
   </div>
+
 </div>
 
 <div class="container">
@@ -16,6 +18,4 @@
     </div>
    <% end %>
   </div>
-
 </div>
-
