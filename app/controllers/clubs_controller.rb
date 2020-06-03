@@ -8,13 +8,14 @@ class ClubsController < ApplicationController
   def edit
     @club = Club.find(params[:id])
     authorize @club
+    @players = @club.players
   end
 
   def update
     @club = Club.find(params[:id])
     authorize @club
     if @club.update(club_params)
-      redirect_to @club
+      redirect_to edit_club_path(@club)
     else
       render :edit
     end
