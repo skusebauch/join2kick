@@ -40,12 +40,16 @@ end
 puts ''
 puts 'Creating Clubs ...'
 clubs = [{ name: 'VfR Aalen',
+          budget: 20000,
            user_id: User.first.id },
          { name: 'SC Charlottenburg',
+          budget: 25000,
            user_id: User.first.id },
          { name: 'FSV Salmrohr',
+          budget: 15000,
            user_id: User.first.id },
          { name: 'Wormatia Worms',
+          budget: 30000,
            user_id: User.first.id }]
 clubs.each do |attributes|
   club = Club.create!(attributes)
@@ -74,6 +78,7 @@ players = [{ name: 'Joshua Kimmich',
            position: 'Midfield',
            skill: ["shooting", "speed"],
            address: "Rudi-Dutschke-Straße 26, 12203 Berlin",
+           salary: 2000,
            user_id: User.second.id,
            club_id: Club.first.id },
          { name: 'Marc-André ter Stegen',
@@ -83,6 +88,7 @@ players = [{ name: 'Joshua Kimmich',
            position: 'Goalkeeper',
            skill: ["strong", "tactic"],
            address: "Friedrichstraße 140, 12203 Berlin",
+           salary: 1100,
            user_id: User.third.id,
            club_id: Club.first.id },
          { name: 'Emre Can',
@@ -92,6 +98,7 @@ players = [{ name: 'Joshua Kimmich',
            position: 'Defender',
            skill: ["passing", "technique"],
            address: "Olympischer Platz 3, 14053 Berlin",
+           salary: 1300,
            user_id: User.fourth.id,
            club_id: Club.first.id }]
 
