@@ -1,25 +1,39 @@
 <% if user_signed_in? %>
 
+<% render "clubs/show" %>
 
 <% else %>
 
   <div class="banner">
     <div class="container">
-      <h1>Welcome to Join2Kick</h1>
-      <h2>We bring clubs and players together!</h2>
-      <%= link_to "Register", new_user_registration_path, class: "button"  %>
+      <div class="banner-intro">
+        <h1>Welcome to Join2Kick</h1>
+        <h2>We bring clubs and <br> players together!</h2>
+        <%= link_to "Register", new_user_registration_path, class: "button"  %>
+      </div>
+        <div class="banner-image"></div>
     </div>
-
   </div>
 
 <% end %>
 
-<h1>Pages#home</h1>
-<p>Find me in app/views/pages/home.html.erb</p>
-
-<p>Are you logged in?</p>
-<% if user_signed_in? %>
-  <p>Yes, your are logged in - with: <%= current_user.email %>!</p>
-<% else %>
-  <p>Please log in </p>
-<% end %>
+<div class="container">
+  <div class="cards-info">
+    <div class="card-info">
+      <h3>Value proposition 1</h3>
+      <p>Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem.</p>
+    </div>
+    <div class="card-info">
+      <h3>Value proposition 2</h3>
+      <p>Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem.</p>
+    </div>
+    <div class="card-info">
+      <h3>Value proposition 3</h3>
+      <p>Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem.</p>
+    </div>
+    <div class="card-info">
+      <h3>Value proposition 4</h3>
+      <p>Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem.</p>
+    </div>
+  </div>
+</div>
