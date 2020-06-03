@@ -1,6 +1,11 @@
 class PlayersController < ApplicationController
   def index
-    @players = policy_scope(Player)
+    if params[:query].present?
+      sql_query = "name ILIKE :query OR position ILIKE :query"
+      @players = policy_scope(Player.where(sql_query, query: "%#{params[:query]}%"))
+    else
+      @players = policy_scope(Player)
+    end
   end
 
   def show
