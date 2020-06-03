@@ -1,4 +1,19 @@
-<%= simple_form_for @club, url: club_path(@club) do |f| %>
-<%= f.input :budget, as: :numeric %>
-<%= f.submit 'Save' %>
-<% end %>
+<div class="container">
+  <%= simple_form_for @club, url: club_path(@club) do |f| %>
+  <%= f.input :budget, as: :numeric %>
+  <%= f.submit 'Save' %>
+  <% end %>
+
+
+  <% @players.each do |player| %>
+    <div> <%= player.name %> </div>
+    <%= simple_form_for player, url: player_path(player) do |f| %>
+    <%= f.input :salary, as: :numeric %>
+    <%= f.submit 'Save' %>
+    <% end %>
+  <% end %>
+</div>
+<br>
+<div class="container">
+  <%= link_to "Go back to edit profile", club_path(@club), class: "button"  %>
+</div>
