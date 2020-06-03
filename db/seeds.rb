@@ -40,12 +40,16 @@ end
 puts ''
 puts 'Creating Clubs ...'
 clubs = [{ name: 'VfR Aalen',
+          budget: 20000,
            user_id: User.first.id },
          { name: 'SC Charlottenburg',
+          budget: 25000,
            user_id: User.first.id },
          { name: 'FSV Salmrohr',
+          budget: 15000,
            user_id: User.first.id },
          { name: 'Wormatia Worms',
+          budget: 30000,
            user_id: User.first.id }]
 clubs.each do |attributes|
   club = Club.create!(attributes)

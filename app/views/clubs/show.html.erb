@@ -1,18 +1,21 @@
+<h1>Clubs#show</h1>
+<h1>My Team</h1>
+
 <div class="container">
-  <h1>Clubs#show</h1>
-  <h1>My Team</h1>
-
   <div>
-    player
+    <p><%= @club.players.sum(:salary) %> <%= @club.budget %></p>
+    <p> <%=(@club.budget) - (@club.players.sum(:salary))%></p>
   </div>
+</div>
 
-
+<div class="container">
   <div>
    <% @club.players.each do |player| %>
-    <div>
+  <div>
       <p><%=  player.name %>  <%= player.position %> <%= player.salary %>€/month</p>
     </div>
    <% end %>
   </div>
+
 </div>
 
