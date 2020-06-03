@@ -10,7 +10,7 @@ class CreatePlayers < ActiveRecord::Migration[6.0]
       t.float :longitude
       t.float :latitude
       t.string :position
-      t.string :skill
+      t.text :skill, array: true, default: []
 
       t.timestamps
     end

@@ -58,7 +58,7 @@ ActiveRecord::Schema.define(version: 2020_06_02_105638) do
     t.float "longitude"
     t.float "latitude"
     t.string "position"
-    t.string "skill"
+    t.text "skill", default: [], array: true
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.string "address"

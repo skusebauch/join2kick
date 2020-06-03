@@ -10,10 +10,10 @@ puts '-> Statistics'
 Statistic.destroy_all
 puts '-> Tournaments'
 Tournament.destroy_all
-puts '-> Clubs'
-Club.destroy_all
 puts '-> Players'
 Player.destroy_all
+puts '-> Clubs'
+Club.destroy_all
 puts '-> Users'
 User.destroy_all
 
@@ -61,7 +61,8 @@ players = [{ name: 'Joshua Kimmich',
            citizenship: 'Germany',
            height: 176,
            position: 'Midfield',
-           skill: 'speed',
+           # skill: ['speed', 'passing'],
+           skill: ["endurance", "passing"],
            address: "Margaretenstr. 37, 12203 Berlin",
            user_id: User.first.id,
            club_id: Club.first.id },
@@ -70,28 +71,28 @@ players = [{ name: 'Joshua Kimmich',
            citizenship: 'Spain',
            height: 174,
            position: 'Midfield',
-           skill: 'strong',
+           skill: ["shooting", "speed"],
            address: "Rudi-Dutschke-Straße 26, 12203 Berlin",
            user_id: User.second.id,
-           club_id: Club.second.id },
+           club_id: Club.first.id },
          { name: 'Marc-André ter Stegen',
            birth: Date.new(1992,4,30),
            citizenship: 'Germany',
            height: 187,
            position: 'Goalkeeper',
-           skill: 'endurance',
+           skill: ["strong", "tactic"],
            address: "Friedrichstraße 140, 12203 Berlin",
            user_id: User.third.id,
-           club_id: Club.third.id },
+           club_id: Club.first.id },
          { name: 'Emre Can',
            birth: Date.new(1994,1,12),
            citizenship: 'Germany',
            height: 184,
            position: 'Defender',
-           skill: 'passing',
+           skill: ["passing", "technique"],
            address: "Olympischer Platz 3, 14053 Berlin",
            user_id: User.fourth.id,
-           club_id: Club.fourth.id }]
+           club_id: Club.first.id }]
 
 players.each do |attributes|
   player = Player.create!(attributes)
