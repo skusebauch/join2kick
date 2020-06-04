@@ -2,21 +2,41 @@
 <h4>My Team</h4>
 
 <div class="budget-card">
-  <p class="budget"> Your current budget: <%= @club.budget %> <br> <%= @club.players.sum(:salary) %></p>
-  <p> <%=(@club.budget) - (@club.players.sum(:salary))%></p>
+  <p class="budget"> Your current budget: <%= @club.budget %> <br> Sum of all salarys: <%= @club.players.sum(:salary) %></p>
+  <p> Remaining budget: <%=(@club.budget) - (@club.players.sum(:salary))%></p>
   <%= link_to "Edit Profile", edit_club_path(@club), class: "button"  %>
 </div>
 
-<div class="container">
-   <% @club.players.each do |player| %>
-   <%= link_to "", player_path(player), class: 'card-link-to-player' %>
-    <div class="card-player-info">
-      <h2> <%=  player.name %> </h2>
-      <p><strong>Position:</strong> <%= player.position %> <strong>Salary:</strong> <%= player.salary %> €/month </p>
-      <% player.statistics.each do |statistic| %>
-      <p><strong>Games played: </strong><%= statistic.game_qty %> <strong>Goals Scored: </strong><%= statistic.goal_qty %>  <strong> Starting Eleven Avg: </strong><%= statistic.starting_eleven_avg %>%  </p>
-      <p><strong>League:</strong> <%= statistic.tournament.tournament_type %> </p>
-      <% end %>
-    </div>
-  <% end %>
-</div>
+<table data-sortable id="table1">
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Position</th>
+      <th>Salary</th>
+      <th>Games Played</th>
+      <th>Goals Scored</th>
+      <th>Starting Eleven Avg</th>
+      <th>League</th>
+    </tr>
+  </thead>
+  <tbody>
+
+     <% @club.players.each do |player| %>
+      <tr>
+        <td> <%= link_to "", player_path(player), class: 'card-link-to-player' %><%=  player.name %> </td>
+        <td> <%= player.position %></td>
+        <td> <%= player.salary %></td>
+
+        <% player.statistics.each do |statistic| %>
+
+        <td><%= statistic.game_qty %></td>
+
+        <td><%= statistic.goal_qty %></td>
+
+        <td><%= statistic.starting_eleven_avg %></td>
+        <td><%= statistic.tournament.tournament_type %></td>
+        <% end %>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
