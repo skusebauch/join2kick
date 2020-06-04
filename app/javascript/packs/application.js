@@ -7,6 +7,7 @@ require("channels")
 
 import "bootstrap";
 import { initChatroomCable } from "../channels/chatroom_channel";
+//import { initChatroomCableIndex } from "../channels/chatroom_channel";
 
 //sortable Table
 import {initSortable} from "../components/table";

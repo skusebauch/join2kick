@@ -1,9 +1,15 @@
-<h1>Your chatroom</h1>
-<div id="chatrooms">
-<!-- data-chatroom-name="<%#= @chatrooms.name %>" -->
-  <% @chatrooms.each do |chatroom| %>
-    <div class="chatrooms-container" id="chatroom-<%= chatroom.id %>">
-      <%= link_to @chatrooms.name, chatroom_path(chatroom) %>
+<div class="chatpage-container" style="display: flex">
+<%= render 'chatrooms/chatrooms_container' %>
+
+<!-- <div id="current-chat-container" style="margin: 10px 10px 10px 10px; padding: 5px; width: 60%">
+  <%# @chatrooms.each do |chatroom| %>
+    <div class="message-container" id="message-<%#= chatroom.id %>">
+      <i class="author">
+        <span><%#= chatroom.messages %></span>
+        <small><%#= chatroom.messages.created_at.strftime("%a %b %e at %l:%M%p") %></small>
+      </i>
+      <p><%#= chatroom.messages.content %></p>
     </div>
-  <% end %>
+  <%# end %>
+</div> -->
 </div>
