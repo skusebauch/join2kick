@@ -22,7 +22,8 @@ puts ''
 puts 'Creating Users ...'
 
 users = [{ email: 'boris@gmail.com',
-           password: '123456'},
+           password: '123456',
+           address: "Rudi-Dutschke-Straße 26, 10969 Berlin"},
          { email: 'ThiagoN@gmail.com',
            password: '123456'},
          { email: 'MarcS@gmail.com',
