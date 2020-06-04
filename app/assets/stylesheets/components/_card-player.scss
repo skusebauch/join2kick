@@ -23,15 +23,20 @@
 }
 
 .budget-card {
+  display: flex-start;
+  text-align: center;
   margin: 20px;
-  background: white;
   height: 150px;
-  width: auto;
+  width: 250px;
+  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+  border-radius: 5px;
 }
 
 .budget {
+  text-align: left;
   font-weight: bold;
   color: green;
+
 }
 
 .card-link-to-player {
