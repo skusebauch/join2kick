@@ -1,11 +1,13 @@
 class PlayersController < ApplicationController
   def index
+    @players = policy_scope(Player)
     if params[:query].present?
-      sql_query = "name ILIKE :query OR position ILIKE :query"
-      @players = policy_scope(Player.where(sql_query, query: "%#{params[:query]}%"))
-    else
-      @players = policy_scope(Player)
+      @players = @players.search(params[:query])
+    elsif params[:player].present?
+      @players = Player.near(params[:player].address, params[:player].location)
+      @players = @players.search(params[:player])
     end
+    # authorize @players
   end
 
   def show
@@ -32,6 +34,6 @@ class PlayersController < ApplicationController
   private
 
   def player_params
-    params.require(:player).permit(:salary)
+    params.require(:player).permit(:salary, :position, :skill, :age, :location, :starting_eleven, :league)
   end
 end

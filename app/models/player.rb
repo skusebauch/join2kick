@@ -8,13 +8,22 @@ class Player < ApplicationRecord
   after_validation :geocode, if: :will_save_change_to_address?
   # skills
   validate :valid_skillset
+  include PgSearch::Model
+  pg_search_scope :search,
+    against: [:name, :salary, :position, :skill, :birth], #:starting_eleven_avg, :league ],
+    using: {
+      tsearch: { prefix: true }
+    }
 
-  def valid_skillset
-    skillset = ["endurance",
+  SKILLSET = ["endurance",
                 "passing",
                 "shooting", "speed", "strong",
                 "tactic", "teamplayer", "technique"]
-    errors.add(:skill, "Not valid skill") unless (skill - skillset).empty?
+
+  POSITIONS = ["Goalkeeper", "Defence", "Midfield", "Striker"]
+
+  def valid_skillset
+    errors.add(:skill, "Not valid skill") unless (skill - SKILLSET).empty?
     # skills.bsearch { |i| skill <=> i }
   end
 end
