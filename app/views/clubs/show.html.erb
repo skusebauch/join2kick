@@ -1,13 +1,10 @@
-<h1>Clubs#show</h1>
-<h1>My Team</h1>
+<h3>Clubs#show</h3>
+<h4>My Team</h4>
 
-<div class="container">
-  <div>
-    <p> <%= @club.budget %> <%= @club.players.sum(:salary) %></p>
-    <p> <%=(@club.budget) - (@club.players.sum(:salary))%></p>
-    <%= link_to "Edit Profile", edit_club_path(@club), class: "button"  %>
-  </div>
-
+<div class="budget-card">
+  <p class="budget"> Your current budget: <%= @club.budget %> <br> <%= @club.players.sum(:salary) %></p>
+  <p> <%=(@club.budget) - (@club.players.sum(:salary))%></p>
+  <%= link_to "Edit Profile", edit_club_path(@club), class: "button"  %>
 </div>
 
 <div class="container">
@@ -20,6 +17,8 @@
         <p> <%= statistic.game_qty %> </p>
       <% end %>
       </div>
+      <%= link_to "", player_path(player), class: 'card-link-to-player' %>
+    </div>
     <% end %>
     </div>
   </div>
