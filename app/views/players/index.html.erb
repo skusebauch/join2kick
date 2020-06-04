@@ -12,7 +12,7 @@
           <div class="filter-players">
             <% Player::POSITIONS.each do |position| %>
 
-              <input class="hidden" type="checkbox" value="<%= position %>" name="player[position][]" id="player_position_<%= position %>">
+              <input class="d-none" type="checkbox" value="<%= position %>" name="player[position][]" id="player_position_<%= position %>">
 
               <label class="filter-player" for="player_position_<%= position %>">
                 <%= position %>
@@ -32,7 +32,7 @@
           <div class="filter-players">
             <% Player::SKILLSET.each do |skill| %>
 
-            <input class="hidden" type="checkbox" value="<%= skill %>" name="player[skill][]" id="player_skill_<%= skill %>">
+            <input class="d-none" type="checkbox" value="<%= skill %>" name="player[skill][]" id="player_skill_<%= skill %>">
 
             <label class="filter-player" for="player_skill_<%= skill %>">
               <%= skill %>
