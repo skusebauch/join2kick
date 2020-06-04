@@ -1,5 +1,10 @@
 <h1>This is the player showpage</h1>
-<li>
+<div>
   <%= @player.name %>
   <%= @player.position %>
-</li>
+  <%= @player.salary %>
+  <% @player.statistics.each do |statistic| %>
+    <p><strong>Games played: </strong><%= statistic.game_qty %> <strong>Goals Scored: </strong><%= statistic.goal_qty %>  <strong> Starting Eleven Avg: </strong><%= statistic.starting_eleven_avg %>%  </p>
+    <p><strong>League:</strong> <%= statistic.tournament.tournament_type %> </p>
+  <% end %>
+</div>

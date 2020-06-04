@@ -8,18 +8,15 @@
 </div>
 
 <div class="container">
-  <div>
    <% @club.players.each do |player| %>
+   <%= link_to "", player_path(player), class: 'card-link-to-player' %>
     <div class="card-player-info">
       <h2> <%=  player.name %> </h2>
-      <p>  <%= player.position %> <%= player.salary %>€/month </p>
-        <% player.statistics.each do |statistic| %>
-        <p> <%= statistic.game_qty %> </p>
+      <p><strong>Position:</strong> <%= player.position %> <strong>Salary:</strong> <%= player.salary %> €/month </p>
+      <% player.statistics.each do |statistic| %>
+      <p><strong>Games played: </strong><%= statistic.game_qty %> <strong>Goals Scored: </strong><%= statistic.goal_qty %>  <strong> Starting Eleven Avg: </strong><%= statistic.starting_eleven_avg %>%  </p>
+      <p><strong>League:</strong> <%= statistic.tournament.tournament_type %> </p>
       <% end %>
-      </div>
-      <%= link_to "", player_path(player), class: 'card-link-to-player' %>
     </div>
-    <% end %>
-    </div>
-  </div>
+  <% end %>
 </div>
