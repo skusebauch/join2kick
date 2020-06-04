@@ -13,9 +13,11 @@
 <div class="container">
   <div>
    <% @club.players.each do |player| %>
-  <div>
-      <p><%=  player.name %>  <%= player.position %> <%= player.salary %>€/month</p>
+    <div class="card-player-info">
+      <h2> <%=  player.name %> </h2>
+      <p>  <%= player.position %> <%= player.salary %>€/month </p>
     </div>
-   <% end %>
+    <% end %>
+    </div>
   </div>
 </div>
