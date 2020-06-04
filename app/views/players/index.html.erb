@@ -3,7 +3,26 @@
 
     <div class="col-sm-3 offset-sm-1">
       <%= simple_form_for :player, method: :get do |f| %>
-        <%= f.input :position, as: :check_boxes, collection: Player::POSITIONS, wrapper: :vertical_collection_inline %>
+        <%#= f.input :position, as: :check_boxes, collection: Player::POSITIONS, wrapper: :vertical_collection_inline %>
+
+        <div class="form-group">
+          <label class="control-label check_boxes optional">Position</label>
+          <input type="hidden" name="player[position][]" value="">
+
+          <div class="filter-players">
+            <% Player::POSITIONS.each do |position| %>
+
+              <input class="hidden" type="checkbox" value="<%= position %>" name="player[position][]" id="player_position_<%= position %>">
+
+              <label class="filter-player" for="player_position_<%= position %>">
+                <%= position %>
+              </label>
+
+            <% end %>
+          </div>
+        </div>
+
+
         <%= f.input :skill, as: :check_boxes, collection: Player::SKILLSET, wrapper: :vertical_collection_inline %>
         <%= f.input :age, as: :range, start_age: 16, end_age: 50 %>
         <%= f.input :location, as: :range %>
