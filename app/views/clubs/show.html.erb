@@ -16,7 +16,10 @@
     <div class="card-player-info">
       <h2> <%=  player.name %> </h2>
       <p>  <%= player.position %> <%= player.salary %>€/month </p>
-    </div>
+        <% player.statistics.each do |statistic| %>
+        <p> <%= statistic.game_qty %> </p>
+      <% end %>
+      </div>
     <% end %>
     </div>
   </div>

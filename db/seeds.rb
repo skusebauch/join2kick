@@ -122,13 +122,27 @@ Tournament.create!(
 ## Statistics ##
 puts ''
 puts 'Creating Statistics ...'
-Player.last.statistics.create!(
-  [
-      {game_qty: 400, goal_qty: 0, starting_eleven_avg: 5, tournament_id: Tournament.last.id },
-      {game_qty: 20, goal_qty: 2, starting_eleven_avg: 30, tournament_id: Tournament.last.id },
-      {game_qty: 10, goal_qty: 10 , starting_eleven_avg: 100, tournament_id: Tournament.last.id },
-      {game_qty: 600, goal_qty: 50 , starting_eleven_avg: 80, tournament_id: Tournament.last.id }
-  ]
+Statistic.create!(
+  [{ game_qty: 400,
+    goal_qty: 0,
+    starting_eleven_avg: 5,
+    tournament_id: Tournament.first.id,
+    player_id: Player.first.id },
+  { game_qty: 20,
+    goal_qty: 2,
+    starting_eleven_avg: 30,
+    tournament_id: Tournament.second.id,
+    player_id: Player.second.id },
+  { game_qty: 10,
+    goal_qty: 10 ,
+    starting_eleven_avg: 100,
+    tournament_id: Tournament.third.id,
+    player_id: Player.third.id },
+  { game_qty: 600,
+    goal_qty: 50 ,
+    starting_eleven_avg: 80,
+    tournament_id: Tournament.fourth.id,
+    player_id: Player.fourth.id }]
 )
 
 puts ''
