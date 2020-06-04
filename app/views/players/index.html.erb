@@ -5,10 +5,10 @@
       <%= simple_form_for :player, method: :get do |f| %>
         <%= f.input :position, as: :check_boxes, collection: Player::POSITIONS, wrapper: :vertical_collection_inline %>
         <%= f.input :skill, as: :check_boxes, collection: Player::SKILLSET, wrapper: :vertical_collection_inline %>
-        <%= f.input :age, as: :range %>
+        <%= f.input :age, as: :range, start: 0, end: 40 %>
         <%= f.input :location, as: :range %>
-        <%= f.input :starting_eleven, as: :range %>
-        <%= f.input :league, as: :range %>
+        <%= f.input :starting_eleven_avg, as: :range %>
+        <%#= f.input :league, as: :range %>
         <%= f.submit "apply", class: "button" %>
       <% end %>
     </div>

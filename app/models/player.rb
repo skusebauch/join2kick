@@ -10,7 +10,8 @@ class Player < ApplicationRecord
   validate :valid_skillset
   include PgSearch::Model
   pg_search_scope :search,
-    against: [:name, :salary, :position, :skill, :birth], #:starting_eleven_avg, :league ],
+    against: [:name, :salary, :position, :skill, :birth, :address],
+
     using: {
       tsearch: { prefix: true }
     }
@@ -25,5 +26,20 @@ class Player < ApplicationRecord
   def valid_skillset
     errors.add(:skill, "Not valid skill") unless (skill - SKILLSET).empty?
     # skills.bsearch { |i| skill <=> i }
+  end
+
+  def avg_starting
+    return 0 if statistics.empty?
+
+    avg = 0
+    statistics.each do |stat|
+      avg += stat.starting_eleven_avg
+    end
+    avg / statistics.count
+  end
+
+  def age(dob)
+    now = Time.now.utc.to_date
+    now.year - dob.year - ((now.month > dob.month || (now.month == dob.month && now.day >= dob.day)) ? 0 : 1)
   end
 end
