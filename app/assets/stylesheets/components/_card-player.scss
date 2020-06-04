@@ -5,6 +5,7 @@
   box-shadow: 0 0 15px rgba(0,0,0,0.2);
   align-items: center;
   padding: 16px;
+  margin: 5px;
 }
 
 .card-player-info h2 {
@@ -19,6 +20,24 @@
   opacity: .7;
   margin-bottom: 0;
   margin-top: 8px;
+}
 
+.budget-card {
+  margin: 20px;
+  background: white;
+  height: 150px;
+  width: auto;
+}
+
+.budget {
+  font-weight: bold;
+  color: green;
+}
+
+.card-link-to-player {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  background: transparent;
 }
 
