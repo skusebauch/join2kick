@@ -14,7 +14,6 @@ const initChatroomCable = () => {
   }
 }
 
-
 const initChatroomCableIndex = () => {
   //const currentChatContainer = document.getElementById('current-chat-container');
   const buttonsChat = document.querySelectorAll('#chatroom-button');
@@ -26,7 +25,8 @@ const initChatroomCableIndex = () => {
     buttonChat.addEventListener( 'click', (event) => {
       // console.log("Test-Listener")
       if (currentChatContainer) {
-        console.log(buttonChat.dataset.chatroomId)
+        //console.log(buttonChat.dataset.chatroomId)
+        currentChatContainer.innerHTML = '';
         const id = buttonChat.dataset.chatroomId;
         consumer.subscriptions.create({ channel: "ChatroomChannel", id: id },
           { received(data){
@@ -38,15 +38,5 @@ const initChatroomCableIndex = () => {
     })
   });
 };
-//  if (currentChatContainer) {
-//    const id = currentChatContainer.dataset.chatroomId;
-//    console.log(id)
-//    consumer.subscriptions.create({ channel: "ChatroomChannel", id: id }, {
-//      received(data) {
-//        console.log(data); // called when data is broadcast in the cable
-//        //currentChatContainer.insertAdjacentHTML('beforeend', data);
-//      },
-//    });
 
-
-export { initChatroomCable, initChatroomCableIndex };
+export { initChatroomCable };
