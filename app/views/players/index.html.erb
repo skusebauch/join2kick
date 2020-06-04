@@ -22,8 +22,25 @@
           </div>
         </div>
 
+        <%#= f.input :skill, as: :check_boxes, collection: Player::SKILLSET, wrapper: :vertical_collection_inline %>
+        <div class="form-group">
+          <label class="control-label check_boxes optional">
+            Skill
+          </label>
+          <input type="hidden" name="player[skill][]" value="">
 
-        <%= f.input :skill, as: :check_boxes, collection: Player::SKILLSET, wrapper: :vertical_collection_inline %>
+          <div class="filter-players">
+            <% Player::SKILLSET.each do |skill| %>
+
+            <input class="hidden" type="checkbox" value="<%= skill %>" name="player[skill][]" id="player_skill_<%= skill %>">
+
+            <label class="filter-player" for="player_skill_<%= skill %>">
+              <%= skill %>
+            </label>
+            <% end %>
+          </div>
+        </div>
+
         <%= f.input :age, as: :range, start_age: 16, end_age: 50 %>
         <%= f.input :location, as: :range %>
         <%= f.input :starting_eleven_avg, as: :range %>
