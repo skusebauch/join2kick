@@ -2,6 +2,7 @@ class ChatroomsController < ApplicationController
   def index
     @chatrooms = policy_scope(Chatroom.all)
     @messages = policy_scope(Message.all)
+    @chatrooms = current_user.chatrooms
     # Message.where(" user_id = ? ", current_user.id).distinct(:chatroom_id)
     # @my_chatrooms = Message.where(user_id: current_user.id)
     # raise
