@@ -1,10 +1,43 @@
-<h1>This is the player showpage</h1>
-<div>
-  <%= @player.name %>
-  <%= @player.position %>
-  <%= @player.salary %>
+<h1 class="animate__animated animate__backInDown"><%= @player.name %></h1>
+<!-- <div class="table-sp">
+  <table class="table">
+    <thead>
+      <tr class="tr">
+        <th>Name</th>
+        <th>Position</th>
+        <th>Salery</th>
+        <th>Game QTY</th>
+        <th>Goals Scored</th>
+        <th>Starting Eleven Avg</th>
+        <th>League</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><%= @player.name %></td>
+        <td><%= @player.position %></td>
+        <td><%= @player.salary %></td>
+        <% @player.statistics.each do |statistic| %>
+        <td><%= statistic.game_qty %></td>
+        <td><%= statistic.goal_qty %></td>
+        <td><%= statistic.starting_eleven_avg %>%</td>
+        <td><%= statistic.tournament.tournament_type %></td>
+        <% end %>
+      </tr>
+    </tbody>
+  </table>
+</div> -->
+
+
+<ul class="list">
+  <li><a href="#0">Name <span><%= @player.name %></span></a></li>
+  <li><a href="#0">Position <span><%= @player.position %></span></a></li>
+  <li><a href="#0">Salary <span><%= @player.salary %></span></a></li>
   <% @player.statistics.each do |statistic| %>
-    <p><strong>Games played: </strong><%= statistic.game_qty %> <strong>Goals Scored: </strong><%= statistic.goal_qty %>  <strong> Starting Eleven Avg: </strong><%= statistic.starting_eleven_avg %>%  </p>
-    <p><strong>League:</strong> <%= statistic.tournament.tournament_type %> </p>
+  <li><a href="#0">Game QTY <span><%= statistic.game_qty %></span></a></li>
+  <li><a href="#0">Goals Scored<span><%= statistic.goal_qty %></span></a></li>
+  <li><a href="#0">Starting Eleven Avg<span><%= statistic.starting_eleven_avg %>%</span></a></li>
   <% end %>
-</div>
+</ul>
+
+<%= link_to "Go back to profile", club_path(current_user.clubs.first), class: "button"  %>
