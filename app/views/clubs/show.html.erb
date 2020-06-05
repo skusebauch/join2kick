@@ -7,21 +7,20 @@
   <%= link_to "Edit Profile", edit_club_path(@club), class: "button"  %>
 </div>
 
-<div class="table-sp">
-  <table id="table">
-    <thead>
-      <tr id="tr">
-        <th>Name</th>
-        <th>Position</th>
-        <th>Salary</th>
-        <th>Games Played</th>
-        <th>Goals Scored</th>
-        <th>Starting Eleven Avg</th>
-        <th>League</th>
-      </tr>
-    </thead>
-    <tbody>
 
+<table id="dttb">
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Position</th>
+      <th>Salary</th>
+      <th>Games Played</th>
+      <th>Goals Scored</th>
+      <th>Starting Eleven Avg</th>
+      <th>League</th>
+    </tr>
+  </thead>
+  <tbody>
        <% @club.players.each do |player| %>
         <tr>
           <td class="td"> <%= link_to "", player_path(player), class: 'card-link-to-player' %><%=  player.name %> </td>
