@@ -6,9 +6,10 @@
 }
 
 .filter-player {
+  font-size: 12px;
   flex: 0 0 45%;
   background: grey;
-  padding: 20px;
+  padding: 5px;
   border-radius: 5px;
   opacity: 0.4;
   text-align: center;
@@ -22,4 +23,8 @@
     opacity: 1;
   }
 
+}
+
+.hidden {
+  display: none;
 }
