@@ -54,6 +54,7 @@
         <% @players.each do |player| %>
           <h4><%= player.name %></h4>
           <p><%= player.position %></p>
+          <%= link_to "See more", player_path(player) %>
         <% end %>
       </div>
     </div>
