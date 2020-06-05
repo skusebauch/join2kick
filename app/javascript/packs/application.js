@@ -3,6 +3,10 @@ require("@rails/ujs").start()
 require("turbolinks").start()
 require("@rails/activestorage").start()
 require("channels")
+// var $  = require( 'jquery' );
+// require( 'datatables.net' )( window, $);
+
+import { DataTable } from 'datatables.net';
 
 
 import "bootstrap";
@@ -24,5 +28,7 @@ document.addEventListener('turbolinks:load', () => {
   initFilter();
 });
 
-
+$(document).ready( function () {
+    $('#dttb').DataTable();
+} );
 
