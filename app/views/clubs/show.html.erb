@@ -1,42 +1,44 @@
-<h3>Clubs#show</h3>
-<h4>My Team</h4>
+<h1 class="animate__animated animate__backInDown"><%= @club.name %></h1>
 
 <div class="budget-card">
-  <p class="budget"> Your current budget: <%= @club.budget %> <br> Sum of all salarys: <%= @club.players.sum(:salary) %></p>
+  <p class="budget"> Your current budget: <%= @club.budget %></p>
+  <p class="budget1">Sum of all salarys: <%= @club.players.sum(:salary) %></p>
   <p> Remaining budget: <%=(@club.budget) - (@club.players.sum(:salary))%></p>
   <%= link_to "Edit Profile", edit_club_path(@club), class: "button"  %>
 </div>
 
-<table data-sortable id="table1">
-  <thead>
-    <tr>
-      <th>Name</th>
-      <th>Position</th>
-      <th>Salary</th>
-      <th>Games Played</th>
-      <th>Goals Scored</th>
-      <th>Starting Eleven Avg</th>
-      <th>League</th>
-    </tr>
-  </thead>
-  <tbody>
-
-     <% @club.players.each do |player| %>
-      <tr>
-        <td> <%= link_to "", player_path(player), class: 'card-link-to-player' %><%=  player.name %> </td>
-        <td> <%= player.position %></td>
-        <td> <%= player.salary %></td>
-
-        <% player.statistics.each do |statistic| %>
-
-        <td><%= statistic.game_qty %></td>
-
-        <td><%= statistic.goal_qty %></td>
-
-        <td><%= statistic.starting_eleven_avg %></td>
-        <td><%= statistic.tournament.tournament_type %></td>
-        <% end %>
+<div class="table-sp">
+  <table id="table">
+    <thead>
+      <tr id="tr">
+        <th>Name</th>
+        <th>Position</th>
+        <th>Salary</th>
+        <th>Games Played</th>
+        <th>Goals Scored</th>
+        <th>Starting Eleven Avg</th>
+        <th>League</th>
       </tr>
-    <% end %>
-  </tbody>
-</table>
+    </thead>
+    <tbody>
+
+       <% @club.players.each do |player| %>
+        <tr>
+          <td class="td"> <%= link_to "", player_path(player), class: 'card-link-to-player' %><%=  player.name %> </td>
+          <td> <%= player.position %></td>
+          <td> <%= player.salary %></td>
+
+          <% player.statistics.each do |statistic| %>
+
+          <td><%= statistic.game_qty %></td>
+
+          <td><%= statistic.goal_qty %></td>
+
+          <td><%= statistic.starting_eleven_avg %></td>
+          <td><%= statistic.tournament.tournament_type %></td>
+          <% end %>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+</div>
