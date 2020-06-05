@@ -1,18 +1,15 @@
 <div class="chatrooms-container" style="width: 20%">
 <!-- data-chatroom-name="<%#= @chatrooms.name %>" -->
-  <% @chatrooms.each do |chatroom| %>
-    <% @chatroom_already_displayed = false %>
-    <% chatroom.messages.each do |message| %>
-    <% if message.user_id != current_user.id && @chatroom_already_displayed == false%>
-       <% @chatroom_already_displayed = true %>
-       <div class="chatroom-card" data-chatroom-id="<%= chatroom.id %>" style="padding: 10px">
+    <% @messages.each do |message| %>
+    <%# @chatroom_already_displayed = false %>
+  <%# @chatrooms.each do |chatroom| %>
+    <%# if message.user_id != current_user.id && @chatroom_already_displayed == false%>
+       <%# @chatroom_already_displayed = true %>
+       <div class="chatroom-card" data-chatroom-id="<%#= chatroom.id %>" style="padding: 10px">
        <%#= link_to chatroom.name, '#', :onclick => 'initChatroomCable(4)' %>
-      <%= link_to message.user.player.name, chatroom_path(chatroom) %>
-<!--       <button id="chatroom-button" data-chatroom-id="<%= chatroom.id %>">
-        <%#= chatroom.name %>
-      </button> -->
+      <%= link_to message.user.player.name, chatroom_path(message.chatroom) %>
       </div>
-      <% end %>
-    <% end %>
+      <%# end %>
+    <%# end %>
   <% end %>
 </div>
