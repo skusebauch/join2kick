@@ -1,43 +1,35 @@
-.card-player-info {
-  overflow: hidden;
-  height: 120px;
-  background: white;
-  box-shadow: 0 0 15px rgba(0,0,0,0.2);
-  align-items: center;
-  padding: 16px;
-  margin: 5px;
-}
-
-.card-player-info h2 {
-  font-size: 16px;
-  font-weight: bold;
-  margin: 0;
-}
-
-.card-player-info p {
-  font-size: 12px;
-  line-height: 1.4;
-  opacity: .7;
-  margin-bottom: 0;
-  margin-top: 8px;
+.animate__animated {
+  text-align: center;
+  margin-right: 155px;
+  color: #a42e1a;
+  font-size: 50px;
 }
 
 .budget-card {
-  display: flex-start;
+  display: flex-end;
   text-align: center;
-  margin: 20px;
+  margin: 50px;
   height: 150px;
   width: 250px;
   box-shadow: 0 0 15px rgba(0,0,0,0.2);
   border-radius: 5px;
 }
 
-.budget {
-  text-align: left;
-  font-weight: bold;
-  color: green;
+// .budget {
+//   text-align: left;
+//   font-weight: bold;
+//   color: green;
+//   margin-bottom: 1px;
+//   margin-left: 10px;
+//   padding-top: 10px;
+// }
 
-}
+// .budget1 {
+//   text-align: left;
+//   font-weight: bold;
+//   color: red;
+//   margin-left: 10px;
+// }
 
 .card-link-to-player {
   position: absolute;
