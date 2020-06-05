@@ -90,11 +90,11 @@ ClubTournament.create!(
     )
 
   statistics = Statistic.create!(
-    game_qty: rand(0..400),
+    game_qty: rand(0..30),
     goal_qty: rand(0..90),
     starting_eleven_avg: rand(0..100),
     tournament: Tournament.first,
-    player: Player.first
+    player: own_player
   )
 end
 
