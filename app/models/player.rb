@@ -16,12 +16,12 @@ class Player < ApplicationRecord
       tsearch: { prefix: true }
     }
 
-  SKILLSET = ["endurance",
-                "passing",
-                "shooting", "speed", "strong",
-                "tactic", "teamplayer", "technique"]
+  SKILLSET = ["Endurance",
+                "Passing",
+                "Shooting", "Speed", "Strong",
+                "Tactic", "Teamplayer", "Technique"]
 
-  POSITIONS = ["Goalkeeper", "Defence", "Midfield", "Striker"]
+  POSITIONS = ["Goalkeeper", "Defender", "Midfielder", "Striker"]
 
   def valid_skillset
     errors.add(:skill, "Not valid skill") unless (skill - SKILLSET).empty?

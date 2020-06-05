@@ -8,7 +8,8 @@
 .filter-player {
   font-size: 12px;
   flex: 0 0 45%;
-  background: grey;
+  background: #FAFAFA;
+  border-style: solid;
   padding: 5px;
   border-radius: 5px;
   opacity: 0.4;
@@ -18,9 +19,10 @@
     cursor: pointer;
   }
   &.active {
-    background: blue;
+    background: #F05D5E;
     color: white;
     opacity: 1;
+    border: #F05D5E;
   }
 
 }
@@ -28,3 +30,5 @@
 .hidden {
   display: none;
 }
+
+

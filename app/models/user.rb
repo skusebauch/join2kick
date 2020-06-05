@@ -6,4 +6,6 @@ class User < ApplicationRecord
 
   has_one :player
   has_many :clubs
+  has_many :messages
+  has_many :chatrooms, through: :messages
 end
