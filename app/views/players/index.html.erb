@@ -36,10 +36,11 @@
           </div>
         </div>
 
-        <%= f.input :age, as: :range %>
-        <%= f.input :location, as: :range %>
-        <%= f.input :starting_eleven_avg, as: :range %>
+        <%#= f.input :age, as: :range %>
+        <%#= f.input :location, as: :range %>
+        <%#= f.input :starting_eleven_avg, as: :range %>
         <%#= f.input :league, as: :range %>
+
         <%= f.submit "apply", class: "button" %>
       <% end %>
     </div>
@@ -47,9 +48,37 @@
     <div class="col-sm-6 offset-sm-1">
       <div id="players">
         <% @players.each do |player| %>
-          <h4><%= player.name %></h4>
-          <p><%= player.position %></p>
-          <%= link_to "See more", player_path(player) %>
+          <div class="player-card">
+            <h4><%= player.name %>, (<%=player.age(player.birth)%>)</h4>
+            <p><%= player.position %></p>
+            <div class="player-card-current-stat">
+              <h5>Current Season</h5>
+              <card class="card-stats">
+                <div class="card-stat">
+                  <% player.statistics.each do |statistic|%>
+                    <%= statistic.game_qty if statistic.tournament.season_year == "2019/2020" && statistic.tournament.tournament_type == "championship"%>
+                  <% end %>
+                  <%= image_tag('game_qty') %>
+                </div>
+
+                <div class="card-stat">
+                  <% player.statistics.each do |statistic|%>
+                    <%= statistic.goal_qty if statistic.tournament.season_year == "2019/2020" && statistic.tournament.tournament_type == "championship"%>
+                  <% end %>
+                  <%= image_tag('goals') %>
+                </div>
+
+                <div class="card-stat">
+                  <% player.statistics.each do |statistic|%>
+                    <%= statistic.starting_eleven_avg if statistic.tournament.season_year == "2019/2020" && statistic.tournament.tournament_type == "championship"%>
+                  <% end %>
+                  <%= image_tag('starting_eleven') %>
+                </div>
+
+              </card>
+            </div>
+            <%= link_to "See more", player_path(player) %>
+          </div>
         <% end %>
       </div>
     </div>
