@@ -1,114 +1,111 @@
-<div class="container">
-  <div class="row">
-
-    <div class="col-sm-3 offset-sm-1">
-      <%= simple_form_for :player, method: :get do |f| %>
-        <%#= f.input :position, as: :check_boxes, collection: Player::POSITIONS, wrapper: :vertical_collection_inline %>
-        <div class="form-group">
-          <label class="control-label check_boxes optional">Position</label>
-          <input type="hidden" name="player[position][]" value="">
-          <div class="filter-players">
-            <% Player::POSITIONS.each do |position| %>
-              <input class="hidden" type="checkbox" value="<%= position %>" name="player[position][]" id="player_position_<%= position %>">
-              <label class="filter-player" for="player_position_<%= position %>">
-                <%= position %>
-              </label>
-            <% end %>
-          </div>
-        </div>
-
-        <%#= f.input :skill, as: :check_boxes, collection: Player::SKILLSET, wrapper: :vertical_collection_inline %>
-        <div class="form-group">
-          <label class="control-label check_boxes optional">
-            Skill
-          </label>
-          <input type="hidden" name="player[skill][]" value="">
-
-          <div class="filter-players">
-            <% Player::SKILLSET.each do |skill| %>
-
-            <input class="hidden" type="checkbox" value="<%= skill %>" name="player[skill][]" id="player_skill_<%= skill %>">
-
-            <label class="filter-player" for="player_skill_<%= skill %>">
-              <%= skill %>
+<div class="content">
+  <div class="filter-search">
+    <%= simple_form_for :player, method: :get do |f| %>
+      <%#= f.input :position, as: :check_boxes, collection: Player::POSITIONS, wrapper: :vertical_collection_inline %>
+      <div class="form-group">
+        <label class="control-label check_boxes optional">Position</label>
+        <input type="hidden" name="player[position][]" value="">
+        <div class="filter-players">
+          <% Player::POSITIONS.each do |position| %>
+            <input class="hidden" type="checkbox" value="<%= position %>" name="player[position][]" id="player_position_<%= position %>">
+            <label class="filter-player" for="player_position_<%= position %>">
+              <%= position %>
             </label>
-            <% end %>
-          </div>
+          <% end %>
         </div>
+      </div>
 
-        <%#= f.input :age, as: :range %>
-        <%#= f.input :location, as: :range %>
-        <%#= f.input :starting_eleven_avg, as: :range %>
-        <%#= f.input :league, as: :range %>
+      <%#= f.input :skill, as: :check_boxes, collection: Player::SKILLSET, wrapper: :vertical_collection_inline %>
+      <div class="form-group">
+        <label class="control-label check_boxes optional">
+          Skill
+        </label>
+        <input type="hidden" name="player[skill][]" value="">
 
-        <%= f.submit "apply", class: "button" %>
+        <div class="filter-players">
+          <% Player::SKILLSET.each do |skill| %>
+
+          <input class="hidden" type="checkbox" value="<%= skill %>" name="player[skill][]" id="player_skill_<%= skill %>">
+
+          <label class="filter-player" for="player_skill_<%= skill %>">
+            <%= skill %>
+          </label>
+          <% end %>
+        </div>
+      </div>
+
+      <%#= f.input :age, as: :range %>
+      <%#= f.input :location, as: :range %>
+      <%#= f.input :starting_eleven_avg, as: :range %>
+      <%#= f.input :league, as: :range %>
+
+      <%= f.submit "apply", class: "button" %>
+    <% end %>
+  </div>
+
+  <div class="players-overview">
+    <div id="players">
+      <% @players.each do |player| %>
+        <div class="player-card">
+          <div class="player-card-info">
+            <img src="<%= player.image %>" alt="avatar">
+            <div class="player-card-description">
+              <h4><%= player.name %>, (<%=player.age(player.birth)%>)</h4>
+              <p><%= player.position %></p>
+            </div>
+          </div>
+          <div class="player-card-current-stat">
+            <h5>Current Season</h5>
+            <div class="card-stats">
+              <div class="card-stat">
+                <% player.statistics.each do |statistic|%>
+                  <%= statistic.game_qty if statistic.tournament.season_year == "2019/2020" && statistic.tournament.tournament_type == "championship"%>
+                <% end %>
+                <%= image_tag('game_qty') %>
+              </div>
+              <div class="card-stat">
+                <% player.statistics.each do |statistic|%>
+                  <%= statistic.goal_qty if statistic.tournament.season_year == "2019/2020" && statistic.tournament.tournament_type == "championship"%>
+                <% end %>
+                <%= image_tag('goals') %>
+              </div>
+              <div class="card-stat">
+                <% player.statistics.each do |statistic|%>
+                  <%= statistic.starting_eleven_avg if statistic.tournament.season_year == "2019/2020" && statistic.tournament.tournament_type == "championship"%>
+                <% end %>
+                % <%= image_tag('starting_eleven') %>
+              </div>
+            </div>
+          </div>
+          <div class="player-card-total-stat">
+            <h5>Stats</h5>
+            <div class="table-datas">
+              <div class="table-data">
+                <table>
+                  <tr>
+                    <th> </th>
+                    <th><%= image_tag('game_qty') %></th>
+                    <th><%= image_tag('goals') %></th>
+                    <th><%= image_tag('starting_eleven') %></th>
+                  </tr>
+                  <tr>
+                  <% player.statistics.each do |statistic| %>
+                    <td class="left"><%= statistic.tournament.league %></td>
+                    <td><%= statistic.game_qty %></td>
+                    <td><%= statistic.goal_qty %></td>
+                    <td><%= statistic.starting_eleven_avg %> %</td>
+                  </tr>
+                  <% end %>
+                </table>
+              </div>
+            </div>
+          </div>
+          <%= link_to "", player_path(player), class: "player-card-link" %>
+        </div>
       <% end %>
     </div>
-
-    <div class="col-sm-6 offset-sm-1">
-      <div id="players">
-        <% @players.each do |player| %>
-          <div class="player-card">
-            <div class="player-card-info">
-              <img src="<%= player.image %>" alt="avatar">
-              <div class="player-card-description">
-                <h4><%= player.name %>, (<%=player.age(player.birth)%>)</h4>
-                <p><%= player.position %></p>
-              </div>
-            </div>
-            <div class="player-card-current-stat">
-              <h5>Current Season</h5>
-              <div class="card-stats">
-                <div class="card-stat">
-                  <% player.statistics.each do |statistic|%>
-                    <%= statistic.game_qty if statistic.tournament.season_year == "2019/2020" && statistic.tournament.tournament_type == "championship"%>
-                  <% end %>
-                  <%= image_tag('game_qty') %>
-                </div>
-                <div class="card-stat">
-                  <% player.statistics.each do |statistic|%>
-                    <%= statistic.goal_qty if statistic.tournament.season_year == "2019/2020" && statistic.tournament.tournament_type == "championship"%>
-                  <% end %>
-                  <%= image_tag('goals') %>
-                </div>
-                <div class="card-stat">
-                  <% player.statistics.each do |statistic|%>
-                    <%= statistic.starting_eleven_avg if statistic.tournament.season_year == "2019/2020" && statistic.tournament.tournament_type == "championship"%>
-                  <% end %>
-                  % <%= image_tag('starting_eleven') %>
-                </div>
-              </div>
-            </div>
-            <div class="player-card-total-stat">
-              <h5>Stats</h5>
-              <div class="table-datas">
-                <div class="table-data">
-                  <table>
-                    <tr>
-                      <th> </th>
-                      <th><%= image_tag('game_qty') %></th>
-                      <th><%= image_tag('goals') %></th>
-                      <th><%= image_tag('starting_eleven') %></th>
-                    </tr>
-                    <tr>
-                    <% player.statistics.each do |statistic| %>
-                      <td class="left"><%= statistic.tournament.league %></td>
-                      <td><%= statistic.game_qty %></td>
-                      <td><%= statistic.goal_qty %></td>
-                      <td><%= statistic.starting_eleven_avg %> %</td>
-                    </tr>
-                    <% end %>
-                  </table>
-                </div>
-              </div>
-            </div>
-            <%= link_to "", player_path(player), class: "player-card-link" %>
-          </div>
-        <% end %>
-      </div>
-    </div>
-
   </div>
 </div>
+
 
 

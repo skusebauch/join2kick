@@ -1,16 +1,21 @@
+.content {
+  display: grid;
+  grid-template-columns: 250px 1fr;
+}
+
 .filter-players {
   display: flex;
-  justify-content: space-between;
   flex-wrap: wrap;
   margin: 20px 0;
 }
 
 .filter-player {
+  width: 100px;
+  margin-right: 10px;
   font-size: 12px;
-  flex: 0 0 45%;
   background: #FAFAFA;
   border-style: solid;
-  padding: 5px;
+  padding: 15px;
   border-radius: 5px;
   opacity: 0.4;
   text-align: center;
@@ -23,10 +28,14 @@
     color: white;
     opacity: 1;
     border: #F05D5E;
+    font-weight: bold;
   }
 
 }
 
+.form-group {
+  margin: 0px 15px 0px 15px;
+}
 .hidden {
   display: none;
 }
