@@ -1,0 +1,81 @@
+#players {
+  display: flex;
+  justify-content: flex-start;
+  flex-wrap: wrap;
+}
+
+.player-card {
+  position: relative;
+  margin: 35px 15px 35px 15px;
+  background-color: white;
+  box-shadow: 0px 1px 2px rgba(0,0,0,0.2);
+  border-radius: 5px;
+  overflow: hidden;
+  width: 390px;
+  h5 {
+    padding-left: 15px;
+  }
+}
+
+.player-card-current-stat {
+  margin-bottom: 15px;
+}
+
+.player-card-description {
+  margin-top: 5px;
+  p {
+    margin-bottom: 0;
+    opacity: .7;
+  }
+}
+
+.player-card-info {
+  display: flex;
+  margin-bottom: 15px;
+  img {
+    height: 100px;
+    margin-right: 15px;
+    object-fit: cover;
+  }
+}
+
+.card-stats {
+  display: flex;
+  justify-content: space-around;
+  img {
+    height: 20px;
+    width: 20px;
+  }
+}
+
+.table-data {
+  display: flex;
+  justify-content: space-between;
+  overflow: hidden;
+  margin-bottom: 8px;
+  .left {
+    text-align: left;
+  }
+
+  img {
+    height: 20px;
+    width: 20px;
+  }
+  tr {
+    padding: 5px 26px 5px 26px;
+    text-align: center;
+  }
+
+  td {
+    padding: 5px 26px 5px 26px;
+    text-align: center;
+  }
+}
+
+.player-card-link {
+  position: absolute;
+  top: 0;
+  height: 100%;
+  width: 100%;
+  background: transparent;
+}

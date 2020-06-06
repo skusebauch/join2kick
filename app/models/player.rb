@@ -19,7 +19,7 @@ class Player < ApplicationRecord
   SKILLSET = ["Endurance",
                 "Passing",
                 "Shooting", "Speed", "Strong",
-                "Tactic", "Teamplayer", "Technique"]
+                "Tactic", "Reflex", "Technique"]
 
   POSITIONS = ["Goalkeeper", "Defender", "Midfielder", "Striker"]
 
