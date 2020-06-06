@@ -8,7 +8,6 @@
     <%= link_to "Edit Profile", edit_club_path(@club), class: "button"  %>
   </div>
 
-
   <table id="dttb">
     <thead>
       <tr>
@@ -27,6 +26,7 @@
             <td class="td"> <%= link_to "", player_path(player), class: 'card-link-to-player' %><%=  player.name %> </td>
             <td> <%= player.position %></td>
             <td> <%= player.salary %></td>
+
 
             <% player.statistics.each do |statistic| %>
 
