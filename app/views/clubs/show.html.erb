@@ -8,7 +8,7 @@
     <%= link_to "Edit Profile", edit_club_path(@club), class: "button"  %>
   </div>
 
-  <table id="dttb">
+  <table id="dttb" class="display">
     <thead>
       <tr>
         <th>Name</th>
@@ -17,29 +17,21 @@
         <th>Games Played</th>
         <th>Goals Scored</th>
         <th>Starting Eleven Avg</th>
-        <th>League</th>
       </tr>
     </thead>
     <tbody>
-         <% @club.players.each do |player| %>
-          <tr>
-            <td class="td"> <%= link_to "", player_path(player), class: 'card-link-to-player' %><%=  player.name %> </td>
-            <td> <%= player.position %></td>
-            <td> <%= player.salary %></td>
-
-
-            <% player.statistics.each do |statistic| %>
-
-            <td><%= statistic.game_qty %></td>
-
-            <td><%= statistic.goal_qty %></td>
-
-            <td><%= statistic.starting_eleven_avg %></td>
-            <td><%= statistic.tournament.tournament_type %></td>
-            <% end %>
-          </tr>
-        <% end %>
-      </tbody>
-    </table>
-  </div>
+      <% @club.players.each do |player| %>
+        <tr>
+          <td class="td"> <%= link_to "", player_path(player), class: 'card-link-to-player' %><%=  player.name %> </td>
+          <td> <%= player.position %></td>
+          <td> <%= player.salary %></td>
+          <% player.statistics.each do |statistic| %>
+            <td><%= statistic.game_qty if statistic.tournament.season_year == "2019/2020" && statistic.tournament.tournament_type == "championship" %></td>
+            <td><%= statistic.goal_qty if statistic.tournament.season_year == "2019/2020" && statistic.tournament.tournament_type == "championship" %></td>
+            <td><%= statistic.starting_eleven_avg if statistic.tournament.season_year == "2019/2020" && statistic.tournament.tournament_type == "championship" %></td>
+          <% end %>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
 </div>
