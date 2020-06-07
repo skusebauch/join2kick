@@ -539,5 +539,621 @@ Statistic.create!(
   player: player_nora
   )
 
+#Midfielder
+
+puts 'Arbi ...'
+
+user_arbi = User.create!(
+  email: Faker::Internet.email,
+  password: 123456,
+  address: Faker::Address.full_address
+  )
+
+player_arbi = Player.create!(
+  name: 'Arbi Velaj',
+  image: 'https://avatars2.githubusercontent.com/u/26385065?v=4',
+  birth: Date.new(rand(1975..2003),rand(1..12), rand(1..26)),
+  citizenship: 'Italy 🇮🇹',
+  height: rand(160..195),
+  position: 'Midfielder',
+  skill: ['Shooting', 'Technique', 'Passing'],
+  address: "Rudi-Dutschke-Straße 26, 10969 Berlin",
+  salary: rand(350..2000),
+  club: club_lewagon,
+  user: user_arbi
+  )
+
+Statistic.create!(
+  game_qty: 22,
+  goal_qty: 15,
+  starting_eleven_avg: 100,
+  tournament: hessenliga,
+  player: player_arbi
+  )
+
+Statistic.create!(
+  game_qty: 34,
+  goal_qty: 17,
+  starting_eleven_avg: 100,
+  tournament: last_hessenliga,
+  player: player_arbi
+  )
+
+Statistic.create!(
+  game_qty: 2,
+  goal_qty: 2,
+  starting_eleven_avg: 100,
+  tournament: dfb_pokal,
+  player: player_arbi
+  )
+
+Statistic.create!(
+  game_qty: 4,
+  goal_qty: 2,
+  starting_eleven_avg: 100,
+  tournament: hessenpokal,
+  player: player_arbi
+  )
+
+Statistic.create!(
+  game_qty: 7,
+  goal_qty: 2,
+  starting_eleven_avg: 80,
+  tournament: last_hessenpokal,
+  player: player_arbi
+  )
+
+puts 'Alex ...'
+
+user_alex = User.create!(
+  email: Faker::Internet.email,
+  password: 123456,
+  address: Faker::Address.full_address
+  )
+
+player_alex = Player.create!(
+  name: 'Alexander Dubovoy',
+  image: 'https://res.cloudinary.com/wagon/image/upload/c_fill,g_face,h_200,w_200/v1582630583/ky7b8bb3ogcx0lpdgkvd.jpg',
+  birth: Date.new(rand(1975..2003),rand(1..12), rand(1..26)),
+  citizenship: 'United States 🇺🇸',
+  height: rand(160..195),
+  position: 'Midfielder',
+  skill: ['Speed', 'Technique', 'Endurance'],
+  address: "Rudi-Dutschke-Straße 26, 10969 Berlin",
+  salary: rand(350..2000),
+  club: club_lewagon,
+  user: user_alex
+  )
+
+Statistic.create!(
+  game_qty: 24,
+  goal_qty: 7,
+  starting_eleven_avg: 93,
+  tournament: hessenliga,
+  player: player_alex
+  )
+
+Statistic.create!(
+  game_qty: 34,
+  goal_qty: 8,
+  starting_eleven_avg: 88,
+  tournament: last_hessenliga,
+  player: player_alex
+  )
+
+Statistic.create!(
+  game_qty: 2,
+  goal_qty: 0,
+  starting_eleven_avg: 100,
+  tournament: dfb_pokal,
+  player: player_alex
+  )
+
+Statistic.create!(
+  game_qty: 4,
+  goal_qty: 1,
+  starting_eleven_avg: 100,
+  tournament: hessenpokal,
+  player: player_alex
+  )
+
+Statistic.create!(
+  game_qty: 7,
+  goal_qty: 2,
+  starting_eleven_avg: 95,
+  tournament: last_hessenpokal,
+  player: player_alex
+  )
+
+puts 'Claire ...'
+
+user_claire = User.create!(
+  email: Faker::Internet.email,
+  password: 123456,
+  address: Faker::Address.full_address
+  )
+
+player_claire = Player.create!(
+  name: 'Claire Demont',
+  image: 'https://avatars3.githubusercontent.com/u/45850166?v=4',
+  birth: Date.new(rand(1975..2003),rand(1..12), rand(1..26)),
+  citizenship: 'France 🇫🇷',
+  height: rand(160..195),
+  position: 'Midfielder',
+  skill: ['Technique', 'Passing'],
+  address: "Rudi-Dutschke-Straße 26, 10969 Berlin",
+  salary: rand(350..2000),
+  club: club_lewagon,
+  user: user_claire
+  )
+
+Statistic.create!(
+  game_qty: 24,
+  goal_qty: 10,
+  starting_eleven_avg: 88,
+  tournament: hessenliga,
+  player: player_claire
+  )
+
+Statistic.create!(
+  game_qty: 25,
+  goal_qty: 12,
+  starting_eleven_avg: 75,
+  tournament: last_hessenliga,
+  player: player_claire
+  )
+
+Statistic.create!(
+  game_qty: 1,
+  goal_qty: 1,
+  starting_eleven_avg: 100,
+  tournament: dfb_pokal,
+  player: player_claire
+  )
+
+Statistic.create!(
+  game_qty: 4,
+  goal_qty: 2,
+  starting_eleven_avg: 100,
+  tournament: hessenpokal,
+  player: player_claire
+  )
+
+Statistic.create!(
+  game_qty: 5,
+  goal_qty: 1,
+  starting_eleven_avg: 95,
+  tournament: last_hessenpokal,
+  player: player_claire
+  )
+
+puts 'Zuza ...'
+
+user_zuza = User.create!(
+  email: Faker::Internet.email,
+  password: 123456,
+  address: Faker::Address.full_address
+  )
+
+player_claire = Player.create!(
+  name: 'Zuza Żuber',
+  image: 'https://avatars3.githubusercontent.com/u/45850166?v=4',
+  birth: Date.new(rand(1975..2003),rand(1..12), rand(1..26)),
+  citizenship: 'Poland 🇵🇱',
+  height: rand(160..195),
+  position: 'Midfielder',
+  skill: ['Technique', 'Passing', 'Speed'],
+  address: "Rudi-Dutschke-Straße 26, 10969 Berlin",
+  salary: rand(350..2000),
+  club: club_lewagon,
+  user: user_zuza
+  )
+
+Statistic.create!(
+  game_qty: 24,
+  goal_qty: 14,
+  starting_eleven_avg: 93,
+  tournament: hessenliga,
+  player: player_zuza
+  )
+
+Statistic.create!(
+  game_qty: 30,
+  goal_qty: 10,
+  starting_eleven_avg: 75,
+  tournament: last_hessenliga,
+  player: player_zuza
+  )
+
+Statistic.create!(
+  game_qty: 1,
+  goal_qty: 0,
+  starting_eleven_avg: 100,
+  tournament: dfb_pokal,
+  player: player_zuza
+  )
+
+Statistic.create!(
+  game_qty: 4,
+  goal_qty: 1,
+  starting_eleven_avg: 80,
+  tournament: hessenpokal,
+  player: player_zuza
+  )
+
+Statistic.create!(
+  game_qty: 10,
+  goal_qty: 4,
+  starting_eleven_avg: 100,
+  tournament: last_hessenpokal,
+  player: player_zuza
+  )
+
+puts 'Anthony ...'
+
+user_anthony = User.create!(
+  email: Faker::Internet.email,
+  password: 123456,
+  address: Faker::Address.full_address
+  )
+
+player_anthony = Player.create!(
+  name: 'Anthony Bandolon',
+  image: 'https://res.cloudinary.com/wagon/image/upload/c_fill,g_face,h_200,w_200/v1584532796/ohnfndhefemkjea708ag.jpg',
+  birth: Date.new(rand(1975..2003),rand(1..12), rand(1..26)),
+  citizenship: 'Germany 🇩🇪',
+  height: rand(160..195),
+  position: 'Midfielder',
+  skill: ['Endurance', 'Passing'],
+  address: "Rudi-Dutschke-Straße 26, 10969 Berlin",
+  salary: rand(350..2000),
+  club: club_lewagon,
+  user: user_anthony
+  )
+
+Statistic.create!(
+  game_qty: 18,
+  goal_qty: 8,
+  starting_eleven_avg: 80,
+  tournament: hessenliga,
+  player: player_anthony
+  )
+
+Statistic.create!(
+  game_qty: 20,
+  goal_qty: 4,
+  starting_eleven_avg: 78,
+  tournament: last_hessenliga,
+  player: player_anthony
+  )
+
+Statistic.create!(
+  game_qty: 1,
+  goal_qty: 0,
+  starting_eleven_avg: 100,
+  tournament: dfb_pokal,
+  player: player_anthony
+  )
+
+Statistic.create!(
+  game_qty: 4,
+  goal_qty: 1,
+  starting_eleven_avg: 60,
+  tournament: hessenpokal,
+  player: player_anthony
+  )
+
+Statistic.create!(
+  game_qty: 5,
+  goal_qty: 2,
+  starting_eleven_avg: 80,
+  tournament: last_hessenpokal,
+  player: player_anthony
+  )
+
+puts 'Bruno ...'
+
+user_bruno = User.create!(
+  email: Faker::Internet.email,
+  password: 123456,
+  address: Faker::Address.full_address
+  )
+
+player_bruno = Player.create!(
+  name: 'Bruno Brunckhorst',
+  image: 'https://res.cloudinary.com/wagon/image/upload/c_fill,g_face,h_200,w_200/v1583184212/o1qfizldws5ocep0xt6c.jpg',
+  birth: Date.new(rand(1975..2003),rand(1..12), rand(1..26)),
+  citizenship: 'Germany 🇩🇪',
+  height: rand(160..195),
+  position: 'Midfielder',
+  skill: ['Passing'],
+  address: "Rudi-Dutschke-Straße 26, 10969 Berlin",
+  salary: rand(350..2000),
+  club: club_lewagon,
+  user: user_bruno
+  )
+
+Statistic.create!(
+  game_qty: 17,
+  goal_qty: 4,
+  starting_eleven_avg: 75,
+  tournament: hessenliga,
+  player: player_bruno
+  )
+
+Statistic.create!(
+  game_qty: 34,
+  goal_qty: 12,
+  starting_eleven_avg: 80,
+  tournament: last_verbandsliga,
+  player: player_bruno
+  )
+
+Statistic.create!(
+  game_qty: 4,
+  goal_qty: 2,
+  starting_eleven_avg: 80,
+  tournament: hessenpokal,
+  player: player_bruno
+  )
+
+Statistic.create!(
+  game_qty: 8,
+  goal_qty: 1,
+  starting_eleven_avg: 90,
+  tournament: last_hessenpokal,
+  player: player_bruno
+  )
+
+# Striker
+
+puts 'Andy ...'
+
+user_andy = User.create!(
+  email: Faker::Internet.email,
+  password: 123456,
+  address: Faker::Address.full_address
+  )
+
+player_andy = Player.create!(
+  name: 'Andrey Baranov',
+  image: 'https://avatars3.githubusercontent.com/u/45850166?v=4',
+  birth: Date.new(rand(1975..2003),rand(1..12), rand(1..26)),
+  citizenship: 'Russia 🇷🇺',
+  height: rand(160..195),
+  position: 'Striker',
+  skill: ['Technique', 'Shooting', 'Speed'],
+  address: "Rudi-Dutschke-Straße 26, 10969 Berlin",
+  salary: rand(350..2000),
+  club: club_lewagon,
+  user: user_andy
+  )
+
+Statistic.create!(
+  game_qty: 24,
+  goal_qty: 20,
+  starting_eleven_avg: 100,
+  tournament: hessenliga,
+  player: player_andy
+  )
+
+Statistic.create!(
+  game_qty: 34,
+  goal_qty: 27,
+  starting_eleven_avg: 95,
+  tournament: last_hessenliga,
+  player: player_andy
+  )
+
+Statistic.create!(
+  game_qty: 2,
+  goal_qty: 3,
+  starting_eleven_avg: 100,
+  tournament: dfb_pokal,
+  player: player_andy
+  )
+
+Statistic.create!(
+  game_qty: 4,
+  goal_qty: 3,
+  starting_eleven_avg: 100,
+  tournament: hessenpokal,
+  player: player_andy
+  )
+
+Statistic.create!(
+  game_qty: 10,
+  goal_qty: 6,
+  starting_eleven_avg: 100,
+  tournament: last_hessenpokal,
+  player: player_andy
+  )
+
+puts 'Martin ...'
+
+user_martin = User.create!(
+  email: Faker::Internet.email,
+  password: 123456,
+  address: Faker::Address.full_address
+  )
+
+player_martin = Player.create!(
+  name: 'Martin De Frutos',
+  image: 'https://avatars3.githubusercontent.com/u/45850166?v=4',
+  birth: Date.new(rand(1975..2003),rand(1..12), rand(1..26)),
+  citizenship: 'Spain 🇪🇸',
+  height: rand(160..195),
+  position: 'Striker',
+  skill: ['Strong', 'Shooting', 'Speed'],
+  address: "Rudi-Dutschke-Straße 26, 10969 Berlin",
+  salary: rand(350..2000),
+  club: club_lewagon,
+  user: user_martin
+  )
+
+Statistic.create!(
+  game_qty: 24,
+  goal_qty: 20,
+  starting_eleven_avg: 100,
+  tournament: hessenliga,
+  player: player_martin
+  )
+
+Statistic.create!(
+  game_qty: 34,
+  goal_qty: 27,
+  starting_eleven_avg: 95,
+  tournament: last_hessenliga,
+  player: player_martin
+  )
+
+Statistic.create!(
+  game_qty: 2,
+  goal_qty: 3,
+  starting_eleven_avg: 100,
+  tournament: dfb_pokal,
+  player: player_martin
+  )
+
+Statistic.create!(
+  game_qty: 4,
+  goal_qty: 3,
+  starting_eleven_avg: 100,
+  tournament: hessenpokal,
+  player: player_martin
+  )
+
+Statistic.create!(
+  game_qty: 10,
+  goal_qty: 6,
+  starting_eleven_avg: 100,
+  tournament: last_hessenpokal,
+  player: player_martin
+  )
+
+puts 'Martin ...'
+
+user_martin = User.create!(
+  email: Faker::Internet.email,
+  password: 123456,
+  address: Faker::Address.full_address
+  )
+
+player_martin = Player.create!(
+  name: 'Martin De Frutos',
+  image: 'https://avatars3.githubusercontent.com/u/45850166?v=4',
+  birth: Date.new(rand(1975..2003),rand(1..12), rand(1..26)),
+  citizenship: 'Spain 🇪🇸',
+  height: rand(160..195),
+  position: 'Striker',
+  skill: ['Strong', 'Shooting', 'Speed'],
+  address: "Rudi-Dutschke-Straße 26, 10969 Berlin",
+  salary: rand(350..2000),
+  club: club_lewagon,
+  user: user_martin
+  )
+
+Statistic.create!(
+  game_qty: 24,
+  goal_qty: 20,
+  starting_eleven_avg: 100,
+  tournament: hessenliga,
+  player: player_martin
+  )
+
+Statistic.create!(
+  game_qty: 34,
+  goal_qty: 27,
+  starting_eleven_avg: 95,
+  tournament: last_hessenliga,
+  player: player_martin
+  )
+
+Statistic.create!(
+  game_qty: 2,
+  goal_qty: 3,
+  starting_eleven_avg: 100,
+  tournament: dfb_pokal,
+  player: player_martin
+  )
+
+Statistic.create!(
+  game_qty: 4,
+  goal_qty: 3,
+  starting_eleven_avg: 100,
+  tournament: hessenpokal,
+  player: player_martin
+  )
+
+Statistic.create!(
+  game_qty: 10,
+  goal_qty: 6,
+  starting_eleven_avg: 100,
+  tournament: last_hessenpokal,
+  player: player_martin
+  )
+
+puts 'Rich ...'
+
+user_rich = User.create!(
+  email: Faker::Internet.email,
+  password: 123456,
+  address: Faker::Address.full_address
+  )
+
+player_rich = Player.create!(
+  name: "Rich O'Grady",
+  image: 'https://res.cloudinary.com/wagon/image/upload/c_fill,g_face,h_200,w_200/v1513088338/lmmcdeakg1co39u2lfzz.jpg',
+  birth: Date.new(rand(1975..2003),rand(1..12), rand(1..26)),
+  citizenship: 'England 🏴󠁧󠁢󠁥󠁮󠁧󠁿',
+  height: rand(160..195),
+  position: 'Striker',
+  skill: ['Strong', 'Tactic', 'Shooting'],
+  address: "Rudi-Dutschke-Straße 26, 10969 Berlin",
+  salary: rand(350..2000),
+  club: club_lewagon,
+  user: user_rich
+  )
+
+Statistic.create!(
+  game_qty: 24,
+  goal_qty: 13,
+  starting_eleven_avg: 90,
+  tournament: hessenliga,
+  player: player_rich
+  )
+
+Statistic.create!(
+  game_qty: 25,
+  goal_qty: 18,
+  starting_eleven_avg: 95,
+  tournament: last_hessenliga,
+  player: player_rich
+  )
+
+Statistic.create!(
+  game_qty: 2,
+  goal_qty: 1,
+  starting_eleven_avg: 100,
+  tournament: dfb_pokal,
+  player: player_rich
+  )
+
+Statistic.create!(
+  game_qty: 4,
+  goal_qty: 2,
+  starting_eleven_avg: 100,
+  tournament: hessenpokal,
+  player: player_rich
+  )
+
+Statistic.create!(
+  game_qty: 10,
+  goal_qty: 4,
+  starting_eleven_avg: 100,
+  tournament: last_hessenpokal,
+  player: player_rich
+  )
+
 puts ''
 puts 'Finished!'
