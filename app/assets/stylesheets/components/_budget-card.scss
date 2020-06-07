@@ -1,0 +1,48 @@
+.budget-card {
+  position: relative;
+  margin: 35px 15px 35px 15px;
+  background-color: white;
+  box-shadow: 0px 1px 2px rgba(0,0,0,0.2);
+  border-radius: 5px;
+  overflow: hidden;
+  width: 390px;
+  h5 {
+    padding-left: 15px;
+  }
+}
+
+.club-card-info {
+  text-align: center;
+  margin-bottom: 15px;
+  h5 {
+    margin-bottom: 0;
+    font-weight: bold;
+  }
+  h6 {
+    margin-bottom: 0;
+    font-weight: bold;
+    opacity: 0.7;
+  }
+}
+
+.club-card-budget {
+  margin: 0px 15px 15px 15px;
+  p {
+    margin-bottom: 2px;
+  }
+}
+
+.cta {
+  margin: 15px 0px 15px 0px;
+  text-align: center;
+}
+
+.budget-item {
+  display: flex;
+  justify-content: space-between;
+
+}
+
+.spacer {
+  height: 15px;
+}

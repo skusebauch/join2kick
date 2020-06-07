@@ -185,7 +185,7 @@ player_sarah = Player.create!(
   position: 'Goalkeeper',
   skill: 'Reflex',
   address: "Rudi-Dutschke-Straße 26, 10969 Berlin",
-  salary: rand(350..2000),
+  salary: 750,
   club: club_lewagon,
   user: user_sarah
   )
@@ -248,7 +248,7 @@ player_lino = Player.create!(
   position: 'Goalkeeper',
   skill: 'Strong',
   address: "Rudi-Dutschke-Straße 26, 10969 Berlin",
-  salary: rand(350..2000),
+  salary: 350,
   club: club_lewagon,
   user: user_lino
   )
@@ -297,7 +297,7 @@ player_prateek = Player.create!(
   position: 'Defender',
   skill: ['Strong', 'Passing'],
   address: "Rudi-Dutschke-Straße 26, 10969 Berlin",
-  salary: rand(350..2000),
+  salary: 500,
   club: club_lewagon,
   user: user_prateek
   )
@@ -352,7 +352,7 @@ player_amelie = Player.create!(
   position: 'Defender',
   skill: ['Technique', 'Endurance'],
   address: "Rudi-Dutschke-Straße 26, 10969 Berlin",
-  salary: rand(350..2000),
+  salary: 550,
   club: club_lewagon,
   user: user_amelie
   )
@@ -392,7 +392,7 @@ player_olivier = Player.create!(
   position: 'Defender',
   skill: ['Strong', 'Tactic'],
   address: "Rudi-Dutschke-Straße 26, 10969 Berlin",
-  salary: rand(350..2000),
+  salary: 450,
   club: club_lewagon,
   user: user_olivier
   )
@@ -447,7 +447,7 @@ player_isabelle = Player.create!(
   position: 'Defender',
   skill: ['Strong', 'Shooting', 'Tactic'],
   address: "Rudi-Dutschke-Straße 26, 10969 Berlin",
-  salary: rand(350..2000),
+  salary: 500,
   club: club_lewagon,
   user: user_isabelle
   )
@@ -502,7 +502,7 @@ player_nora = Player.create!(
   position: 'Defender',
   skill: ['Endurance'],
   address: "Rudi-Dutschke-Straße 26, 10969 Berlin",
-  salary: rand(350..2000),
+  salary: 500,
   club: club_lewagon,
   user: user_nora
   )
@@ -559,7 +559,7 @@ player_arbi = Player.create!(
   position: 'Midfielder',
   skill: ['Shooting', 'Technique', 'Passing'],
   address: "Rudi-Dutschke-Straße 26, 10969 Berlin",
-  salary: rand(350..2000),
+  salary: 1200,
   club: club_lewagon,
   user: user_arbi
   )
@@ -622,7 +622,7 @@ player_alex = Player.create!(
   position: 'Midfielder',
   skill: ['Speed', 'Technique', 'Endurance'],
   address: "Rudi-Dutschke-Straße 26, 10969 Berlin",
-  salary: rand(350..2000),
+  salary: 1000,
   club: club_lewagon,
   user: user_alex
   )
@@ -685,7 +685,7 @@ player_claire = Player.create!(
   position: 'Midfielder',
   skill: ['Technique', 'Passing'],
   address: "Rudi-Dutschke-Straße 26, 10969 Berlin",
-  salary: rand(350..2000),
+  salary: 950,
   club: club_lewagon,
   user: user_claire
   )
@@ -741,14 +741,14 @@ user_zuza = User.create!(
 
 player_zuza = Player.create!(
   name: 'Zuza Żuber',
-  image: 'https://avatars3.githubusercontent.com/u/45850166?v=4',
+  image: 'https://res.cloudinary.com/wagon/image/upload/c_fill,g_face,h_200,w_200/v1570609465/a8kmugjdqlihecdk9cz8.jpg',
   birth: Date.new(rand(1975..2003),rand(1..12), rand(1..26)),
   citizenship: 'Poland 🇵🇱',
   height: rand(160..195),
   position: 'Midfielder',
   skill: ['Technique', 'Passing', 'Speed'],
   address: "Rudi-Dutschke-Straße 26, 10969 Berlin",
-  salary: rand(350..2000),
+  salary: 950,
   club: club_lewagon,
   user: user_zuza
   )
@@ -811,7 +811,7 @@ player_anthony = Player.create!(
   position: 'Midfielder',
   skill: ['Endurance', 'Passing'],
   address: "Rudi-Dutschke-Straße 26, 10969 Berlin",
-  salary: rand(350..2000),
+  salary: 950,
   club: club_lewagon,
   user: user_anthony
   )
@@ -874,7 +874,7 @@ player_bruno = Player.create!(
   position: 'Midfielder',
   skill: ['Passing'],
   address: "Rudi-Dutschke-Straße 26, 10969 Berlin",
-  salary: rand(350..2000),
+  salary: 750,
   club: club_lewagon,
   user: user_bruno
   )
@@ -924,14 +924,14 @@ user_andy = User.create!(
 
 player_andy = Player.create!(
   name: 'Andrey Baranov',
-  image: 'https://avatars3.githubusercontent.com/u/45850166?v=4',
+  image: 'https://avatars3.githubusercontent.com/u/12513436?v=4',
   birth: Date.new(rand(1975..2003),rand(1..12), rand(1..26)),
   citizenship: 'Russia 🇷🇺',
   height: rand(160..195),
   position: 'Striker',
   skill: ['Technique', 'Shooting', 'Speed'],
   address: "Rudi-Dutschke-Straße 26, 10969 Berlin",
-  salary: rand(350..2000),
+  salary: 1150,
   club: club_lewagon,
   user: user_andy
   )
@@ -987,54 +987,46 @@ user_martin = User.create!(
 
 player_martin = Player.create!(
   name: 'Martin De Frutos',
-  image: 'https://avatars3.githubusercontent.com/u/45850166?v=4',
+  image: 'https://res.cloudinary.com/wagon/image/upload/c_fill,g_face,h_200,w_200/v1541322516/ssjktftgsdicvy1cersj.jpg',
   birth: Date.new(rand(1975..2003),rand(1..12), rand(1..26)),
   citizenship: 'Spain 🇪🇸',
   height: rand(160..195),
   position: 'Striker',
   skill: ['Strong', 'Shooting', 'Speed'],
   address: "Rudi-Dutschke-Straße 26, 10969 Berlin",
-  salary: rand(350..2000),
+  salary: 900,
   club: club_lewagon,
   user: user_martin
   )
 
 Statistic.create!(
-  game_qty: 24,
-  goal_qty: 20,
-  starting_eleven_avg: 100,
+  game_qty: 15,
+  goal_qty: 4,
+  starting_eleven_avg: 90,
   tournament: hessenliga,
   player: player_martin
   )
 
 Statistic.create!(
-  game_qty: 34,
-  goal_qty: 27,
-  starting_eleven_avg: 95,
-  tournament: last_hessenliga,
-  player: player_martin
-  )
-
-Statistic.create!(
-  game_qty: 2,
-  goal_qty: 3,
-  starting_eleven_avg: 100,
-  tournament: dfb_pokal,
+  game_qty: 24,
+  goal_qty: 8,
+  starting_eleven_avg: 94,
+  tournament: last_verbandsliga,
   player: player_martin
   )
 
 Statistic.create!(
   game_qty: 4,
-  goal_qty: 3,
+  goal_qty: 1,
   starting_eleven_avg: 100,
   tournament: hessenpokal,
   player: player_martin
   )
 
 Statistic.create!(
-  game_qty: 10,
-  goal_qty: 6,
-  starting_eleven_avg: 100,
+  game_qty: 8,
+  goal_qty: 2,
+  starting_eleven_avg: 80,
   tournament: last_hessenpokal,
   player: player_martin
   )
@@ -1057,7 +1049,7 @@ player_rich = Player.create!(
   position: 'Striker',
   skill: ['Strong', 'Tactic', 'Shooting'],
   address: "Rudi-Dutschke-Straße 26, 10969 Berlin",
-  salary: rand(350..2000),
+  salary: 1000,
   club: club_lewagon,
   user: user_rich
   )

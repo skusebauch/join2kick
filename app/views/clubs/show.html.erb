@@ -1,37 +1,67 @@
 <div class="container">
-  <h1 class="animate__animated animate__backInDown"><%= @club.name %></h1>
-
-  <div class="budget-card">
-    <p class="budget"> Your current budget: <%= @club.budget %></p>
-    <p class="budget1">Sum of all salarys: <%= @club.players.sum(:salary) %></p>
-    <p> Remaining budget: <%=(@club.budget) - (@club.players.sum(:salary))%></p>
-    <%= link_to "Edit Profile", edit_club_path(@club), class: "button"  %>
+  <div class="player-card">
+    <div class="avatar-team">
+      <img class="avatar-team" alt="profile-pic" src="https://kitt.lewagon.com/placeholder/users/arthur-littm" />
+    </div>
+    <div class="club-card-info">
+      <h5><%= @club.user.email %></h5>
+      <h6><%= @club.name %>,
+        <% @club.club_tournaments.each do |club_tournament| %>
+          <%= club_tournament.tournament.league if club_tournament.tournament.season_year == "2019/2020" && club_tournament.tournament.tournament_type == "championship" %>
+        <% end %>
+      </h6>
+    </div>
+    <div class="club-card-budget">
+      <div class="budget-item">
+        <p>Current budget</p>
+        <p><%= number_to_currency(@club.budget, delimiter: '.', locale: "fr",unit: "€ ") %> </p>
+      </div>
+      <div class="budget-item">
+        <p>Sum salaries</p>
+        <p><%= number_to_currency(@club.players.sum(:salary), delimiter: '.', locale: "fr",unit: "€ ") %></p>
+      </div>
+      <div class="budget-item">
+        <p>Remaining budget</p>
+        <% remain_budget = @club.budget - @club.players.sum(:salary) %>
+        <p><strong><%= number_to_currency(remain_budget, delimiter: '.', locale: "fr",unit: "€ ") %></strong></p>
+      </div>
+      <div class="spacer"></div>
+      <div class="cta">
+        <%= link_to "Edit Budget", edit_club_path(@club), class: "button"  %>
+      </div>
+      <div class="spacer"></div>
+    </div>
   </div>
 
-  <table id="dttb" class="display">
-    <thead>
-      <tr>
-        <th>Name</th>
-        <th>Position</th>
-        <th>Salary</th>
-        <th>Games Played</th>
-        <th>Goals Scored</th>
-        <th>Starting Eleven Avg</th>
-      </tr>
-    </thead>
-    <tbody>
-      <% @club.players.each do |player| %>
-        <tr>
-          <td class="td"> <%= link_to "", player_path(player), class: 'card-link-to-player' %><%=  player.name %> </td>
-          <td> <%= player.position %></td>
-          <td> <%= player.salary %></td>
-          <% player.statistics.each do |statistic| %>
-            <td><%= statistic.game_qty if statistic.tournament.season_year == "2019/2020" && statistic.tournament.tournament_type == "championship" %></td>
-            <td><%= statistic.goal_qty if statistic.tournament.season_year == "2019/2020" && statistic.tournament.tournament_type == "championship" %></td>
-            <td><%= statistic.starting_eleven_avg if statistic.tournament.season_year == "2019/2020" && statistic.tournament.tournament_type == "championship" %></td>
+  <div class="team-overview">
+    <h1>My Team</h1>
+    <div class="player-overview">
+      <table id="dttb" class="display team-details">
+        <thead>
+          <tr>
+            <th>Name</th>
+            <th>Position</th>
+            <th>Salary</th>
+            <th>Games Played</th>
+            <th>Goals Scored</th>
+            <th>Starting Eleven Avg</th>
+          </tr>
+        </thead>
+        <tbody>
+          <% @club.players.each do |player| %>
+            <tr>
+              <td class="td"> <%= link_to "", player_path(player), class: 'card-link-to-player' %><%=  player.name %> </td>
+              <td> <%= player.position %></td>
+              <td> <%= player.salary %> €</td>
+              <% player.statistics.each do |statistic| %>
+                <td><%= statistic.game_qty if statistic.tournament.season_year == "2019/2020" && statistic.tournament.tournament_type == "championship" %></td>
+                <td><%= statistic.goal_qty if statistic.tournament.season_year == "2019/2020" && statistic.tournament.tournament_type == "championship" %></td>
+                <td><%= statistic.starting_eleven_avg if statistic.tournament.season_year == "2019/2020" && statistic.tournament.tournament_type == "championship" %></td>
+              <% end %>
+            </tr>
           <% end %>
-        </tr>
-      <% end %>
-    </tbody>
-  </table>
+        </tbody>
+      </table>
+    </div>
+  </div>
 </div>
