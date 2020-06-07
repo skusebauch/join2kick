@@ -6,6 +6,13 @@ ruby '2.6.6'
 # Faker for seeds
 gem 'faker', :git => 'https://github.com/faker-ruby/faker.git', :branch => 'master'
 
+# env gitignore
+gem 'dotenv-rails', groups: [:development, :test]
+
+# cloudinary env
+gem 'cloudinary', '~> 1.12.0'
+
+
 
 # pg search
 gem 'pg_search', '~> 2.3.0'

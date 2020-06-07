@@ -46,3 +46,17 @@
 .spacer {
   height: 15px;
 }
+
+.edit-profile {
+  i {
+    padding: 8px;
+    border-radius: 50%;
+    background-color: white;
+    position: absolute;
+    top: 90px;
+    right: -2px;
+    text-align: center;
+    color: #F05D5E;
+    margin-bottom: 15px;
+  }
+}
