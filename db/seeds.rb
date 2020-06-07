@@ -541,6 +541,7 @@ Statistic.create!(
 
 #Midfielder
 
+puts ''
 puts 'Arbi ...'
 
 user_arbi = User.create!(
@@ -603,6 +604,7 @@ Statistic.create!(
   player: player_arbi
   )
 
+puts ''
 puts 'Alex ...'
 
 user_alex = User.create!(
@@ -665,6 +667,7 @@ Statistic.create!(
   player: player_alex
   )
 
+puts ''
 puts 'Claire ...'
 
 user_claire = User.create!(
@@ -727,6 +730,7 @@ Statistic.create!(
   player: player_claire
   )
 
+puts ''
 puts 'Zuza ...'
 
 user_zuza = User.create!(
@@ -735,7 +739,7 @@ user_zuza = User.create!(
   address: Faker::Address.full_address
   )
 
-player_claire = Player.create!(
+player_zuza = Player.create!(
   name: 'Zuza Żuber',
   image: 'https://avatars3.githubusercontent.com/u/45850166?v=4',
   birth: Date.new(rand(1975..2003),rand(1..12), rand(1..26)),
@@ -789,6 +793,7 @@ Statistic.create!(
   player: player_zuza
   )
 
+puts ''
 puts 'Anthony ...'
 
 user_anthony = User.create!(
@@ -851,6 +856,7 @@ Statistic.create!(
   player: player_anthony
   )
 
+puts ''
 puts 'Bruno ...'
 
 user_bruno = User.create!(
@@ -907,6 +913,7 @@ Statistic.create!(
 
 # Striker
 
+puts ''
 puts 'Andy ...'
 
 user_andy = User.create!(
@@ -969,6 +976,7 @@ Statistic.create!(
   player: player_andy
   )
 
+puts ''
 puts 'Martin ...'
 
 user_martin = User.create!(
@@ -1031,68 +1039,7 @@ Statistic.create!(
   player: player_martin
   )
 
-puts 'Martin ...'
-
-user_martin = User.create!(
-  email: Faker::Internet.email,
-  password: 123456,
-  address: Faker::Address.full_address
-  )
-
-player_martin = Player.create!(
-  name: 'Martin De Frutos',
-  image: 'https://avatars3.githubusercontent.com/u/45850166?v=4',
-  birth: Date.new(rand(1975..2003),rand(1..12), rand(1..26)),
-  citizenship: 'Spain 🇪🇸',
-  height: rand(160..195),
-  position: 'Striker',
-  skill: ['Strong', 'Shooting', 'Speed'],
-  address: "Rudi-Dutschke-Straße 26, 10969 Berlin",
-  salary: rand(350..2000),
-  club: club_lewagon,
-  user: user_martin
-  )
-
-Statistic.create!(
-  game_qty: 24,
-  goal_qty: 20,
-  starting_eleven_avg: 100,
-  tournament: hessenliga,
-  player: player_martin
-  )
-
-Statistic.create!(
-  game_qty: 34,
-  goal_qty: 27,
-  starting_eleven_avg: 95,
-  tournament: last_hessenliga,
-  player: player_martin
-  )
-
-Statistic.create!(
-  game_qty: 2,
-  goal_qty: 3,
-  starting_eleven_avg: 100,
-  tournament: dfb_pokal,
-  player: player_martin
-  )
-
-Statistic.create!(
-  game_qty: 4,
-  goal_qty: 3,
-  starting_eleven_avg: 100,
-  tournament: hessenpokal,
-  player: player_martin
-  )
-
-Statistic.create!(
-  game_qty: 10,
-  goal_qty: 6,
-  starting_eleven_avg: 100,
-  tournament: last_hessenpokal,
-  player: player_martin
-  )
-
+puts ''
 puts 'Rich ...'
 
 user_rich = User.create!(
