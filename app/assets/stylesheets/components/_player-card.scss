@@ -4,6 +4,13 @@
   flex-wrap: wrap;
 }
 
+.players-overview {
+  margin: 35px 0px 0px 20px;
+  h1 {
+    font-weight: bold;
+  }
+}
+
 .player-card {
   position: relative;
   margin: 35px 15px 35px 15px;
@@ -52,6 +59,7 @@
   display: flex;
   justify-content: space-between;
   overflow: hidden;
+  width: 400px;
   margin-bottom: 8px;
   .left {
     text-align: left;
