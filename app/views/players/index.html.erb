@@ -1,6 +1,5 @@
 <div class="container">
   <div class="content">
-
     <div id="filter-search">
       <%= simple_form_for :player, method: :get do |f| %>
         <%#= f.input :position, as: :check_boxes, collection: Player::POSITIONS, wrapper: :vertical_collection_inline %>
@@ -16,45 +15,52 @@
             <% end %>
           </div>
         </div>
-
         <%#= f.input :skill, as: :check_boxes, collection: Player::SKILLSET, wrapper: :vertical_collection_inline %>
         <div class="form-group">
           <h5>Skill</h5>
           <input type="hidden" name="player[skill][]" value="">
-
           <div class="filter-players">
             <% Player::SKILLSET.each do |skill| %>
-
             <input class="hidden" type="checkbox" value="<%= skill %>" name="player[skill][]" id="player_skill_<%= skill %>">
-
             <label class="filter-player" for="player_skill_<%= skill %>">
               <%= skill %>
             </label>
             <% end %>
           </div>
         </div>
-
         <%#= f.input :age, as: :range, input_html: { min: "17", max: "50" } %>
         <div class="form-group">
           <h5>Age</h5>
           <input class="form-control-range numeric range optional" min="17" max="50" type="range" step="1" name="player[age]" id="player_age">
         </div>
-
-
         <%#= f.input :location, as: :range, input_html: { min: "0", max: "500" } %>
         <div class="form-group">
           <h5>Location</h5>
           <input class="form-control-range numeric range optional" min="0" max="500" type="range" step="1" name="player[location]" id="player_location">
         </div>
-
         <%#= f.input :starting_eleven_avg, as: :range, input_html: { min: "0", max: "100" } %>
         <div class="form-group">
           <h5>Starting eleven in %</h5>
           <input class="form-control-range numeric range optional" min="0" max="100" type="range" step="1" name="player[starting_eleven_avg]" id="player_starting_eleven_avg">
         </div>
-
-        <%#= f.input :league, as: :range %>
-
+        <%#= f.input :season_year, collection: Tournament::YEAR, prompt: :season_year %>
+        <div class="form-group">
+          <h5>Season year</h5>
+          <select class="form-control" name="player[season_year]" id="player_season_year">
+            <option value="">Please select</option>
+            <option value="2019/2020">2019/2020</option>
+            <option value="2018/2019">2018/2019</option>
+          </select>
+        </div>
+        <%#= f.input :league, collection: Tournament::LEAGUE, prompt: :league %>
+        <div class="form-group">
+          <h5>League</h5>
+          <select class="form-control" name="player[league]" id="player_league">
+            <option value="">Please select</option>
+            <option value="Hessenliga">Hessenliga</option>
+            <option value="Verbandsliga">Verbandsliga</option>
+          </select>
+        </div>
         <%= f.submit "apply", class: "button" %>
       <% end %>
     </div>

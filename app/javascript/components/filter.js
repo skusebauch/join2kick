@@ -1,9 +1,12 @@
 const initFilter = () => {
-  const playerClass = document.querySelector(".filter-player");
+  const playerClass = document.querySelectorAll(".filter-player");
   if (playerClass != undefined) {
-    playerClass.addEventListener("click", (event) => {
+    playerClass.forEach(filter => {
+      filter.addEventListener("click", (event) => {
       event.currentTarget.classList.toggle("active");
-   });
+    });
+  });
+
   }
 }
 

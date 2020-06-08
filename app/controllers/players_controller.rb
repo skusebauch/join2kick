@@ -5,7 +5,6 @@ class PlayersController < ApplicationController
       @players = Player.search(params[:query])
     elsif params[:player].present?
       @players = Player.near(current_user.address, params[:player][:location].to_i) if params[:player][:location].present?
-
       @players_position = []
       # @players = Player.search(params[:player][:position])
       @players_position = @players.where(position: params[:player][:position]) if params[:player][:position] != [""]
@@ -34,10 +33,10 @@ class PlayersController < ApplicationController
         player.avg_starting >= params[:player][:starting_eleven_avg].to_i
       end
 
-      #@players_age = @players.where(birth: params[:player][:age]) if params[:player][:age].present?
-      #@players = Player.near(current_user.address, params[:player][:location]) if params[:player][:location].present?
-      #@players = @players.where(starting_eleven_avg: params[:player][:starting_eleven_avg]) if params[:player][:starting_eleven_avg].present?
-      #@players = @players.where(league: params[:player][:league]) if params[:player][:league].present?
+      tournament = Tournament.find_by(league: params[:player][:league], season_year: params[:player][:season_year])
+      @players.select! do |player|
+        player.tournaments.include?(tournament)
+      end
     end
     # authorize @players
   end
