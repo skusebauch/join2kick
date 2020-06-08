@@ -66,7 +66,7 @@
     </div>
 
     <div class="players-overview">
-      <h5>Results</h5>
+      <h5><%= @search_mode ? "Results" : "Based on my profile" %></h5>
       <div id="players">
         <% @players.each do |player| %>
           <div class="player-card">
