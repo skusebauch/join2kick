@@ -53,16 +53,14 @@
           </tr>
         </thead>
         <tbody>
-          <% @club.players.each do |player| %>
+          <% @current_players.each do |player| %>
             <tr>
-              <td class="td"> <%= link_to "", player_path(player), class: 'card-link-to-player' %><%=  player.name %> </td>
-              <td> <%= player.position %></td>
-              <td> <%= player.salary %> €</td>
-              <% player.statistics.each do |statistic| %>
-                <td><%= statistic.game_qty if statistic.tournament.season_year == "2019/2020" && statistic.tournament.tournament_type == "championship" %></td>
-                <td><%= statistic.goal_qty if statistic.tournament.season_year == "2019/2020" && statistic.tournament.tournament_type == "championship" %></td>
-                <td><%= statistic.starting_eleven_avg if statistic.tournament.season_year == "2019/2020" && statistic.tournament.tournament_type == "championship" %></td>
-              <% end %>
+              <td class="td"> <%= link_to "", player_path(player[:player_id]), class: 'card-link-to-player' %><%=  player[:name] %> </td>
+              <td> <%= player[:position] %></td>
+              <td> <%= player[:salary] %> €</td>
+              <td> <%= player[:current_game_qty] %></td>
+              <td> <%= player[:current_goals] %></td>
+              <td> <%= player[:current_starting_elv_avg] %></td>
             </tr>
           <% end %>
         </tbody>
