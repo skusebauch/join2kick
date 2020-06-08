@@ -3,7 +3,7 @@
     <%= link_to "Your Network", users_path %>
   </div>
 
-  <div class="player-card">
+  <div class="player-card" id="club-page">
     <div class="avatar-team">
       <% if @club.user.photo.attached? %>
         <%= cl_image_tag @club.user.photo.key , height: 100, width: 100, crop: :fill, class: "avatar-team" %>
