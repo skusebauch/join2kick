@@ -23,6 +23,18 @@
   }
 }
 
+.call-to-action {
+  margin-top: 50px;
+  margin-bottom: 50px;
+  text-align: center;
+  a {
+    margin-left: 10px;
+    margin-right: 10px;
+    padding-left: 30px;
+    padding-right: 30px;
+  }
+}
+
 .player-profile-details {
   display: flex;
   justify-content: space-around;
@@ -40,7 +52,7 @@
 
 .table-datas-player {
   margin: 0 auto;
-  margin-bottom: 15px;
+  margin-bottom: 35px;
 }
 .table-data-player{
   display: flex;
