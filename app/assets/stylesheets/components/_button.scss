@@ -4,11 +4,11 @@
   border: none;
   border-radius: 5px;
   background: #213757;
-  transition: background 0.2s ease;
   opacity: 1;
   &:hover {
+    transition: all 0.3s 0s cubic-bezier(0.4, 0.25, 0.3, 1);
     background: #213757;
-    opacity: 0.6;
+    opacity: 0.8;
     color: white;
     text-decoration: none;
   }
@@ -24,11 +24,11 @@
   border: none;
   border-radius: 5px;
   background: #213757;
-  transition: background 0.2s ease;
   opacity: 1;
   &:hover {
     background: #213757;
-    opacity: 0.6;
+    transition: all 0.3s 0s cubic-bezier(0.4, 0.25, 0.3, 1);
+    opacity: 0.8;
     color: white;
     text-decoration: none;
   }
@@ -42,11 +42,11 @@
   padding: 16px 30px 16px 30px;
   border-radius: 5px;
   background: white;
-  transition: background 0.2s ease;
   opacity: 1;
   &:hover {
+    transition: all 0.3s 0s cubic-bezier(0.4, 0.25, 0.3, 1);
     background: white;
-    opacity: 0.6;
+    opacity: 0.8;
     color: #213757;
     text-decoration: none;
   }
