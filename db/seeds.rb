@@ -21,18 +21,21 @@ puts 'Creating User for Teams...'
 # Admin User
 User.create!(
   email: 'boris@gmail.com',
-  password: '123456'
+  password: '123456',
+  address: "Rudi-Dutschke-Straße 26, 10969 Berlin"
   )
 # User for Viktoria Berlin
 User.create!(
   email: 'hans@gmail.com',
-  password: '123456'
+  password: '123456',
+  address: "Rudi-Dutschke-Straße 26, 10969 Berlin"
   )
 
 # User for Berliner Sportclub
 User.create!(
   email: 'kally@gmail.com',
-  password: '123456'
+  password: '123456',
+  address: "Rudi-Dutschke-Straße 26, 10969 Berlin"
   )
 
 puts ''
