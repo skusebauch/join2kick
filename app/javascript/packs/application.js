@@ -28,7 +28,7 @@ document.addEventListener('turbolinks:load', () => {
   initFilter();
 });
 
-$(document).ready( function () {
+$(document).on('turbolinks:load', function () {
     $('#dttb').DataTable();
 } );
 
