@@ -20,9 +20,16 @@
 .nav-item {
   list-style-type: none;
   a {
-    color: #213757 !important;
+    color: #213757;
     margin-right: 20px;
+    &:hover{
+    transition: all 0.25s 0s cubic-bezier(0.4, 0.25, 0.3, 1), color 125ms 0s cubic-bezier(0.4, 0.25, 0.3, 1);
+    cursor: pointer;
+    font-weight: bold;
+    border-bottom: 2px solid #213757;
+    }
   }
+
 }
 
 .nav-search {
