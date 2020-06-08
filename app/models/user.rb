@@ -6,7 +6,7 @@ class User < ApplicationRecord
 
   has_one_attached :photo
   has_one :player
-  has_many :clubs
+  has_one :club
 
   has_many :messages, through: :conversations, dependent: :destroy
   has_many :conversations, through: :messages
