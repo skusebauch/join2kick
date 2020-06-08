@@ -1,0 +1,10 @@
+<div class="chatpage-container" style="display: flex">
+<%#= render 'chatrooms/chatrooms_container' %>
+  <div class="conversations-container" style="width: 20%">
+    <% @conversations.each do |conversation| %>
+     <div class="conversation-card" data-conversation-id="<%= conversation.id %>" style="padding: 10px">
+       <%= link_to conversation.sender_id == current_user.id ? User.find(conversation.receiver_id).email : User.find(conversation.sender_id).email, conversation_path(conversation) %>
+     </div>
+   <% end %>
+  </div>
+</div>
