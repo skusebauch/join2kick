@@ -1,4 +1,8 @@
 <div class="container">
+  <div>
+    <%= link_to "Your Network", users_path %>
+  </div>
+
   <div class="player-card">
     <div class="avatar-team">
       <% if @club.user.photo.nil? %>
