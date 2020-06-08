@@ -44,6 +44,8 @@ class PlayersController < ApplicationController
   def show
     @player = Player.find(params[:id])
     authorize(@player)
+    @user = User.find(params[:id])
+    authorize(@user)
   end
 
   def edit
