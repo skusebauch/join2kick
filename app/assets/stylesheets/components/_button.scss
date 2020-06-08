@@ -13,7 +13,28 @@
     color: white;
     text-decoration: none;
   }
+
 }
+
+.button-filter {
+  margin-left: 10%;
+  margin-right: 10%;
+  width: 80%;
+  color: white;
+  padding: 8px 24px;
+  border: none;
+  border-radius: 5px;
+  background: #F05D5E;
+  transition: background 0.2s ease;
+  opacity: 1;
+  &:hover {
+    background: #F05D5E;
+    opacity: 0.6;
+    color: white;
+    text-decoration: none;
+  }
+}
+
 
 .button-light {
   color: #F05D5E;

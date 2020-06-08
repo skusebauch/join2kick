@@ -7,8 +7,9 @@ class User < ApplicationRecord
   has_one_attached :photo
   has_one :player
   has_many :clubs
-  has_many :messages
-  has_many :chatrooms, through: :messages
+
+  has_many :messages, through: :conversations, dependent: :destroy
+  has_many :conversations, through: :messages
 
   # Following users
   has_many :follower_relationships, foreign_key: :following_id, class_name: 'Follow'

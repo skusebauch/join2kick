@@ -1,8 +1,6 @@
 #filter-search {
-  height: 100vh;
   width: 100%;
-  position: sticky;
-  top: 0;
+  margin-top: 30px;
 }
 
 .filter-players {
@@ -13,6 +11,7 @@
 
 .filter-player {
   width: 100px;
+  border-width: 1px;
   margin-right: 10px;
   font-size: 12px;
   background: #FAFAFA;
@@ -31,6 +30,7 @@
     opacity: 1;
     border: #F05D5E;
     font-weight: bold;
+    border-width: 1px;;
   }
 
 }
