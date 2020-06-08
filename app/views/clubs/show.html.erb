@@ -1,11 +1,11 @@
 <div class="container">
   <div class="player-card">
     <div class="avatar-team">
-      <% if @club.user.photo.nil? %>
-        <%= image_tag "https://res.cloudinary.com/dgwgea5k3/image/upload/v1591359130/Unbenanndsfst-1_rukblo.jpg", class: "avatar-team" %>
-      <% else %>
+      <% if @club.user.photo.attached? %>
         <%= cl_image_tag @club.user.photo.key , height: 100, width: 100, crop: :fill, class: "avatar-team" %>
-     <% end %>
+      <% else %>
+        <%= image_tag "https://res.cloudinary.com/dgwgea5k3/image/upload/v1591359130/Unbenanndsfst-1_rukblo.jpg", class: "avatar-team" %>
+      <% end %>
      <%= link_to '<i class="far fa-edit"></i>'.html_safe, edit_user_registration_path %>
   </div>
   <div class="club-card-info">
