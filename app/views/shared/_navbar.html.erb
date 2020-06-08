@@ -10,7 +10,7 @@
       <%= text_field_tag :query,
         params[:query],
         class: "form-control",
-        placeholder: "Find a player"
+        placeholder: 'Find a player'
       %>
       <% end %>
     </div>
@@ -21,10 +21,13 @@
 
 
         <li class="nav-item">
-          <%= link_to "My Team", club_path(current_user.club), class: "nav-link" %>
+          <%= link_to "Team", club_path(current_user.club), class: "nav-link" %>
         </li>
         <li class="nav-item">
-          <%= link_to "Find player", players_path, class: "nav-link" %>
+          <%= link_to "Player", players_path, class: "nav-link" %>
+        </li>
+        <li class="nav-item">
+          <%= link_to "Network", users_path, class: "nav-link" %>
         </li>
         <li class="nav-item">
           <%= link_to "Messages", conversations_path, class: "nav-link" %>
