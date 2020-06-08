@@ -7,6 +7,11 @@
       <h2><%= @player.name %>, (<%= @player.age(@player.birth) %>)</h2>
       <h3><%= @player.position %></h3>
     </div>
+    <div class="call-to-action">
+      <%= link_to '<i class="fas fa-user-plus"></i> Connect'.html_safe, follow_user_path(@user.id), method: :post, remote: true, class: "button" %>
+      <%= link_to '<i class="fas fa-paper-plane"></i> Message'.html_safe , '#', class: "button-light" %>
+    </div>
+
     <div class="player-profile-details">
       <div class="player-profile-detail">
         <p><strong>Date of birth</strong></p>
@@ -25,57 +30,51 @@
         <p><%= @player.birth %></p>
       </div>
     </div>
-      <div class="player-card-total-stat-player">
-        <h5>Stats - Current Season</h5>
-        <div class="table-datas-player">
-          <div class="table-data-player">
-            <table>
-              <tr>
-                <th> </th>
-                <th><%= image_tag('game_qty') %></th>
-                <th><%= image_tag('goals') %></th>
-                <th><%= image_tag('starting_eleven') %></th>
-              </tr>
-              <tr>
-              <% @player.statistics.each do |statistic| %>
-                <td class="left"><%= statistic.tournament.league if statistic.tournament.season_year == "2019/2020" %></td>
-                <td><%= statistic.game_qty if statistic.tournament.season_year == "2019/2020"%></td>
-                <td><%= statistic.goal_qty if statistic.tournament.season_year == "2019/2020"%></td>
-                <td><%= statistic.starting_eleven_avg if statistic.tournament.season_year == "2019/2020" %> </td>
-              </tr>
-              <% end %>
-            </table>
-          </div>
+    <div class="player-card-total-stat-player">
+      <h5>Current Season</h5>
+      <div class="table-datas-player">
+        <div class="table-data-player">
+          <table>
+            <tr>
+              <th> </th>
+              <th><%= image_tag('game_qty') %></th>
+              <th><%= image_tag('goals') %></th>
+              <th><%= image_tag('starting_eleven') %></th>
+            </tr>
+            <tr>
+            <% @player.statistics.each do |statistic| %>
+              <td class="left"><%= statistic.tournament.league if statistic.tournament.season_year == "2019/2020" %></td>
+              <td><%= statistic.game_qty if statistic.tournament.season_year == "2019/2020"%></td>
+              <td><%= statistic.goal_qty if statistic.tournament.season_year == "2019/2020"%></td>
+              <td><%= statistic.starting_eleven_avg if statistic.tournament.season_year == "2019/2020" %></td>
+            </tr>
+            <% end %>
+          </table>
         </div>
       </div>
-      <div class="player-card-total-stat-player">
-        <h5>Stats - Total</h5>
-        <div class="table-datas-player">
-          <div class="table-data-player">
-            <table>
-              <tr>
-                <th> </th>
-                <th><%= image_tag('game_qty') %></th>
-                <th><%= image_tag('goals') %></th>
-                <th><%= image_tag('starting_eleven') %></th>
-              </tr>
-              <tr>
-              <% @player.statistics.each do |statistic| %>
-                <td class="left"><%= statistic.tournament.league %></td>
-                <td><%= statistic.game_qty %></td>
-                <td><%= statistic.goal_qty %></td>
-                <td><%= statistic.starting_eleven_avg %> %</td>
-              </tr>
-              <% end %>
-            </table>
-          </div>
+    </div>
+    <div class="player-card-total-stat-player">
+      <h5>Stats - Total</h5>
+      <div class="table-datas-player">
+        <div class="table-data-player">
+          <table>
+            <tr>
+              <th> </th>
+              <th><%= image_tag('game_qty') %></th>
+              <th><%= image_tag('goals') %></th>
+              <th><%= image_tag('starting_eleven') %></th>
+            </tr>
+            <tr>
+            <% @player.statistics.each do |statistic| %>
+              <td class="left"><%= statistic.tournament.league %></td>
+              <td><%= statistic.game_qty %></td>
+              <td><%= statistic.goal_qty %></td>
+              <td><%= statistic.starting_eleven_avg %> %</td>
+            </tr>
+            <% end %>
+          </table>
         </div>
-      <div style="text-align: center; margin-bottom: 30px;">
-        <%= link_to "Contact #{@player.name}" , '#', class: "button" %>
-      </div>
       </div>
     </div>
   </div>
-  <%= link_to "Follow", follow_user_path(@user.id), method: :post, remote: true %>
-
-  <!--  -->
+</div>
