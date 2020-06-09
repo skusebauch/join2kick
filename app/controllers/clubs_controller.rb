@@ -14,6 +14,7 @@ class ClubsController < ApplicationController
       end
     end
     # raise
+    @wish_lists = WishList.where(user_id: current_user)
   end
 
   def edit

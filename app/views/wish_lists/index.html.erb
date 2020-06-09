@@ -1,0 +1,13 @@
+<h1>Wish List</h1>
+<div class="container">
+
+<ul>
+  <% @wish_lists.each do |wish_list| %>
+    <li><%= wish_list.player.name %></li>
+    <%= link_to '<i class="fas fa-trash-alt"></i>'.html_safe, wish_list_path(wish_list), method: :delete, data: { confirm: "Are you sure?"} %>
+  <% end %>
+</ul>
+</div>
+
+<!-- method: :delete, data: { confirm: "Are you sure?"}  -->
+
