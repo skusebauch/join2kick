@@ -3,7 +3,13 @@
   <div class="conversations-container" style="width: 20%">
     <% @conversations.each do |conversation| %>
      <div class="conversation-card" data-conversation-id="<%= conversation.id %>" style="padding: 10px">
-       <%= link_to conversation.sender_id == current_user.id ? User.find(conversation.receiver_id).email : User.find(conversation.sender_id).email, conversation_path(conversation) %>
+      <% if conversation.sender_id == current_user.id %>
+        <% user_conversation_with = User.find(conversation.receiver_id) %>
+      <% else %>
+        <% user_conversation_with = User.find(conversation.sender_id) %>
+      <% end %>
+      <%= link_to user_conversation_with.player.nil? ? user_conversation_with.email : user_conversation_with.player.name , conversation_path(user_conversation_with) %>
+      <%#= link_to user_conversation_with.player.name, conversation_path(user_conversation_with) %>
      </div>
    <% end %>
   </div>
