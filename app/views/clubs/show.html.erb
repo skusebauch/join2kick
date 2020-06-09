@@ -54,12 +54,12 @@
               <div>
                 <tr class="player-card-small">
                   <td id="td-name"> <%= image_tag(player[:image])%></td>
-                  <td> <%= player[:name] %></td>
-                  <td> <%= player[:position] %></td>
-                  <td> <%= player[:current_game_qty] %> <%= image_tag('game_qty.svg') %></td>
-                  <td> <%= player[:current_goals] %> <%= image_tag('goals.svg') %></td>
-                  <td> <%= player[:current_starting_elv_avg]%> % <%= image_tag('starting_eleven.svg') %></td>
-                  <td> <%= player[:salary]%> €</td>
+                  <td id="td-personal"> <%= player[:name] %></td>
+                  <td id="td-position"> <%= player[:position] %></td>
+                  <td id="td-stats"> <%= player[:current_game_qty] %> <%= image_tag('game_qty.svg') %></td>
+                  <td id="td-stats"> <%= player[:current_goals] %> <%= image_tag('goals.svg') %></td>
+                  <td id="td-stats-last"> <%= player[:current_starting_elv_avg]%> % <%= image_tag('starting_eleven.svg') %></td>
+                  <td id="td-salary"> <%= player[:salary]%> €</td>
                 </tr>
               </div>
             <% end %>
@@ -82,12 +82,12 @@
               <div>
                 <tr class="player-card-small">
                   <td id="td-name"> <%= image_tag(player[:image])%></td>
-                  <td class="left"><%= player[:name] %></td>
-                  <td> <%= player[:position] %></td>
-                  <td> <%= player[:current_game_qty] %> <%= image_tag('game_qty.svg') %></td>
-                  <td> <%= player[:current_goals] %> <%= image_tag('goals.svg') %></td>
-                  <td> <%= player[:current_starting_elv_avg]%> % <%= image_tag('starting_eleven.svg') %></td>
-                  <td> <%= player[:salary]%> €</td>
+                  <td id="td-personal"><%= player[:name] %></td>
+                  <td id="td-position"> <%= player[:position] %></td>
+                  <td id="td-stats"> <%= player[:current_game_qty] %> <%= image_tag('game_qty.svg') %></td>
+                  <td id="td-stats"> <%= player[:current_goals] %> <%= image_tag('goals.svg') %></td>
+                  <td id="td-stats-last"> <%= player[:current_starting_elv_avg]%> % <%= image_tag('starting_eleven.svg') %></td>
+                  <td id="td-salary"> <%= player[:salary]%> €</td>
                 </tr>
               </div>
             <% end %>
@@ -110,12 +110,12 @@
               <div>
                 <tr class="player-card-small">
                   <td id="td-name"> <%= image_tag(player[:image])%></td>
-                  <td class="left"><%= player[:name] %></td>
-                  <td> <%= player[:position] %></td>
-                  <td> <%= player[:current_game_qty] %> <%= image_tag('game_qty.svg') %></td>
-                  <td> <%= player[:current_goals] %> <%= image_tag('goals.svg') %></td>
-                  <td> <%= player[:current_starting_elv_avg]%> % <%= image_tag('starting_eleven.svg') %></td>
-                  <td> <%= player[:salary]%> €</td>
+                  <td id="td-personal"><%= player[:name] %></td>
+                  <td id="td-position"> <%= player[:position] %></td>
+                  <td id="td-stats"> <%= player[:current_game_qty] %> <%= image_tag('game_qty.svg') %></td>
+                  <td id="td-stats"> <%= player[:current_goals] %> <%= image_tag('goals.svg') %></td>
+                  <td id="td-stats-last"> <%= player[:current_starting_elv_avg]%> % <%= image_tag('starting_eleven.svg') %></td>
+                  <td id="td-salary"> <%= player[:salary]%> €</td>
                 </tr>
               </div>
             <% end %>
@@ -137,12 +137,12 @@
               <div>
                 <tr class="player-card-small">
                   <td id="td-name"> <%= image_tag(player[:image]) %></td>
-                  <td> <%= player[:name] %></td>
-                  <td> <%= player[:position] %></td>
-                  <td> <%= player[:current_game_qty] %> <%= image_tag('game_qty.svg') %></td>
-                  <td> <%= player[:current_goals] %> <%= image_tag('goals.svg') %></td>
-                  <td> <%= player[:current_starting_elv_avg]%> % <%= image_tag('starting_eleven.svg') %></td>
-                  <td> <%= player[:salary]%> €</td>
+                  <td id="td-personal"> <%= player[:name] %></td>
+                  <td id="td-position"> <%= player[:position] %></td>
+                  <td id="td-stats"> <%= player[:current_game_qty] %> <%= image_tag('game_qty.svg') %></td>
+                  <td id="td-stats"> <%= player[:current_goals] %> <%= image_tag('goals.svg') %></td>
+                  <td id="td-stats-last"> <%= player[:current_starting_elv_avg]%> % <%= image_tag('starting_eleven.svg') %></td>
+                  <td id="td-salary"> <%= player[:salary]%> €</td>
                 </tr>
               </div>
             <% end %>
