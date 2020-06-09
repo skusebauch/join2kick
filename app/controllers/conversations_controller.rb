@@ -5,16 +5,20 @@ class ConversationsController < ApplicationController
   end
 
   def show
-    @messages = Message.where(conversation_id: params[:id]) # load all messages of selected conversation
-    policy_scope(@messages)
-    @message_new = Message.new # for simple_form_for
-    @conversation = @conversations.find(params[:id]) # current conversation
-    authorize(@conversation)
-    if @conversation.sender_id == current_user.id # set correct receiver to display
-      @message_receiver = User.find(@conversation.receiver_id)
+    @user_conversation_with = User.find(params[:id])
+    # find current conversation, if any
+    @conversation = @conversations.where(sender_id: @user_conversation_with).or(@conversations.where(receiver_id: @user_conversation_with))
+    if @conversation.empty?
+      @messages = [Message.new(user_id: @user_conversation_with.id, content: "Start Messaging")]
+      @conversation = Conversation.create(sender_id: current_user.id, receiver_id: @user_conversation_with.id)
     else
-      @message_receiver = User.find(@conversation.sender_id)
+      @conversation = @conversation.first
+      @messages = @conversation.messages
+      # @messages = Message.where(conversation_id: params[:id]) # load all messages of selected conversation
+      policy_scope(@messages)
     end
+    authorize(@conversation)
+    @message_new = Message.new # for simple_form_for
   end
 
   private

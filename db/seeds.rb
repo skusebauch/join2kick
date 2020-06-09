@@ -174,7 +174,7 @@ puts ''
 puts 'Sarah ...'
 
 user_sarah = User.create!(
-  email: Faker::Internet.email,
+  email: "sarah@test.de",
   password: 123456,
   address: Faker::Address.full_address
   )

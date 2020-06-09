@@ -1,6 +1,8 @@
 <% if current_user.is_following?(user.id) %>
   <li data-user=<%= user.id %>>
+    <% if user.player %>
     <%= user.player.club.name%>
+    <% end %>
     <%= user.email %>
     <%= link_to "Unfollow", unfollow_user_path(user.id), method: :post, remote: true %>
   </li>

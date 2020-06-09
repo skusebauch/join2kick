@@ -10,7 +10,7 @@
     </div>
     <div class="call-to-action">
       <%= link_to '<i class="fas fa-user-plus"></i> Connect'.html_safe, follow_user_path(@user.id), method: :post, remote: true, class: "button" %>
-      <%= link_to '<i class="fas fa-paper-plane"></i> Message'.html_safe , '#', class: "button-light" %>
+      <%= link_to '<i class="fas fa-paper-plane"></i> Message'.html_safe , conversation_path(@player.user), class: "button-light" %>
     </div>
 
     <div class="player-profile-details">
@@ -44,10 +44,12 @@
             </tr>
             <tr>
             <% @player.statistics.each do |statistic| %>
-              <td class="left"><%= statistic.tournament.league if statistic.tournament.season_year == "2019/2020" %></td>
-              <td><%= statistic.game_qty if statistic.tournament.season_year == "2019/2020"%></td>
-              <td><%= statistic.goal_qty if statistic.tournament.season_year == "2019/2020"%></td>
-              <td><%= statistic.starting_eleven_avg if statistic.tournament.season_year == "2019/2020" %></td>
+              <% if statistic.tournament.season_year == "2019/2020" %>
+                <td class="left"><%= statistic.tournament.league%></td>
+                <td><%= statistic.game_qty %></td>
+                <td><%= statistic.goal_qty %></td>
+                <td><%= statistic.starting_eleven_avg %> %</td>
+              <% end %>
             </tr>
             <% end %>
           </table>

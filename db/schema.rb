@@ -10,7 +10,8 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_06_09_090157) do
+ActiveRecord::Schema.define(version: 2020_06_09_134128) do
+
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -103,6 +104,14 @@ ActiveRecord::Schema.define(version: 2020_06_09_090157) do
     t.index ["user_id"], name: "index_players_on_user_id"
   end
 
+  create_table "posts", force: :cascade do |t|
+    t.text "content"
+    t.bigint "user_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["user_id"], name: "index_posts_on_user_id"
+  end
+
   create_table "statistics", force: :cascade do |t|
     t.integer "game_qty"
     t.integer "goal_qty"
@@ -156,6 +165,7 @@ ActiveRecord::Schema.define(version: 2020_06_09_090157) do
   add_foreign_key "messages", "users"
   add_foreign_key "players", "clubs"
   add_foreign_key "players", "users"
+  add_foreign_key "posts", "users"
   add_foreign_key "statistics", "players"
   add_foreign_key "statistics", "tournaments"
   add_foreign_key "wish_lists", "players"
