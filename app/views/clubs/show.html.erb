@@ -1,8 +1,4 @@
 <div class="container">
-  <div>
-
-  </div>
-
   <div class="player-card" id="club-page">
     <div class="avatar-team">
       <% if @club.user.photo.attached? %>
@@ -44,31 +40,114 @@
 
   <div class="team-overview">
     <h1>My Team</h1>
-    <div class="player-overview">
-      <table id="dttb" class="display team-details">
-        <thead>
+      <div class="position-table">
+        <h5> Goalkeeper </h5>
+        <table class="team-player-overview">
           <tr>
-            <th>Name</th>
-            <th>Position</th>
-            <th>Salary</th>
-            <th>Games Played</th>
-            <th>Goals Scored</th>
-            <th>Starting Eleven Avg</th>
+            <th> </th>
+            <th> </th>
+            <th> </th>
+            <th> </th>
           </tr>
-        </thead>
-        <tbody>
           <% @current_players.each do |player| %>
-            <tr>
-              <td class="td"> <%= link_to "", player_path(player[:player_id]), class: 'card-link-to-player' %><%=  player[:name] %> </td>
-              <td> <%= player[:position] %></td>
-              <td> <%= player[:salary] %> €</td>
-              <td> <%= player[:current_game_qty] %></td>
-              <td> <%= player[:current_goals] %></td>
-              <td> <%= player[:current_starting_elv_avg] %></td>
-            </tr>
+            <% if player[:position] == "Goalkeeper" %>
+              <div>
+                <tr class="player-card-small">
+                  <td id="td-name"> <%= image_tag(player[:image])%></td>
+                  <td> <%= player[:name] %></td>
+                  <td> <%= player[:position] %></td>
+                  <td> <%= player[:current_game_qty] %> <%= image_tag('game_qty.svg') %></td>
+                  <td> <%= player[:current_goals] %> <%= image_tag('goals.svg') %></td>
+                  <td> <%= player[:current_starting_elv_avg]%> % <%= image_tag('starting_eleven.svg') %></td>
+                  <td> <%= player[:salary]%> €</td>
+                </tr>
+              </div>
+            <% end %>
           <% end %>
-        </tbody>
-      </table>
-    </div>
+        </table>
+      </div>
+
+      <div class="position-table">
+        <h5> Defender </h5>
+        <table class="team-player-overview">
+          <tr>
+            <th> </th>
+            <th> </th>
+            <th> </th>
+            <th> </th>
+          </tr>
+
+          <% @current_players.each do |player| %>
+            <% if player[:position] == "Defender" %>
+              <div>
+                <tr class="player-card-small">
+                  <td id="td-name"> <%= image_tag(player[:image])%></td>
+                  <td class="left"><%= player[:name] %></td>
+                  <td> <%= player[:position] %></td>
+                  <td> <%= player[:current_game_qty] %> <%= image_tag('game_qty.svg') %></td>
+                  <td> <%= player[:current_goals] %> <%= image_tag('goals.svg') %></td>
+                  <td> <%= player[:current_starting_elv_avg]%> % <%= image_tag('starting_eleven.svg') %></td>
+                  <td> <%= player[:salary]%> €</td>
+                </tr>
+              </div>
+            <% end %>
+          <% end %>
+        </table>
+      </div>
+
+      <div class="position-table">
+        <h5> Midfielder </h5>
+        <table class="team-player-overview">
+          <tr>
+            <th> </th>
+            <th> </th>
+            <th> </th>
+            <th> </th>
+          </tr>
+
+          <% @current_players.each do |player| %>
+            <% if player[:position] == "Midfielder" %>
+              <div>
+                <tr class="player-card-small">
+                  <td id="td-name"> <%= image_tag(player[:image])%></td>
+                  <td class="left"><%= player[:name] %></td>
+                  <td> <%= player[:position] %></td>
+                  <td> <%= player[:current_game_qty] %> <%= image_tag('game_qty.svg') %></td>
+                  <td> <%= player[:current_goals] %> <%= image_tag('goals.svg') %></td>
+                  <td> <%= player[:current_starting_elv_avg]%> % <%= image_tag('starting_eleven.svg') %></td>
+                  <td> <%= player[:salary]%> €</td>
+                </tr>
+              </div>
+            <% end %>
+          <% end %>
+        </table>
+      </div>
+      <div class="position-table">
+        <h5> Striker </h5>
+        <table class="team-player-overview">
+          <tr>
+            <th> </th>
+            <th> </th>
+            <th> </th>
+            <th> </th>
+          </tr>
+
+          <% @current_players.each do |player| %>
+            <% if player[:position] == "Striker" %>
+              <div>
+                <tr class="player-card-small">
+                  <td id="td-name"> <%= image_tag(player[:image]) %></td>
+                  <td> <%= player[:name] %></td>
+                  <td> <%= player[:position] %></td>
+                  <td> <%= player[:current_game_qty] %> <%= image_tag('game_qty.svg') %></td>
+                  <td> <%= player[:current_goals] %> <%= image_tag('goals.svg') %></td>
+                  <td> <%= player[:current_starting_elv_avg]%> % <%= image_tag('starting_eleven.svg') %></td>
+                  <td> <%= player[:salary]%> €</td>
+                </tr>
+              </div>
+            <% end %>
+          <% end %>
+        </table>
+      </div>
   </div>
 </div>

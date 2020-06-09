@@ -43,10 +43,12 @@
             </tr>
             <tr>
             <% @player.statistics.each do |statistic| %>
-              <td class="left"><%= statistic.tournament.league if statistic.tournament.season_year == "2019/2020" %></td>
-              <td><%= statistic.game_qty if statistic.tournament.season_year == "2019/2020"%></td>
-              <td><%= statistic.goal_qty if statistic.tournament.season_year == "2019/2020"%></td>
-              <td><%= statistic.starting_eleven_avg if statistic.tournament.season_year == "2019/2020" %></td>
+              <% if statistic.tournament.season_year == "2019/2020" %>
+                <td class="left"><%= statistic.tournament.league%></td>
+                <td><%= statistic.game_qty %></td>
+                <td><%= statistic.goal_qty %></td>
+                <td><%= statistic.starting_eleven_avg %> %</td>
+              <% end %>
             </tr>
             <% end %>
           </table>
