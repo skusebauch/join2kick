@@ -21,7 +21,7 @@
 
 
         <li class="nav-item">
-          <%= link_to "Team", club_path(current_user.club), class: "nav-link" %>
+          <%= link_to "Team", club_path(current_user.club.nil? ? current_user.player.club : current_user.club), class: "nav-link" %>
         </li>
         <li class="nav-item">
           <%= link_to "Player", players_path, class: "nav-link" %>
