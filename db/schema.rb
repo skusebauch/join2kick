@@ -63,16 +63,6 @@ ActiveRecord::Schema.define(version: 2020_06_09_134128) do
     t.index ["sender_id"], name: "index_conversations_on_sender_id"
   end
 
-  create_table "feeds", force: :cascade do |t|
-    t.string "content"
-    t.bigint "newsfeed_id", null: false
-    t.bigint "user_id", null: false
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
-    t.index ["newsfeed_id"], name: "index_feeds_on_newsfeed_id"
-    t.index ["user_id"], name: "index_feeds_on_user_id"
-  end
-
   create_table "follows", force: :cascade do |t|
     t.integer "following_id", null: false
     t.integer "follower_id", null: false
@@ -91,12 +81,6 @@ ActiveRecord::Schema.define(version: 2020_06_09_134128) do
     t.datetime "updated_at", precision: 6, null: false
     t.index ["conversation_id"], name: "index_messages_on_conversation_id"
     t.index ["user_id"], name: "index_messages_on_user_id"
-  end
-
-  create_table "newsfeeds", force: :cascade do |t|
-    t.string "name"
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
   end
 
   create_table "players", force: :cascade do |t|
@@ -167,8 +151,6 @@ ActiveRecord::Schema.define(version: 2020_06_09_134128) do
   add_foreign_key "clubs", "users"
   add_foreign_key "conversations", "users", column: "receiver_id"
   add_foreign_key "conversations", "users", column: "sender_id"
-  add_foreign_key "feeds", "newsfeeds"
-  add_foreign_key "feeds", "users"
   add_foreign_key "messages", "conversations"
   add_foreign_key "messages", "users"
   add_foreign_key "players", "clubs"
