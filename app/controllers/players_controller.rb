@@ -3,8 +3,10 @@ class PlayersController < ApplicationController
   def index
     @players = policy_scope(Player)
     if params[:query].present?
+      @search_mode = true
       @players = Player.search(params[:query])
     elsif params[:player].present?
+      @search_mode = true
       @players = Player.near(current_user.address, params[:player][:location].to_i) if params[:player][:location].present?
       @players_position = []
       # @players = Player.search(params[:player][:position])
@@ -45,6 +47,8 @@ class PlayersController < ApplicationController
   def show
     @player = Player.find(params[:id])
     authorize(@player)
+    @user = User.find(params[:id])
+    authorize(@user)
   end
 
   def edit

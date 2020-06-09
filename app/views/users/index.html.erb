@@ -6,6 +6,7 @@
 <p>Followers</p>
 <ul>
   <% current_user.followers.each do |follower| %>
+  <%= follower.club.name%>
   <%= follower.email %>
   <% end %>
 </ul>

@@ -1,9 +1,5 @@
 <div class="container">
-  <div>
-    <%= link_to "Your Network", users_path %>
-  </div>
-
-  <div class="player-card">
+  <div class="player-card" id="club-page">
     <div class="avatar-team">
       <% if @club.user.photo.attached? %>
         <%= cl_image_tag @club.user.photo.key , height: 100, width: 100, crop: :fill, class: "avatar-team" %>
@@ -11,15 +7,15 @@
         <%= image_tag "https://res.cloudinary.com/dgwgea5k3/image/upload/v1591359130/Unbenanndsfst-1_rukblo.jpg", class: "avatar-team" %>
       <% end %>
      <%= link_to '<i class="far fa-edit"></i>'.html_safe, edit_user_registration_path %>
-  </div>
-  <div class="club-card-info">
-    <h4><%= @club.user.email %></h4>
-    <h5><%= @club.name %>,
-      <% @club.club_tournaments.each do |club_tournament| %>
-        <%= club_tournament.tournament.league if club_tournament.tournament.season_year == "2019/2020" && club_tournament.tournament.tournament_type == "championship" %>
-      <% end %>
-    </h5>
-  </div>
+    </div>
+    <div class="club-card-info">
+      <h4>Boris Paillard<%#= @club.user.email --- for demo purpose%></h4>
+      <h5><%= @club.name %>,
+        <% @club.club_tournaments.each do |club_tournament| %>
+          <%= club_tournament.tournament.league if club_tournament.tournament.season_year == "2019/2020" && club_tournament.tournament.tournament_type == "championship" %>
+        <% end %>
+      </h5>
+    </div>
     <div class="club-card-budget">
       <div class="budget-item">
         <p>Current budget</p>
@@ -36,7 +32,7 @@
       </div>
       <div class="spacer"></div>
       <div class="cta">
-        <%= link_to "Edit Budget", edit_club_path(@club), class: "button"  %>
+        <%= link_to '<i class="far fa-edit"></i> Budget'.html_safe, edit_club_path(@club), class: "button"  %>
       </div>
       <div class="spacer"></div>
     </div>
@@ -44,31 +40,114 @@
 
   <div class="team-overview">
     <h1>My Team</h1>
-    <div class="player-overview">
-      <table id="dttb" class="display team-details">
-        <thead>
+      <div class="position-table">
+        <h5> Goalkeeper </h5>
+        <table class="team-player-overview">
           <tr>
-            <th>Name</th>
-            <th>Position</th>
-            <th>Salary</th>
-            <th>Games Played</th>
-            <th>Goals Scored</th>
-            <th>Starting Eleven Avg</th>
+            <th> </th>
+            <th> </th>
+            <th> </th>
+            <th> </th>
           </tr>
-        </thead>
-        <tbody>
           <% @current_players.each do |player| %>
-            <tr>
-              <td class="td"> <%= link_to "", player_path(player[:player_id]), class: 'card-link-to-player' %><%=  player[:name] %> </td>
-              <td> <%= player[:position] %></td>
-              <td> <%= player[:salary] %> €</td>
-              <td> <%= player[:current_game_qty] %></td>
-              <td> <%= player[:current_goals] %></td>
-              <td> <%= player[:current_starting_elv_avg] %></td>
-            </tr>
+            <% if player[:position] == "Goalkeeper" %>
+              <div>
+                <tr class="player-card-small">
+                  <td id="td-name"><%= link_to "", player_path(player[:player_id]), class: 'player-card-small-link' %> <%= image_tag(player[:image])%></td>
+                  <td id="td-personal"> <%= player[:name] %></td>
+                  <td id="td-position"> <%= player[:position] %></td>
+                  <td id="td-stats"> <%= player[:current_game_qty] %> <%= image_tag('game_qty.svg') %></td>
+                  <td id="td-stats"> <%= player[:current_goals] %> <%= image_tag('goals.svg') %></td>
+                  <td id="td-stats-last"> <%= player[:current_starting_elv_avg]%> % <%= image_tag('starting_eleven.svg') %></td>
+                  <td id="td-salary"> <%= number_to_currency(player[:salary], delimiter: '.', locale: "fr",unit: "€ ")%></td>
+                </tr>
+              </div>
+            <% end %>
           <% end %>
-        </tbody>
-      </table>
-    </div>
+        </table>
+      </div>
+
+      <div class="position-table">
+        <h5> Defender </h5>
+        <table class="team-player-overview">
+          <tr>
+            <th> </th>
+            <th> </th>
+            <th> </th>
+            <th> </th>
+          </tr>
+
+          <% @current_players.each do |player| %>
+            <% if player[:position] == "Defender" %>
+              <div>
+                <tr class="player-card-small">
+                  <td id="td-name"> <%= link_to "", player_path(player[:player_id]), class: 'player-card-small-link' %> <%= image_tag(player[:image])%></td>
+                  <td id="td-personal"><%= player[:name] %></td>
+                  <td id="td-position"> <%= player[:position] %></td>
+                  <td id="td-stats"> <%= player[:current_game_qty] %> <%= image_tag('game_qty.svg') %></td>
+                  <td id="td-stats"> <%= player[:current_goals] %> <%= image_tag('goals.svg') %></td>
+                  <td id="td-stats-last"> <%= player[:current_starting_elv_avg]%> % <%= image_tag('starting_eleven.svg') %></td>
+                  <td id="td-salary"> <%= number_to_currency(player[:salary], delimiter: '.', locale: "fr",unit: "€ ")%></td>
+                </tr>
+              </div>
+            <% end %>
+          <% end %>
+        </table>
+      </div>
+
+      <div class="position-table">
+        <h5> Midfielder </h5>
+        <table class="team-player-overview">
+          <tr>
+            <th> </th>
+            <th> </th>
+            <th> </th>
+            <th> </th>
+          </tr>
+
+          <% @current_players.each do |player| %>
+            <% if player[:position] == "Midfielder" %>
+              <div>
+                <tr class="player-card-small">
+                  <td id="td-name"> <%= link_to "", player_path(player[:player_id]), class: 'player-card-small-link' %> <%= image_tag(player[:image])%></td>
+                  <td id="td-personal"> <%= link_to "", player_path(player[:player_id]), class: 'player-card-small-link' %><%= player[:name] %></td>
+                  <td id="td-position"> <%= player[:position] %></td>
+                  <td id="td-stats"> <%= player[:current_game_qty] %> <%= image_tag('game_qty.svg') %></td>
+                  <td id="td-stats"> <%= player[:current_goals] %> <%= image_tag('goals.svg') %></td>
+                  <td id="td-stats-last"> <%= player[:current_starting_elv_avg]%> % <%= image_tag('starting_eleven.svg') %></td>
+                  <td id="td-salary"> <%= number_to_currency(player[:salary], delimiter: '.', locale: "fr",unit: "€ ")%></td>
+                </tr>
+              </div>
+            <% end %>
+          <% end %>
+        </table>
+      </div>
+      <div class="position-table">
+        <h5> Striker </h5>
+        <table class="team-player-overview">
+          <tr>
+            <th> </th>
+            <th> </th>
+            <th> </th>
+            <th> </th>
+          </tr>
+
+          <% @current_players.each do |player| %>
+            <% if player[:position] == "Striker" %>
+              <div>
+                <tr class="player-card-small">
+                  <td id="td-name"> <%= link_to "", player_path(player[:player_id]), class: 'player-card-small-link' %> <%= image_tag(player[:image]) %></td>
+                  <td id="td-personal"> <%= link_to "", player_path(player[:player_id]), class: 'player-card-small-link' %><%= player[:name] %></td>
+                  <td id="td-position"> <%= player[:position] %></td>
+                  <td id="td-stats"> <%= player[:current_game_qty] %> <%= image_tag('game_qty.svg') %></td>
+                  <td id="td-stats"> <%= player[:current_goals] %> <%= image_tag('goals.svg') %></td>
+                  <td id="td-stats-last"> <%= player[:current_starting_elv_avg]%> % <%= image_tag('starting_eleven.svg') %></td>
+                  <td id="td-salary"> <%= number_to_currency(player[:salary], delimiter: '.', locale: "fr",unit: "€ ")%></td>
+                </tr>
+              </div>
+            <% end %>
+          <% end %>
+        </table>
+      </div>
   </div>
 </div>

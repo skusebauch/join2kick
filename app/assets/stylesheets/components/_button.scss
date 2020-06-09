@@ -1,15 +1,14 @@
 .button {
   color: white;
-  width: 100px;
-  padding: 8px 24px;
+  padding: 16px 30px 16px 30px;
   border: none;
   border-radius: 5px;
-  background: #F05D5E;
-  transition: background 0.2s ease;
+  background: #213757;
   opacity: 1;
   &:hover {
-    background: #F05D5E;
-    opacity: 0.6;
+    transition: all 0.3s 0s cubic-bezier(0.4, 0.25, 0.3, 1);
+    background: #213757;
+    opacity: 0.8;
     color: white;
     text-decoration: none;
   }
@@ -21,15 +20,15 @@
   margin-right: 10%;
   width: 80%;
   color: white;
-  padding: 8px 24px;
+  padding: 16px 30px 16px 30px;
   border: none;
   border-radius: 5px;
-  background: #F05D5E;
-  transition: background 0.2s ease;
+  background: #213757;
   opacity: 1;
   &:hover {
-    background: #F05D5E;
-    opacity: 0.6;
+    background: #213757;
+    transition: all 0.3s 0s cubic-bezier(0.4, 0.25, 0.3, 1);
+    opacity: 0.8;
     color: white;
     text-decoration: none;
   }
@@ -37,18 +36,18 @@
 
 
 .button-light {
-  color: #F05D5E;
-  border: 1px solid #F05D5E;
+  color: #213757;
+  border: 1px solid #213757;
   width: 100px;
-  padding: 8px 24px;
+  padding: 16px 30px 16px 30px;
   border-radius: 5px;
   background: white;
-  transition: background 0.2s ease;
   opacity: 1;
   &:hover {
+    transition: all 0.3s 0s cubic-bezier(0.4, 0.25, 0.3, 1);
     background: white;
-    opacity: 0.6;
-    color: #F05D5E;
+    opacity: 0.8;
+    color: #213757;
     text-decoration: none;
   }
 }

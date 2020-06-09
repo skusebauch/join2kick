@@ -38,7 +38,8 @@
   margin-top: 15px;
   p {
     margin-bottom: 0;
-    color: #F05D5E;
+    opacity: 0.7;
+    color: #213757;
   }
 }
 
@@ -93,4 +94,79 @@
   height: 100%;
   width: 100%;
   background: transparent;
+}
+
+.player-card-small {
+  position: relative;
+  margin: 35px 15px 35px 15px;
+  background-color: white;
+  box-shadow: 0px 1px 20px 1px rgba(0, 0, 0, 0.05);
+  border-radius: 5px;
+  overflow: hidden;
+  height: 90px;
+  width: 100%;
+  tr {
+    border-bottom: 15px;
+  }
+}
+
+.player-card-small-link {
+    position: absolute;
+    height: 90px;
+    width: 1110px;
+    background: transparent;
+    z-index: 2;
+  }
+
+
+.team-player-overview {
+  width: 100%;
+  img {
+    height: 20px;
+    width: 20px;
+  }
+  tr {
+    width: 100px;
+  }
+}
+
+.position-table {
+  margin-bottom: 35px;
+}
+
+#td-name {
+  width: 100px;
+  img {
+    border-radius: 50%;
+    height: 60px;
+    width: 60px;
+    object-fit: cover;
+    margin-left: 15px;
+  }
+}
+
+#td-personal {
+  font-weight: bold;
+  width: 250px;
+}
+
+#td-position {
+  font-weight: bold;
+  opacity: 0.7;
+  width: 150px;
+}
+
+#td-stats {
+  text-align: right;
+  width: 102px;
+}
+
+#td-stats-last {
+  text-align: right;
+  width: 115px;
+}
+
+#td-salary {
+  text-align: right;
+  padding-right: 90px;
 }

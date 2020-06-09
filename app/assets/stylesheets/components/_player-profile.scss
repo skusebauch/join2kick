@@ -2,10 +2,10 @@
   position: relative;
   margin: 35px auto;
   background-color: white;
-  box-shadow: 0px 1px 2px rgba(0,0,0,0.2);
+  box-shadow: 0px 1px 20px 5px rgba(0, 0, 0, 0.05);
   border-radius: 5px;
   overflow: hidden;
-  width: 80%;
+  width: 70%;
   h5 {
     padding-left: 15px;
   }
@@ -13,7 +13,7 @@
 
 .player-profile-info {
   text-align: center;
-  margin-bottom: 15px;
+  margin-bottom: 35px;
   h2 {
     font-weight: bold;
     margin-bottom: 2px;
@@ -23,13 +23,28 @@
   }
 }
 
+.call-to-action {
+  margin-top: 50px;
+  margin-bottom: 50px;
+  text-align: center;
+  a {
+    margin-left: 10px;
+    margin-right: 10px;
+    padding-left: 30px;
+    padding-right: 30px;
+  }
+}
+
 .player-profile-details {
   display: flex;
   justify-content: space-around;
-  margin-bottom: 15px;
+  margin-bottom: 35px;
 }
 
 .player-card-total-stat-player {
+  h5 {
+    margin-bottom: 20px;
+  }
   margin: auto;
   width: 75%;
 }
@@ -37,7 +52,7 @@
 
 .table-datas-player {
   margin: 0 auto;
-  margin-bottom: 15px;
+  margin-bottom: 35px;
 }
 .table-data-player{
   display: flex;

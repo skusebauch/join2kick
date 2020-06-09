@@ -10,7 +10,7 @@
       <%= text_field_tag :query,
         params[:query],
         class: "form-control",
-        placeholder: "Find a player"
+        placeholder: 'Find a player'
       %>
       <% end %>
     </div>
@@ -21,10 +21,13 @@
 
 
         <li class="nav-item">
-          <%= link_to "My Team", club_path(current_user.clubs.first), class: "nav-link" %>
+          <%= link_to "Team", club_path(current_user.club), class: "nav-link" %>
         </li>
         <li class="nav-item">
-          <%= link_to "Find player", players_path, class: "nav-link" %>
+          <%= link_to "Player", players_path, class: "nav-link" %>
+        </li>
+        <li class="nav-item">
+          <%= link_to "Network", users_path, class: "nav-link" %>
         </li>
         <li class="nav-item">
           <%= link_to "Messages", conversations_path, class: "nav-link" %>
@@ -32,8 +35,6 @@
         <li class="nav-item dropdown">
           <%= image_tag "https://res.cloudinary.com/dgwgea5k3/image/upload/v1591359130/Unbenanndsfst-1_rukblo.jpg", class: "avatar dropdown-toggle", id: "navbarDropdown", data: { toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
           <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
-            <%= link_to "Action", "#", class: "dropdown-item" %>
-            <%= link_to "Another action", "#", class: "dropdown-item" %>
             <%= link_to "Log out", destroy_user_session_path, method: :delete, class: "dropdown-item" %>
           </div>
         </li>

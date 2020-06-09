@@ -13,6 +13,7 @@ import "bootstrap";
 import { initChatroomCable } from "../channels/chatroom_channel";
 //import { initChatroomCableIndex } from "../channels/chatroom_channel";
 
+// filter result page event
 //sortable Table
 
 // Internal imports, e.g:
