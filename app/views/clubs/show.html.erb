@@ -53,13 +53,13 @@
             <% if player[:position] == "Goalkeeper" %>
               <div>
                 <tr class="player-card-small">
-                  <td id="td-name"> <%= image_tag(player[:image])%></td>
+                  <td id="td-name"><%= link_to "", player_path(player[:player_id]), class: 'player-card-small-link' %> <%= image_tag(player[:image])%></td>
                   <td id="td-personal"> <%= player[:name] %></td>
                   <td id="td-position"> <%= player[:position] %></td>
                   <td id="td-stats"> <%= player[:current_game_qty] %> <%= image_tag('game_qty.svg') %></td>
                   <td id="td-stats"> <%= player[:current_goals] %> <%= image_tag('goals.svg') %></td>
                   <td id="td-stats-last"> <%= player[:current_starting_elv_avg]%> % <%= image_tag('starting_eleven.svg') %></td>
-                  <td id="td-salary"> <%= player[:salary]%> €</td>
+                  <td id="td-salary"> <%= number_to_currency(player[:salary], delimiter: '.', locale: "fr",unit: "€ ")%></td>
                 </tr>
               </div>
             <% end %>
@@ -81,13 +81,13 @@
             <% if player[:position] == "Defender" %>
               <div>
                 <tr class="player-card-small">
-                  <td id="td-name"> <%= image_tag(player[:image])%></td>
+                  <td id="td-name"> <%= link_to "", player_path(player[:player_id]), class: 'player-card-small-link' %> <%= image_tag(player[:image])%></td>
                   <td id="td-personal"><%= player[:name] %></td>
                   <td id="td-position"> <%= player[:position] %></td>
                   <td id="td-stats"> <%= player[:current_game_qty] %> <%= image_tag('game_qty.svg') %></td>
                   <td id="td-stats"> <%= player[:current_goals] %> <%= image_tag('goals.svg') %></td>
                   <td id="td-stats-last"> <%= player[:current_starting_elv_avg]%> % <%= image_tag('starting_eleven.svg') %></td>
-                  <td id="td-salary"> <%= player[:salary]%> €</td>
+                  <td id="td-salary"> <%= number_to_currency(player[:salary], delimiter: '.', locale: "fr",unit: "€ ")%></td>
                 </tr>
               </div>
             <% end %>
@@ -109,13 +109,13 @@
             <% if player[:position] == "Midfielder" %>
               <div>
                 <tr class="player-card-small">
-                  <td id="td-name"> <%= image_tag(player[:image])%></td>
-                  <td id="td-personal"><%= player[:name] %></td>
+                  <td id="td-name"> <%= link_to "", player_path(player[:player_id]), class: 'player-card-small-link' %> <%= image_tag(player[:image])%></td>
+                  <td id="td-personal"> <%= link_to "", player_path(player[:player_id]), class: 'player-card-small-link' %><%= player[:name] %></td>
                   <td id="td-position"> <%= player[:position] %></td>
                   <td id="td-stats"> <%= player[:current_game_qty] %> <%= image_tag('game_qty.svg') %></td>
                   <td id="td-stats"> <%= player[:current_goals] %> <%= image_tag('goals.svg') %></td>
                   <td id="td-stats-last"> <%= player[:current_starting_elv_avg]%> % <%= image_tag('starting_eleven.svg') %></td>
-                  <td id="td-salary"> <%= player[:salary]%> €</td>
+                  <td id="td-salary"> <%= number_to_currency(player[:salary], delimiter: '.', locale: "fr",unit: "€ ")%></td>
                 </tr>
               </div>
             <% end %>
@@ -136,13 +136,13 @@
             <% if player[:position] == "Striker" %>
               <div>
                 <tr class="player-card-small">
-                  <td id="td-name"> <%= image_tag(player[:image]) %></td>
-                  <td id="td-personal"> <%= player[:name] %></td>
+                  <td id="td-name"> <%= link_to "", player_path(player[:player_id]), class: 'player-card-small-link' %> <%= image_tag(player[:image]) %></td>
+                  <td id="td-personal"> <%= link_to "", player_path(player[:player_id]), class: 'player-card-small-link' %><%= player[:name] %></td>
                   <td id="td-position"> <%= player[:position] %></td>
                   <td id="td-stats"> <%= player[:current_game_qty] %> <%= image_tag('game_qty.svg') %></td>
                   <td id="td-stats"> <%= player[:current_goals] %> <%= image_tag('goals.svg') %></td>
                   <td id="td-stats-last"> <%= player[:current_starting_elv_avg]%> % <%= image_tag('starting_eleven.svg') %></td>
-                  <td id="td-salary"> <%= player[:salary]%> €</td>
+                  <td id="td-salary"> <%= number_to_currency(player[:salary], delimiter: '.', locale: "fr",unit: "€ ")%></td>
                 </tr>
               </div>
             <% end %>
