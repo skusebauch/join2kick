@@ -12,6 +12,7 @@
 
 ActiveRecord::Schema.define(version: 2020_06_09_134128) do
 
+
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -145,6 +146,15 @@ ActiveRecord::Schema.define(version: 2020_06_09_134128) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
+  create_table "wish_lists", force: :cascade do |t|
+    t.bigint "user_id", null: false
+    t.bigint "player_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["player_id"], name: "index_wish_lists_on_player_id"
+    t.index ["user_id"], name: "index_wish_lists_on_user_id"
+  end
+
   add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"
   add_foreign_key "club_tournaments", "clubs"
   add_foreign_key "club_tournaments", "tournaments"
@@ -158,4 +168,6 @@ ActiveRecord::Schema.define(version: 2020_06_09_134128) do
   add_foreign_key "posts", "users"
   add_foreign_key "statistics", "players"
   add_foreign_key "statistics", "tournaments"
+  add_foreign_key "wish_lists", "players"
+  add_foreign_key "wish_lists", "users"
 end

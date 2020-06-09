@@ -1,4 +1,7 @@
 <div class="container">
+
+  <div class="d-flex">
+
   <div class="player-card" id="club-page">
     <div class="avatar-team">
       <% if @club.user.photo.attached? %>
@@ -36,6 +39,17 @@
       </div>
       <div class="spacer"></div>
     </div>
+  </div>
+
+  <div>
+    <h1>Wish List</h1>
+      <ul>
+       <% @wish_lists.first(10).each do |wish_list| %>
+        <li><%= wish_list.player.name %></li>
+         <%= link_to '<i class="fas fa-trash-alt"></i>'.html_safe, wish_list_path(wish_list), method: :delete, data: { confirm: "Are you sure?"} %>
+          <% end %>
+        </ul>
+  </div>
   </div>
 
   <div class="team-overview">
@@ -150,4 +164,4 @@
         </table>
       </div>
   </div>
-</div>
+ </div>

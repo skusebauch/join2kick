@@ -6,6 +6,7 @@
     <div class="player-profile-info">
       <h2><%= @player.name %>, (<%= @player.age(@player.birth) %>)</h2>
       <h3><%= @player.position %></h3>
+      <%= link_to '<i class="fa fa-star" aria-hidden="true"></i>'.html_safe, player_wish_lists_path(@player), method: :post %>
     </div>
     <div class="call-to-action">
       <%= link_to '<i class="fas fa-user-plus"></i> Connect'.html_safe, follow_user_path(@user.id), method: :post, remote: true, class: "button" %>

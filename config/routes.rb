@@ -13,8 +13,12 @@ Rails.application.routes.draw do
   resources :posts, only: [:index, :create]
 
   resources :clubs
-  resources :players, only: [:index, :show, :update]
+  resources :players, only: [:index, :show, :update] do
+    resources :wish_lists, only: [ :create ]
+  end
   resources :conversations, only: [:index, :show] do
     resources :messages, only: :create
   end
+
+  resources :wish_lists, only: [ :destroy, :index ]
 end
