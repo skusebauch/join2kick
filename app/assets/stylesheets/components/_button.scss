@@ -3,11 +3,11 @@
   padding: 16px 30px 16px 30px;
   border: none;
   border-radius: 5px;
-  background: #213757;
+  background: #192a42;
   opacity: 1;
   &:hover {
     transition: all 0.3s 0s cubic-bezier(0.4, 0.25, 0.3, 1);
-    background: #213757;
+    background: #192a42;
     opacity: 0.8;
     color: white;
     text-decoration: none;
@@ -23,10 +23,10 @@
   padding: 16px 30px 16px 30px;
   border: none;
   border-radius: 5px;
-  background: #213757;
+  background: #192a42;
   opacity: 1;
   &:hover {
-    background: #213757;
+    background: #192a42;
     transition: all 0.3s 0s cubic-bezier(0.4, 0.25, 0.3, 1);
     opacity: 0.8;
     color: white;
@@ -36,8 +36,8 @@
 
 
 .button-light {
-  color: #213757;
-  border: 1px solid #213757;
+  color: #192a42;
+  border: 1px solid #192a42;
   width: 100px;
   padding: 16px 30px 16px 30px;
   border-radius: 5px;
@@ -47,7 +47,7 @@
     transition: all 0.3s 0s cubic-bezier(0.4, 0.25, 0.3, 1);
     background: white;
     opacity: 0.8;
-    color: #213757;
+    color: #192a42;
     text-decoration: none;
   }
 }

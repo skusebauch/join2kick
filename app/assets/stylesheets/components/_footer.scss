@@ -1,0 +1,22 @@
+.footer {
+  background: #192a42;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 175px;
+  padding: 0px 50px;
+  color: white;
+}
+.footer-links {
+  display: flex;
+  align-items: center;
+}
+.footer-links a {
+  color: white;
+  text-decoration: none;
+  font-size: 24px;
+  padding: 0px 10px;
+}
+.footer-links a:hover {
+  opacity: 0.8;
+}
