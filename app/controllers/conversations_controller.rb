@@ -13,7 +13,7 @@ class ConversationsController < ApplicationController
       @conversation = Conversation.create(sender_id: current_user.id, receiver_id: @user_conversation_with.id)
     else
       @conversation = @conversation.first
-      @messages = @conversation.messages
+      @messages = @conversation.messages # load all messages of selected conversation
       # @messages = Message.where(conversation_id: params[:id]) # load all messages of selected conversation
       policy_scope(@messages)
     end
