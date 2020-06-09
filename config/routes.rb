@@ -10,6 +10,8 @@ Rails.application.routes.draw do
     end
   end
 
+  resources :posts, only: [:index, :create]
+
   resources :clubs
   resources :players, only: [:index, :show, :update]
   resources :conversations, only: [:index, :show] do

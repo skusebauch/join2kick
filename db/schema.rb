@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_06_08_093508) do
+ActiveRecord::Schema.define(version: 2020_06_09_134128) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -63,6 +63,16 @@ ActiveRecord::Schema.define(version: 2020_06_08_093508) do
     t.index ["sender_id"], name: "index_conversations_on_sender_id"
   end
 
+  create_table "feeds", force: :cascade do |t|
+    t.string "content"
+    t.bigint "newsfeed_id", null: false
+    t.bigint "user_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["newsfeed_id"], name: "index_feeds_on_newsfeed_id"
+    t.index ["user_id"], name: "index_feeds_on_user_id"
+  end
+
   create_table "follows", force: :cascade do |t|
     t.integer "following_id", null: false
     t.integer "follower_id", null: false
@@ -83,6 +93,12 @@ ActiveRecord::Schema.define(version: 2020_06_08_093508) do
     t.index ["user_id"], name: "index_messages_on_user_id"
   end
 
+  create_table "newsfeeds", force: :cascade do |t|
+    t.string "name"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
   create_table "players", force: :cascade do |t|
     t.string "name"
     t.date "birth"
@@ -101,6 +117,14 @@ ActiveRecord::Schema.define(version: 2020_06_08_093508) do
     t.string "image"
     t.index ["club_id"], name: "index_players_on_club_id"
     t.index ["user_id"], name: "index_players_on_user_id"
+  end
+
+  create_table "posts", force: :cascade do |t|
+    t.text "content"
+    t.bigint "user_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["user_id"], name: "index_posts_on_user_id"
   end
 
   create_table "statistics", force: :cascade do |t|
@@ -143,10 +167,13 @@ ActiveRecord::Schema.define(version: 2020_06_08_093508) do
   add_foreign_key "clubs", "users"
   add_foreign_key "conversations", "users", column: "receiver_id"
   add_foreign_key "conversations", "users", column: "sender_id"
+  add_foreign_key "feeds", "newsfeeds"
+  add_foreign_key "feeds", "users"
   add_foreign_key "messages", "conversations"
   add_foreign_key "messages", "users"
   add_foreign_key "players", "clubs"
   add_foreign_key "players", "users"
+  add_foreign_key "posts", "users"
   add_foreign_key "statistics", "players"
   add_foreign_key "statistics", "tournaments"
 end
