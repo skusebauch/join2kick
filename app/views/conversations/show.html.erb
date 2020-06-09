@@ -1,8 +1,6 @@
 <div class="chatpage-container" style="display: flex">
-  <%#= render 'chatrooms/chatrooms_container' %>
 
   <div id="messages" data-conversation-id="<%= @user_conversation_with.id %>" style="width: 80%">
-    <h4>Say hello to: <%= @user_conversation_with.player.nil? ? @user_conversation_with.email : @user_conversation_with.player.name %></h4>
     <% @messages.each do |message| %>
       <div class="message-container" id="message-<%= message.id %>">
         <i class="author">
