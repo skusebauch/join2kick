@@ -81,19 +81,25 @@
               <div class="card-stats">
                 <div class="card-stat">
                   <% player.statistics.each do |statistic|%>
-                    <%= statistic.game_qty if statistic.tournament.season_year == "2019/2020" && statistic.tournament.tournament_type == "championship"%>
+                    <% if statistic.tournament.season_year == "2019/2020" && statistic.tournament.tournament_type == "championship" %>
+                      <%= statistic.game_qty %>
+                    <% end %>
                   <% end %>
                   <%= image_tag('game_qty.svg') %>
                 </div>
                 <div class="card-stat">
                   <% player.statistics.each do |statistic|%>
-                    <%= statistic.goal_qty if statistic.tournament.season_year == "2019/2020" && statistic.tournament.tournament_type == "championship"%>
+                    <% if statistic.tournament.season_year == "2019/2020" && statistic.tournament.tournament_type == "championship" %>
+                      <%= statistic.goal_qty %>
+                    <% end %>
                   <% end %>
                   <%= image_tag('goals.svg') %>
                 </div>
                 <div class="card-stat">
                   <% player.statistics.each do |statistic|%>
-                    <%= statistic.starting_eleven_avg if statistic.tournament.season_year == "2019/2020" && statistic.tournament.tournament_type == "championship"%>
+                    <% if statistic.tournament.season_year == "2019/2020" && statistic.tournament.tournament_type == "championship" %>
+                      <%= statistic.starting_eleven_avg %>
+                    <% end %>
                   <% end %>
                   % <%= image_tag('starting_eleven.svg') %>
                 </div>
