@@ -110,6 +110,13 @@
   }
 }
 
+.player-card-small-link {
+    position: absolute;
+    height: 90px;
+    width: 1110px;
+    background: transparent;
+    z-index: 2;
+  }
 
 
 .team-player-overview {
@@ -117,9 +124,6 @@
   img {
     height: 20px;
     width: 20px;
-  }
-  td {
-    width: 100px;
   }
   tr {
     width: 100px;
@@ -133,8 +137,36 @@
 #td-name {
   width: 100px;
   img {
-    height: 90px;
-    width: 90px;
+    border-radius: 50%;
+    height: 60px;
+    width: 60px;
+    object-fit: cover;
+    margin-left: 15px;
   }
 }
 
+#td-personal {
+  font-weight: bold;
+  width: 250px;
+}
+
+#td-position {
+  font-weight: bold;
+  opacity: 0.7;
+  width: 150px;
+}
+
+#td-stats {
+  text-align: right;
+  width: 102px;
+}
+
+#td-stats-last {
+  text-align: right;
+  width: 115px;
+}
+
+#td-salary {
+  text-align: right;
+  padding-right: 90px;
+}
