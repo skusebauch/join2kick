@@ -1,7 +1,7 @@
 <div class="chatpage-container" style="display: flex">
   <%= render 'conversations/conversations_container' %>
 
-  <div id="messages" data-conversation-id="<%= @user_conversation_with.id %>" style="width: 80%">
+  <div id="messages" data-conversation-id="<%=@user_conversation_with.id%>" style="width: 80%">
     <% @messages.each do |message| %>
       <div class="message-container" id="message-<%= message.id %>">
         <i class="author">
@@ -17,7 +17,7 @@
 <div class="messages-form-container" style="display: flex; justify-content: center;">
   <div>
     <%#= simple_form_for [ @conversation, @message_new ], remote: true do |f| %>
-    <%= simple_form_for [ @conversation, @message_new ], url: conversation_messages_path(@conversation) do |f| %>
+    <%= simple_form_for [ @conversation, @message_new ], url: conversation_messages_path(@conversation), remote: true do |f| %>
     <%= f.input :content, label: false, placeholder: "Message ##{@user_conversation_with.player.nil? ? @user_conversation_with.email : @user_conversation_with.player.name}" %>
     <%= f.submit class: "btn btn-primary" %>
     <% end %>

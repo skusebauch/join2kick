@@ -13,9 +13,9 @@ class MessagesController < ApplicationController
       # redirect_to conversations_path(params[:conversation_id], anchor: "message-#{@message_new.id}")
       #redirect_to conversation_path(params[:conversation_id])
       if current_user == @message.conversation.sender
-        redirect_to conversation_path(@message.conversation.receiver)
+        redirect_to conversation_path(@message.conversation.receiver, anchor: "message-#{@message_new.id}")
       else
-        redirect_to conversation_path(@message.conversation.sender)
+        redirect_to conversation_path(@message.conversation.sender, anchor: "message-#{@message_new.id}")
       end
     else
       render "conversations/show"
