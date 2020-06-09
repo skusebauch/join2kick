@@ -1,0 +1,67 @@
+.wish-player-overview {
+  width: 625px;
+  img {
+    height: 20px;
+    width: 20px;
+  }
+  tr {
+    width: 50px;
+  }
+}
+
+#wishlist-header {
+  margin-top: 35px;
+}
+
+#td-personal-wish {
+  font-weight: bold;
+  width: 125px;
+}
+
+#td-position-wish {
+  font-weight: bold;
+  opacity: 0.7;
+  width: 14%;
+}
+
+#td-stats-wish {
+  text-align: right;
+  width: 14%;
+  padding-right: 15px;
+}
+
+#td-stats-last-wish {
+  text-align: right;
+  width: 14%;
+  padding-right: 15px;
+}
+
+#td-salary-wish {
+  text-align: right;
+  padding-right: 90px;
+}
+
+#header-spacer {
+  margin-bottom: 15px;
+}
+
+#delete {
+  text-align: center;
+  i {
+    padding: 5px;
+    color: #192a42;
+    font-size: 16px;
+    z-index: 1000;
+    &:hover {
+      opacity: 0.6;
+    }
+  }
+}
+
+.player-card-small-link-wish {
+    position: absolute;
+    height: 55px;
+    width: 575px;
+    background: transparent;
+    z-index: 2;
+  }
