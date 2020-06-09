@@ -70,9 +70,9 @@
             </table>
           </div>
         </div>
-      <div style="text-align: center; margin-bottom: 30px;">
-        <%= link_to "Contact #{@player.name}" , '#', class: "button" %>
-      </div>
+        <div style="text-align: center; margin-bottom: 30px;">
+          <%= link_to "Contact #{@player.name}" , conversation_path(@player.user), class: "button" %>
+        </div>
       </div>
     </div>
   </div>

@@ -1,4 +1,5 @@
 class PlayersController < ApplicationController
+  # before_action :set_conversations, only: :show
   def index
     @players = policy_scope(Player)
     if params[:query].present?
@@ -66,5 +67,10 @@ class PlayersController < ApplicationController
 
   def player_params
     params.require(:player).permit(:salary, :position, :skill, :age, :location, :starting_eleven, :league)
+  end
+
+  def set_conversations
+    @conversations = Conversation.where(sender_id: current_user).or(Conversation.where(receiver_id: current_user))
+    @conversations = policy_scope(@conversations)
   end
 end
