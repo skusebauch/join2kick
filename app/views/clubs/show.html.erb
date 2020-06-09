@@ -1,61 +1,85 @@
 <div class="container">
 
-  <div class="d-flex">
-
-  <div class="player-card" id="club-page">
-    <div class="player-card-header">
-      <%= cl_image_tag 'https://res.cloudinary.com/dgwgea5k3/image/upload/v1591713072/fu%C3%9Fball_ouracs.jpg', class: 'card-cover' %>
-      <div class="player-card-header-details">
-        <div class="avatar-team-container">
-          <% if @club.user.photo.attached? %>
-            <%= cl_image_tag @club.user.photo.key , height: 100, width: 100, crop: :fill, class: "avatar-team" %>
-          <% else %>
-            <%= image_tag "https://res.cloudinary.com/dgwgea5k3/image/upload/v1591359130/Unbenanndsfst-1_rukblo.jpg", class: "avatar-team" %>
-          <% end %>
-         <%= link_to '<i class="far fa-edit"></i>'.html_safe, edit_user_registration_path %>
+  <div class="top-club">
+    <div class="player-card" id="club-page">
+      <div class="player-card-header">
+        <%= cl_image_tag 'https://res.cloudinary.com/dgwgea5k3/image/upload/v1591713072/fu%C3%9Fball_ouracs.jpg', class: 'card-cover' %>
+        <div class="player-card-header-details">
+          <div class="avatar-team-container">
+            <% if @club.user.photo.attached? %>
+              <%= cl_image_tag @club.user.photo.key , height: 100, width: 100, crop: :fill, class: "avatar-team" %>
+            <% else %>
+              <%= image_tag "https://res.cloudinary.com/dgwgea5k3/image/upload/v1591359130/Unbenanndsfst-1_rukblo.jpg", class: "avatar-team" %>
+            <% end %>
+           <%= link_to '<i class="far fa-edit"></i>'.html_safe, edit_user_registration_path %>
+          </div>
+          <h4>Boris Paillard<%#= @club.user.email --- for demo purpose%></h4>
         </div>
-        <h4>Boris Paillard<%#= @club.user.email --- for demo purpose%></h4>
       </div>
-    </div>
-    <div class="club-card-info">
-      <h5>
-        <%= @club.name %>,
-        <% @club.club_tournaments.each do |club_tournament| %>
-          <%= club_tournament.tournament.league if club_tournament.tournament.season_year == "2019/2020" && club_tournament.tournament.tournament_type == "championship" %>
-        <% end %>
-      </h5>
-    </div>
-    <div class="club-card-budget">
-      <div class="budget-item">
-        <p>Current budget</p>
-        <p><%= number_to_currency(@club.budget, delimiter: '.', locale: "fr",unit: "€ ") %> </p>
-      </div>
-      <div class="budget-item">
-        <p>Sum salaries</p>
-        <p><%= number_to_currency(@club.players.sum(:salary), delimiter: '.', locale: "fr",unit: "€ ") %></p>
-      </div>
-      <div class="budget-item">
-        <p>Remaining budget</p>
-        <% remain_budget = @club.budget - @club.players.sum(:salary) %>
-        <p><strong><%= number_to_currency(remain_budget, delimiter: '.', locale: "fr",unit: "€ ") %></strong></p>
-      </div>
-      <div class="spacer"></div>
-      <div class="cta">
-        <%= link_to '<i class="far fa-edit"></i> Budget'.html_safe, edit_club_path(@club), class: "button"  %>
-      </div>
-      <div class="spacer"></div>
-    </div>
-  </div>
-
-  <div>
-    <h1>Wish List</h1>
-      <ul>
-       <% @wish_lists.first(10).each do |wish_list| %>
-        <li><%= wish_list.player.name %></li>
-         <%= link_to '<i class="fas fa-trash-alt"></i>'.html_safe, wish_list_path(wish_list), method: :delete, data: { confirm: "Are you sure?"} %>
+      <div class="club-card-info">
+        <h5>
+          <%= @club.name %>,
+          <% @club.club_tournaments.each do |club_tournament| %>
+            <%= club_tournament.tournament.league if club_tournament.tournament.season_year == "2019/2020" && club_tournament.tournament.tournament_type == "championship" %>
           <% end %>
-        </ul>
-  </div>
+        </h5>
+      </div>
+      <div class="club-card-budget">
+        <div class="budget-item">
+          <p>Current budget</p>
+          <p><%= number_to_currency(@club.budget, delimiter: '.', locale: "fr",unit: "€ ") %> </p>
+        </div>
+        <div class="budget-item">
+          <p>Sum salaries</p>
+          <p><%= number_to_currency(@club.players.sum(:salary), delimiter: '.', locale: "fr",unit: "€ ") %></p>
+        </div>
+        <div class="budget-item">
+          <p>Remaining budget</p>
+          <% remain_budget = @club.budget - @club.players.sum(:salary) %>
+          <p><strong><%= number_to_currency(remain_budget, delimiter: '.', locale: "fr",unit: "€ ") %></strong></p>
+        </div>
+        <div class="spacer"></div>
+        <div class="cta">
+          <%= link_to '<i class="far fa-edit"></i> Budget'.html_safe, edit_club_path(@club), class: "button"  %>
+        </div>
+        <div class="spacer"></div>
+      </div>
+    </div>
+
+    <div class="wish-list-card">
+      <div class="position-table">
+          <h5 id="wishlist-header"> Wishlist </h5>
+          <table class="wish-player-overview">
+            <tr id="header-spacer">
+              <th> </th>
+              <th> </th>
+              <th> </th>
+              <th id="td-stats-wish"><%= image_tag('game_qty.svg') %> </th>
+              <th id="td-stats-wish"><%= image_tag('goals.svg') %></th>
+              <th id="td-stats-last-wish"><%= image_tag('starting_eleven.svg') %></th>
+              <th> </th>
+            </tr>
+            <% @wish_lists.first(10).each do |wish_list| %>
+              <div>
+                <tr class="player-card-small">
+
+                  <td id="td-name"><%= link_to "", player_path(wish_list.player), class: 'player-card-small-link-wish' %> <%= image_tag(wish_list.player.image)%></td>
+                  <td id="td-personal-wish"> <%= wish_list.player.name %></td>
+                  <td id="td-position-wish"> <%= wish_list.player.position %></td>
+                  <% wish_list.player.statistics.each do |statistic| %>
+                    <% if statistic.tournament.season_year == "2019/2020" && statistic.tournament.tournament_type == "championship" %>
+                      <td id="td-stats-wish"> <%= statistic.game_qty %> </td>
+                      <td id="td-stats-wish"> <%= statistic.goal_qty %> </td>
+                      <td id="td-stats-last-wish"> <%= statistic.starting_eleven_avg %> % </td>
+                    <% end %>
+                  <% end %>
+                  <td id="delete"><%= link_to '<i class="fas fa-trash-alt"></i>'.html_safe, wish_list_path(wish_list), method: :delete, data: { confirm: "Are you sure?"} %></td>
+                </tr>
+              </div>
+            <% end %>
+          </table>
+        </div>
+    </div>
   </div>
 
   <div class="team-overview">
