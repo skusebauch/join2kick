@@ -1,4 +1,5 @@
 <div class="chatpage-container" style="display: flex">
+  <%= render 'conversations/conversations_container' %>
 
   <div id="messages" data-conversation-id="<%= @user_conversation_with.id %>" style="width: 80%">
     <% @messages.each do |message| %>
