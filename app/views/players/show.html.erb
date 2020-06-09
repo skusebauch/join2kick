@@ -9,7 +9,7 @@
     </div>
     <div class="call-to-action">
       <%= link_to '<i class="fas fa-user-plus"></i> Connect'.html_safe, follow_user_path(@user.id), method: :post, remote: true, class: "button" %>
-      <%= link_to '<i class="fas fa-paper-plane"></i> Message'.html_safe , '#', class: "button-light" %>
+      <%= link_to '<i class="fas fa-paper-plane"></i> Message'.html_safe , conversation_path(@player.user), class: "button-light" %>
     </div>
 
     <div class="player-profile-details">
@@ -76,9 +76,6 @@
             <% end %>
           </table>
         </div>
-      </div>
-      <div style="text-align: center; margin-bottom: 30px;">
-        <%= link_to "Contact #{@player.name}" , conversation_path(@player.user), class: "button" %>
       </div>
     </div>
   </div>

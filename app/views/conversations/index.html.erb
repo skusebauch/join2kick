@@ -9,7 +9,6 @@
         <% user_conversation_with = User.find(conversation.sender_id) %>
       <% end %>
       <%= link_to user_conversation_with.player.nil? ? user_conversation_with.email : user_conversation_with.player.name , conversation_path(user_conversation_with) %>
-      <%#= link_to user_conversation_with.player.name, conversation_path(user_conversation_with) %>
      </div>
    <% end %>
   </div>
