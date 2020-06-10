@@ -5,6 +5,7 @@ class PostsController < ApplicationController
     @followers_posts = @posts.select do |post|
       current_user.followings.include?(post.user)
     end
+    @current_user_posts = current_user.posts
   end
 
   def create

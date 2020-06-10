@@ -8,6 +8,8 @@ class User < ApplicationRecord
   has_one :player
   has_one :club
 
+  has_many :posts
+
   has_many :messages, through: :conversations, dependent: :destroy
   has_many :conversations, through: :messages
 

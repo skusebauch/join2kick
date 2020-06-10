@@ -1,14 +1,24 @@
- <div class="container">
-  <div>
+<div class="container">
+  <h3>Your Newsfeed</h3>
+  <div class="inputform">
     <%= simple_form_for @post do |f| %>
       <%= f.input :content %>
       <%= f.submit %>
     <% end %>
   </div>
 
+  <% @current_user_posts.each do |post| %>
+  <%= post.content %>
+  <% end %>
+
   <% @followers_posts.each do |post| %>
     <div class="posts">
-      <%= post.content %>
+      <%=  post.user.email %>
+      <%= image_tag(post.user.player.image, class: 'img-post') %>
+      <div class="post">
+        <%= post.content %>
+      </div>
     </div>
   <% end %>
 </div>
+
