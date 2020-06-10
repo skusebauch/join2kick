@@ -2,6 +2,7 @@ class ConversationsController < ApplicationController
   before_action :set_conversations, only: [:index, :show]
 
   def index
+
   end
 
   def show

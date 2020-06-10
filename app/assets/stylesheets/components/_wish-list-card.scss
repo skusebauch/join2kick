@@ -1,13 +1,28 @@
 .wish-player-overview {
+  position: relative;
   width: 625px;
+
   img {
     height: 20px;
     width: 20px;
   }
-  tr {
-    width: 50px;
-  }
+
+  // .icons {
+  //   position: absolute;
+  //   display: flex;
+  //   justify-content: space-between;
+  //   width: 255px;
+  //   right: 0;
+  //   top: -34px;
+  // }
 }
+
+// .player-card-small {
+//   margin: 0 0 12px;
+//   display: block;
+//   display: flex;
+//   align-items: center;
+// }
 
 .active-star {
   color: #213757;
