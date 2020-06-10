@@ -1,6 +1,6 @@
 <div class="container">
   <div class="chatpage-container" style="display: flex">
-    <%= render 'conversations/conversations_container' %>
+  <%= render 'conversations/conversations_container' %>
   <div id="messages" data-conversation-id="<%= @conversation.id %>" style="width: 80%">
     <% @messages.each do |message| %>
       <div class="message-container" id="message-<%= message.id %>">
@@ -27,4 +27,5 @@
       <% end %>
     </div>
   </div>
+</div>
 </div>
