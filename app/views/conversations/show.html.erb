@@ -2,6 +2,33 @@
   <div class="conversation-box">
     <%= render 'conversations/conversations_container' %>
     <div id="messages-container" data-conversation-id="<%= @conversation.id %>" style="width: 80%">
+      <div class="message-header">
+        <% if @user_conversation_with.player.nil? %>
+          <% if @user_conversation_with.photo.attached? %>
+            <%= cl_image_tag @user_conversation_with.photo.key , height: 25, width: 25, crop: :fill, class: "avatar-team-small-header" %>
+          <% else %>
+            <%= image_tag "https://res.cloudinary.com/dgwgea5k3/image/upload/v1591359130/Unbenanndsfst-1_rukblo.jpg", class: "avatar-team-small-header" %>
+          <% end %>
+        <% else %>
+            <%= cl_image_tag @user_conversation_with.player.image, class: "avatar-team-small-header" %>
+        <% end %>
+        <div class="message-header-info">
+          <div class="name-chat">
+            <% if @user_conversation_with.player.nil? %>
+                <%= @user_conversation_with.user.name %>
+            <% else %>
+                <%= @user_conversation_with.player.name %>
+            <% end %>
+          </div>
+          <div class="star-chat">
+            <% if @player_is_fav %>
+              <%= link_to '<i class="fa fa-star" aria-hidden="true"></i>'.html_safe, player_wish_lists_path(@user_conversation_with.player), method: :post, style: "color: rgba(0, 0, 0, 0.8)" %>
+            <% else %>
+              <%= link_to '<i class="fa fa-star" aria-hidden="true"></i>'.html_safe, player_wish_lists_path(@user_conversation_with.player), method: :post, style: "color: rgba(0, 0, 0, 0.2)" %>
+            <% end %>
+          </div>
+        </div>
+      </div>
       <div class="messages-wrapper">
         <% @messages.each do |message| %>
           <div class="message-container" id="message-<%= message.id %>">

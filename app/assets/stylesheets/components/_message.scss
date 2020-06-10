@@ -5,7 +5,7 @@
   width: 500px;
   box-shadow: 0px 1px 20px 1px rgba(0, 0, 0, 0.05);
   border-radius: 0px 5px 5px 0px;
-  padding: 35px 35px 100px;
+  padding: 15px 35px 100px;
   border: 1px solid lightgray;
 }
 
@@ -134,3 +134,24 @@
   }
 }
 
+.message-header {
+  display: flex;
+  justify-content: flex-start;
+  margin-bottom: 15px;
+}
+.message-header-info {
+  display:flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.name-chat {
+  margin-right: 15px;
+  font-weight: bold;
+}
+
+.star-chat {
+  i {
+    font-size: 20px;
+  }
+}
