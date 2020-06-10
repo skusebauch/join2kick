@@ -7,11 +7,14 @@
           <h5>Position</h5>
           <input type="hidden" name="player[position][]" value="">
           <div class="filter-players">
+
             <% Player::POSITIONS.each do |position| %>
               <input class="hidden" type="checkbox" value="<%= position %>" name="player[position][]" id="player_position_<%= position %>">
-              <label class="filter-player" for="player_position_<%= position %>">
-                <%= position %>
-              </label>
+              <% if params[:player] %>
+                <label class="filter-player <% if params["player"]["position"].include?(position) %> active <% end %>" for="player_position_<%= position %>"> <%= position %> </label>
+              <% else %>
+                <label class="filter-player" for="player_position_<%= position %>"> <%= position %> </label>
+              <% end %>
             <% end %>
           </div>
         </div>
@@ -22,9 +25,11 @@
           <div class="filter-players">
             <% Player::SKILLSET.each do |skill| %>
             <input class="hidden" type="checkbox" value="<%= skill %>" name="player[skill][]" id="player_skill_<%= skill %>">
-            <label class="filter-player" for="player_skill_<%= skill %>">
-              <%= skill %>
-            </label>
+            <% if params[:player] %>
+              <label class="filter-player <% if params["player"]["skill"].include?(skill) %> active <% end %>" for="player_skill_<%= skill %>"> <%= skill %> </label>
+            <% else %>
+              <label class="filter-player" for="player_skill_<%= skill %>"> <%= skill %> </label>
+            <% end %>
             <% end %>
           </div>
         </div>
@@ -48,8 +53,8 @@
           <h5>Season year</h5>
           <select class="form-control" name="player[season_year]" id="player_season_year">
             <option value="">Please select</option>
-            <option value="2019/2020">2019/2020</option>
-            <option value="2018/2019">2018/2019</option>
+            <option value="2019/2020" <% if params["player"] && params["player"]["season_year"] == "2019/2020"  %> selected="selected" <% end %> >2019/2020</option>
+            <option value="2018/2019" <% if params["player"] && params["player"]["season_year"] == "2018/2019"  %> selected="selected" <% end %>>2018/2019</option>
           </select>
         </div>
         <%#= f.input :league, collection: Tournament::LEAGUE, prompt: :league %>
@@ -57,8 +62,8 @@
           <h5>League</h5>
           <select class="form-control" name="player[league]" id="player_league">
             <option value="">Please select</option>
-            <option value="Hessenliga">Hessenliga</option>
-            <option value="Verbandsliga">Verbandsliga</option>
+            <option value="Hessenliga" <% if params["player"] && params["player"]["league"] == "Hessenliga"  %> selected="selected" <% end %> >Hessenliga</option>
+            <option value="Verbandsliga" <% if params["player"] && params["player"]["league"] == "Verbandsliga"  %> selected="selected" <% end %>>Verbandsliga</option>
           </select>
         </div>
         <%= f.submit 'Apply'.html_safe, class: "button-filter" %>
