@@ -4,7 +4,13 @@
       <%= image_tag @player.image, class: "avatar-team" %>
     </div>
     <div class="player-profile-info">
-      <h2><%= @player.name %>, (<%= @player.age(@player.birth) %>)  <%= link_to '<i class="fa fa-star" aria-hidden="true"></i>'.html_safe, player_wish_lists_path(@player), method: :post, style: "color: rgba(0, 0, 0, 0.5)" %></h2>
+      <h2><%= @player.name %>, (<%= @player.age(@player.birth) %>)
+        <% if @player_is_fav %>
+          <%= link_to '<i class="fa fa-star" aria-hidden="true"></i>'.html_safe, player_wish_lists_path(@player), method: :post, style: "color: rgba(0, 0, 0, 0.8)" %>
+        <% else %>
+          <%= link_to '<i class="fa fa-star" aria-hidden="true"></i>'.html_safe, player_wish_lists_path(@player), method: :post, style: "color: rgba(0, 0, 0, 0.2)" %>
+         <% end %>
+         </h2>
       <h3><%= @player.position %></h3>
 
     </div>

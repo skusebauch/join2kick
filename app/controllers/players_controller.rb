@@ -49,6 +49,8 @@ class PlayersController < ApplicationController
     authorize(@player)
     @user = @player.user
     authorize(@user)
+    @wish_lists = WishList.where(user_id: current_user)
+    @player_is_fav = player_is_fav?(@wish_lists)
   end
 
   def edit
@@ -68,6 +70,12 @@ class PlayersController < ApplicationController
   end
 
   private
+
+  def player_is_fav?(wish_lists)
+    if wish_lists.where(player_id: @player.id).any? && wish_lists.where(player_id: @player.id)
+      return true
+    end
+  end
 
   def player_params
     params.require(:player).permit(:salary, :position, :skill, :age, :location, :starting_eleven, :league)
