@@ -6,7 +6,7 @@
         <% @messages.each do |message| %>
           <div class="message-container" id="message-<%= message.id %>">
             <i class="author">
-              <span><%= message.user.player.nil? ? message.user.email : message.user.player.name %></span>
+              <span><%= message.user.player.nil? ? message.user.name : message.user.player.name %></span>
               <small><%= message.created_at.strftime("%a %b %e at %l:%M%p") if message.created_at? %></small>
             </i>
             <p><%= message.content %></p>
