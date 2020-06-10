@@ -6,7 +6,6 @@ class MessagesController < ApplicationController
     @message.user = current_user
     @message.conversation_id = params[:conversation_id]
     authorize(@message)
-    binding.pry
     if @message.save
       ConversationChannel.broadcast_to(
         @conversation,
@@ -16,9 +15,9 @@ class MessagesController < ApplicationController
       # redirect_to conversations_path(params[:conversation_id], anchor: "message-#{@message_new.id}")
       # redirect_to conversation_path(params[:conversation_id])
       if current_user == @message.conversation.sender
-        redirect_to conversation_path(@message.conversation.receiver, anchor: "message-#{@message_new.id}")
+        redirect_to conversation_path(@message.conversation.receiver, anchor: "message-#{@message.id}")
       else
-        redirect_to conversation_path(@message.conversation.sender, anchor: "message-#{@message_new.id}")
+        redirect_to conversation_path(@message.conversation.sender, anchor: "message-#{@message.id}")
       end
     else
       render "conversations/show"
@@ -33,6 +32,6 @@ class MessagesController < ApplicationController
 
   def set_conversation
     @conversation = Conversation.find(params[:conversation_id])
-    @conversation = policy_scope(@conversations)
+    @conversation = authorize(@conversation)
   end
 end
