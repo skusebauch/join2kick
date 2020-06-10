@@ -3,10 +3,15 @@
   <p>Following</p>
   <%= render @users %>
 </ul>
-<p>Followers</p>
+
+
+
 <ul>
+<p>Followers</p>
   <% current_user.followers.each do |follower| %>
-  <%= follower.club.name%>
-  <%= follower.email %>
+  <li>
+    <%= follower.club.name%>
+    <%= follower.email %>
   <% end %>
+  </li>
 </ul>

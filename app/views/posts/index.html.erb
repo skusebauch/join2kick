@@ -1,10 +1,12 @@
-<% @followers_posts.each do |post| %>
-<%= post.content %>
-<% end %>
-
-<div>
-  <%= simple_form_for @post do |f| %>
-    <%= f.input :content %>
-    <%= f.submit %>
+<div class="container">
+  <% @followers_posts.each do |post| %>
+  <%= post.content %>
   <% end %>
+
+  <div>
+    <%= simple_form_for @post do |f| %>
+      <%= f.input :content %>
+      <%= f.submit %>
+    <% end %>
+  </div>
 </div>
