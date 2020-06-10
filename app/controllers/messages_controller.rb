@@ -1,17 +1,20 @@
 class MessagesController < ApplicationController
+  before_action :set_conversation, only: [:create]
+
   def create
     @message = Message.new(message_params)
     @message.user = current_user
     @message.conversation_id = params[:conversation_id]
     authorize(@message)
+    binding.pry
     if @message.save
-      #ChatroomChannel.broadcast_to(
-      #  @chatroom,
-      #  render_to_string(partial: "message", locals: { message: @message })
-      #)
+      ConversationChannel.broadcast_to(
+        @conversation,
+        render_to_string(partial: "message", locals: { message: @message })
+      )
       # scroll down to current message
       # redirect_to conversations_path(params[:conversation_id], anchor: "message-#{@message_new.id}")
-      #redirect_to conversation_path(params[:conversation_id])
+      # redirect_to conversation_path(params[:conversation_id])
       if current_user == @message.conversation.sender
         redirect_to conversation_path(@message.conversation.receiver, anchor: "message-#{@message_new.id}")
       else
@@ -26,5 +29,10 @@ class MessagesController < ApplicationController
 
   def message_params
     params.require(:message).permit(:content)
+  end
+
+  def set_conversation
+    @conversation = Conversation.find(params[:conversation_id])
+    @conversation = policy_scope(@conversations)
   end
 end

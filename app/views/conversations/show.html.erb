@@ -1,7 +1,7 @@
 <div class="chatpage-container" style="display: flex">
   <%= render 'conversations/conversations_container' %>
 
-  <div id="messages" data-chatroom-id="<%= @conversation %>" style="width: 80%">
+  <div id="messages" data-conversation-id="<%= @conversation %>" style="width: 80%">
     <% @messages.each do |message| %>
       <div class="message-container" id="message-<%= message.id %>">
         <i class="author">
