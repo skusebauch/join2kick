@@ -51,9 +51,9 @@
           <h5 id="wishlist-header"> Wishlist </h5>
           <table class="wish-player-overview">
             <tr class="icons">
-              <th id="td-stats-wish"><%= image_tag('game_qty.svg') %> </th>
-              <th id="td-stats-wish"><%= image_tag('goals.svg') %></th>
-              <th id="td-stats-last-wish"><%= image_tag('starting_eleven.svg') %></th>
+              <th id="td-stats-wish"> </th>
+              <th id="td-stats-wish"></th>
+              <th id="td-stats-last-wish"></th>
               <th> </th>
             </tr>
             <% @wish_lists.last(5).each do |wish_list| %>
@@ -65,9 +65,9 @@
                   <td id="td-position-wish"> <%= wish_list.player.position %></td>
                   <% wish_list.player.statistics.each do |statistic| %>
                     <% if statistic.tournament.season_year == "2019/2020" && statistic.tournament.tournament_type == "championship" %>
-                      <td id="td-stats-wish"> <%= statistic.game_qty %> </td>
-                      <td id="td-stats-wish"> <%= statistic.goal_qty %> </td>
-                      <td id="td-stats-last-wish"> <%= statistic.starting_eleven_avg %> % </td>
+                      <td id="td-stats-wish"> <%= statistic.game_qty %> <%= image_tag('game_qty.svg') %> </td>
+                      <td id="td-stats-wish"> <%= statistic.goal_qty %> <%= image_tag('goals.svg') %> </td>
+                      <td id="td-stats-last-wish"> <%= statistic.starting_eleven_avg %> % <%= image_tag('starting_eleven.svg') %> </td>
                     <% end %>
                   <% end %>
                   <td id="delete"><%= link_to '<i class="fas fa-trash-alt"></i>'.html_safe, wish_list_path(wish_list), method: :delete, data: { confirm: "Are you sure?"} %></td>
