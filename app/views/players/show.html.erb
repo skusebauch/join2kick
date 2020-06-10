@@ -9,7 +9,7 @@
 
     </div>
     <div class="call-to-action">
-      <%= link_to '<i class="fas fa-user-plus"></i> Connect'.html_safe, follow_user_path(@user.id), method: :post, remote: true, class: "button" %>
+      <%= link_to '<i class="fas fa-user-plus"></i> Connect'.html_safe, follow_user_path(@user), method: :post, remote: true, class: "button" %>
       <%= link_to '<i class="fas fa-paper-plane"></i> Message'.html_safe , conversation_path(@player.user), class: "button-light" %>
     </div>
 
