@@ -8,13 +8,20 @@
   </div>
 
   <% @current_user_posts.each do |post| %>
-  <%= post.content %>
+  <div class="o-posts">
+    <%= post.user.email %>
+    <%= link_to '<i class="fas fa-trash-alt"></i>'.html_safe, post_path(post), method: :delete, data: { confirm: "Are you sure?"} %>
+    <div class="o-post">
+    <%= post.content %>
+    </div>
+  </div>
   <% end %>
 
   <% @followers_posts.each do |post| %>
     <div class="posts">
-      <%=  post.user.email %>
       <%= image_tag(post.user.player.image, class: 'img-post') %>
+      <%= post.user.email %>
+      <%= link_to '<i class="fas fa-trash-alt"></i>'.html_safe, post_path(post), method: :delete, data: { confirm: "Are you sure?"} %>
       <div class="post">
         <%= post.content %>
       </div>
