@@ -1,12 +1,22 @@
 <div class="conversations-container" style="width: 20%">
     <% @conversations.each do |conversation| %>
-     <div class="conversation-card" data-conversation-id="<%= conversation.id %>" style="padding: 10px">
+     <div class="conversation-card" data-conversation-id="<%= conversation.id %>">
+
       <% if conversation.sender_id == current_user.id %>
         <% user_conversation_with = User.find(conversation.receiver_id) %>
       <% else %>
         <% user_conversation_with = User.find(conversation.sender_id) %>
       <% end %>
-      <%= link_to user_conversation_with.player.nil? ? user_conversation_with.email : user_conversation_with.player.name , conversation_path(user_conversation_with) %>
+      <div class="content-conversation-card">
+        <% if user_conversation_with.player.nil? %>
+          <% if user_conversation_with.photo.attached? %>
+            <%= cl_image_tag @club.user_conversation_with.photo.key , height: 100, width: 100, crop: :fill, class: "avatar-team" %>if  : conversation.user.player.image %></span>
+          <% else %>
+            <%= image_tag "https://res.cloudinary.com/dgwgea5k3/image/upload/v1591359130/Unbenanndsfst-1_rukblo.jpg", class: "avatar-team" %>
+          <% end %>
+        <% end %>
+        <%= link_to user_conversation_with.player.nil? ? user_conversation_with.email : user_conversation_with.player.name , conversation_path(user_conversation_with) %>
+      </div>
        <%#= link_to chatroom.name, '#', :onclick => 'initChatroomCable(4)' %>
       <%#= link_to message.user.player.name, chatroom_path(chatroom) %>
      </div>
