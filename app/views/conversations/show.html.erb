@@ -1,9 +1,9 @@
 <div class="container">
   <div class="chatpage-container" style="display: flex">
   <%= render 'conversations/conversations_container' %>
-  <div id="messages" data-conversation-id="<%= @conversation.id %>" style="width: 80%">
+  <div id="messages-container" data-conversation-id="<%= @conversation.id %>" style="width: 80%">
     <% @messages.each do |message| %>
-      <div class="message-container" id="message-<%= message.id %>">
+      <div class="message" id="message-<%= message.id %>">
         <i class="author">
           <span><%= message.user.player.nil? ? message.user.email : message.user.player.name %></span>
           <small><%= message.created_at.strftime("%a %b %e at %l:%M%p") if message.created_at? %></small>
