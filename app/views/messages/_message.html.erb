@@ -1,7 +1,7 @@
 <div class="message-container" id="message-<%= message.id %>">
   <i class="author">
-    <span><%= message.user.email %></span>
-    <small><%= message.created_at.strftime("%a %b %e at %l:%M%p") %></small>
+    <span><%= message.user.player.nil? ? message.user.email : message.user.player.name %></span>
+    <small><%= message.created_at.strftime("%a %b %e at %l:%M%p") if message.created_at? %></small>
   </i>
   <p><%= message.content %></p>
 </div>

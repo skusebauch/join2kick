@@ -1,7 +1,7 @@
 class PlayersController < ApplicationController
   # before_action :set_conversations, only: :show
   def index
-    @players = policy_scope(Player)
+    @players = policy_scope(Player).where.not(user: current_user)
     if params[:query].present?
       @search_mode = true
       @players = Player.search(params[:query])
@@ -47,7 +47,7 @@ class PlayersController < ApplicationController
   def show
     @player = Player.find(params[:id])
     authorize(@player)
-    @user = User.find(params[:id])
+    @user = @player.user
     authorize(@user)
   end
 

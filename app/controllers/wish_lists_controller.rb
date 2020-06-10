@@ -18,16 +18,17 @@ class WishListsController < ApplicationController
     @wish_list.player = @player
     authorize @wish_list
     if @wish_list.save
-      redirect_to wish_lists_path
+      redirect_to player_path(@player)
     else
       render "wish_lists/show"
     end
   end
 
   def destroy
+    @club = current_user.club
     @wish_list = WishList.find(params[:id])
     @wish_list.destroy
-    redirect_to wish_lists_path
+    redirect_to club_path(@club)
     authorize @wish_list
   end
 

@@ -10,7 +10,7 @@ import { DataTable } from 'datatables.net';
 
 
 import "bootstrap";
-import { initChatroomCable } from "../channels/chatroom_channel";
+import { initConversationCable } from "../channels/conversation_channel";
 //import { initChatroomCableIndex } from "../channels/chatroom_channel";
 
 // filter result page event
@@ -27,7 +27,7 @@ import { initStar } from '../components/star';
 document.addEventListener('turbolinks:load', () => {
   // Call your functions here, e.g:
   // initSelect2();
-  initChatroomCable();
+  initConversationCable();
   initFilter();
   initStar();
   // initRenderUser();
