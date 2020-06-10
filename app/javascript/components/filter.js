@@ -3,6 +3,7 @@ const initFilter = () => {
   if (playerClass != undefined) {
     playerClass.forEach(filter => {
       filter.addEventListener("click", (event) => {
+
       event.currentTarget.classList.toggle("active");
     });
   });
