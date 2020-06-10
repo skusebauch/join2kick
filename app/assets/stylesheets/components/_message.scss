@@ -1,11 +1,24 @@
 #messages-container {
+  position: relative;
   height: 80vh;
   background: white;
   width: 500px;
   box-shadow: 0px 1px 20px 1px rgba(0, 0, 0, 0.05);
   border-radius: 0px 5px 5px 0px;
-  padding: 35px;
+  padding: 35px 35px 100px;
   border: 1px solid lightgray;
+}
+
+.message-container-index {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.messages-wrapper {
+  overflow: scroll;
+  height: 100%;
 }
 
 .conversation-box {
@@ -15,10 +28,42 @@
   width: 500px;
 }
 
+.messages-form-container {
+  position: absolute;
+  bottom: 40px;
+
+  textarea {
+    max-width: 570px;
+  }
+
+  input[type="submit"] {
+    padding: 0 30px;
+  }
+}
+
 .message-send {
   display: flex;
   height: 45px;
 
+  .form-group {
+    margin: 0;
+  }
+}
+
+.message-container {
+
+}
+
+.message-container {
+  width: 100%;
+  background: white;
+  box-shadow: 0px 1px 20px 1px rgba(0, 0, 0, 0.05);
+  padding: 5px 15px 5px 15px;
+  margin-bottom: 15px;
+  border-radius: 5px;
+  i {
+    color: #213757;
+  }
 }
 #message_content {
   width: 600px;
@@ -31,11 +76,21 @@
 }
 
 .conversations-container {
+  width: 30%;
   border-top: 1px solid lightgray;
   border-bottom: 1px solid lightgray;
   border-left: 1px solid lightgray;
   box-shadow: 0px 1px 20px 1px rgba(0, 0, 0, 0.05);
   border-radius: 5px 0px 0px 5px;
+  color: #213757;
+  a {
+    color: #213757;
+    list-style-type: none;
+    &:hover {
+      list-style-type: none;
+      opacity: 0.8;
+    }
+  }
 }
 
 .conversation-card {
@@ -49,6 +104,10 @@
   a {
     color: #213757;
     list-style-type: none;
+    &:hover {
+      opacity: 0.8;
+      list-style-type: none;
+    }
 
   }
 }
@@ -56,17 +115,18 @@
 .content-conversation-card {
   color: #213757;
     a {
-    color: #213757 !important;
+    color: #213757;
     list-style-type: none;
-
   }
 }
 
 
 
-#message-empty {
+.message-empty {
   vertical-align: center;
   text-align: center;
+  background-color: transparent;
+  box-shadow: none;
   i {
     font-size: 75px;
     color: #213757;
