@@ -8,6 +8,9 @@
   border: 1px solid lightgray;
 }
 
+.conversation-box {
+  display: flex
+}
 .message-input {
   width: 500px;
 }
@@ -39,4 +42,32 @@
   overflow: hidden;
   height: 90px;
   width: 100%;
+  color: #213757;
+  a {
+    color: #213757;
+    list-style-type: none;
+
+  }
 }
+
+.content-conversation-card {
+  color: #213757;
+    a {
+    color: #213757 !important;
+    list-style-type: none;
+
+  }
+}
+
+
+
+#message-empty {
+  vertical-align: center;
+  text-align: center;
+  i {
+    font-size: 75px;
+    color: #213757;
+    text-align: center;
+  }
+}
+
