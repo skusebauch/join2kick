@@ -1,3 +1,12 @@
-<div class="chatpage-container" style="display: flex">
-  <%= render 'conversations/conversations_container' %>
+<div class="container">
+  <div class="conversation-box">
+    <%= render 'conversations/conversations_container' %>
+    <div id="messages" style="width: 80%">
+      <div class="message-container" id="message-empty">
+        <i class="far fa-paper-plane"></i>
+        <h1 id="message-index">Your messages</h1>
+        <h3 id="message-index">Start your conversation!</h3>
+      </div>
+    </div>
+  </div>
 </div>
