@@ -21,11 +21,15 @@ import { initChatroomCable } from "../channels/chatroom_channel";
 import { initFilter } from '../components/filter';
 // import { initRenderUser} from '../components/follow_user';
 
+// active star
+import { initStar } from '../components/star';
+
 document.addEventListener('turbolinks:load', () => {
   // Call your functions here, e.g:
   // initSelect2();
   initChatroomCable();
   initFilter();
+  initStar();
   // initRenderUser();
 });
 
