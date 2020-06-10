@@ -1,13 +1,7 @@
-<div class="message-container" id="message-<%= message.id %>">
+<div class="message" id="message-<%= message.id %>">
   <i class="author">
     <span><%= message.user.player.nil? ? message.user.email : message.user.player.name %></span>
     <small><%= message.created_at.strftime("%a %b %e at %l:%M%p") if message.created_at? %></small>
   </i>
   <p><%= message.content %></p>
-</div>
-
-
-<div class="form-group text optional message_content">
-  <textarea class="form-control text optional" placeholder="Message #Martin De Frutos" name="message[content]" id="message_content">
-  </textarea>
 </div>

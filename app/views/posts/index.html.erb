@@ -1,12 +1,14 @@
-<div class="container">
-  <% @followers_posts.each do |post| %>
-  <%= post.content %>
-  <% end %>
-
+ <div class="container">
   <div>
     <%= simple_form_for @post do |f| %>
       <%= f.input :content %>
       <%= f.submit %>
     <% end %>
   </div>
+
+  <% @followers_posts.each do |post| %>
+    <div class="posts">
+      <%= post.content %>
+    </div>
+  <% end %>
 </div>

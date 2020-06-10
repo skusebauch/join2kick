@@ -1,7 +1,7 @@
 <div class="container">
   <div class="conversation-box">
     <%= render 'conversations/conversations_container' %>
-    <div id="messages" data-conversation-id="<%= @conversation.id %>" style="width: 80%">
+    <div id="messages-container" data-conversation-id="<%= @conversation.id %>" style="width: 80%">
       <% @messages.each do |message| %>
         <div class="message-container" id="message-<%= message.id %>">
           <i class="author">
@@ -29,3 +29,4 @@
     </div>
   </div>
 </div>
+  
