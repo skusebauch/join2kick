@@ -3,6 +3,15 @@
   background: #fcfdff;
   transition: 0.5s background-color ease;
   height: 95px;
+
+}
+
+.logo-class {
+  margin-left: 35px;
+  img {
+    width: 200px;
+
+  }
 }
 
 .navbar-lewagon-transparent {
@@ -35,4 +44,8 @@
 .nav-search {
   width: 350px;
   vertical-align: middle;
+}
+
+#navbarSupportedContent {
+  margin-right: 35px;
 }
