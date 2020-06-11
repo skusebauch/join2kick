@@ -226,13 +226,14 @@ puts 'Sarah ...'
 user_sarah = User.create!(
   email: "sarah@test.de",
   password: 123456,
-  address: Faker::Address.full_address
+  address: Faker::Address.full_address,
+  name: 'Sarah Lafer'
   )
 
 player_sarah = Player.create!(
   name: 'Sarah Lafer',
   image: 'https://res.cloudinary.com/wagon/image/upload/c_fill,g_face,h_200,w_200/v1556048247/ymehhwjerbyrghdubep5.jpg',
-  birth: Date.new(rand(1975..2003),rand(1..12), rand(1..26)),
+  birth: Date.new(rand(1975..1996),rand(1..12), rand(1..26)),
   citizenship: 'Austria 🇦🇹',
   height: rand(160..195),
   position: 'Goalkeeper',
@@ -289,13 +290,14 @@ puts 'Lino ...'
 user_lino = User.create!(
   email: Faker::Internet.email,
   password: 123456,
-  address: Faker::Address.full_address
+  address: Faker::Address.full_address,
+  name: 'Lino Maurer'
   )
 
 player_lino = Player.create!(
   name: 'Lino Maurer',
   image: 'https://avatars0.githubusercontent.com/u/59058786?v=4',
-  birth: Date.new(rand(1975..2003),rand(1..12), rand(1..26)),
+  birth: Date.new(rand(1975..1996),rand(1..12), rand(1..26)),
   citizenship: 'Germany 🇩🇪',
   height: rand(160..195),
   position: 'Goalkeeper',
@@ -338,13 +340,14 @@ puts 'Prateek ...'
 user_prateek = User.create!(
   email: Faker::Internet.email,
   password: 123456,
-  address: Faker::Address.full_address
+  address: Faker::Address.full_address,
+  name: 'Prateek Mahindra'
   )
 
 player_prateek = Player.create!(
   name: 'Prateek Mahindra',
   image: 'https://avatars1.githubusercontent.com/u/59365013?v=4',
-  birth: Date.new(rand(1975..2003),rand(1..12), rand(1..26)),
+  birth: Date.new(rand(1975..1996),rand(1..12), rand(1..26)),
   citizenship: 'India 🇮🇳',
   height: rand(160..195),
   position: 'Defender',
@@ -393,13 +396,14 @@ puts 'Amelie ...'
 user_amelie = User.create!(
   email: Faker::Internet.email,
   password: 123456,
-  address: Faker::Address.full_address
+  address: Faker::Address.full_address,
+  name: 'Amélie Boudier'
   )
 
 player_amelie = Player.create!(
   name: 'Amélie Boudier',
   image: 'https://avatars2.githubusercontent.com/u/42960360?v=4',
-  birth: Date.new(rand(1975..2003),rand(1..12), rand(1..26)),
+  birth: Date.new(rand(1975..1996),rand(1..12), rand(1..26)),
   citizenship: 'France 🇫🇷',
   height: rand(160..195),
   position: 'Defender',
@@ -433,13 +437,14 @@ puts 'Olivier ...'
 user_olivier = User.create!(
   email: Faker::Internet.email,
   password: 123456,
-  address: Faker::Address.full_address
+  address: Faker::Address.full_address,
+  name: 'Olivier Girardot'
   )
 
 player_olivier = Player.create!(
   name: 'Olivier Girardot',
   image: 'https://avatars2.githubusercontent.com/u/32952612?v=4',
-  birth: Date.new(rand(1975..2003),rand(1..12), rand(1..26)),
+  birth: Date.new(rand(1975..1996),rand(1..12), rand(1..26)),
   citizenship: 'France 🇫🇷',
   height: rand(160..195),
   position: 'Defender',
@@ -543,13 +548,14 @@ puts 'Nora ...'
 user_nora = User.create!(
   email: Faker::Internet.email,
   password: 123456,
-  address: Faker::Address.full_address
+  address: Faker::Address.full_address,
+  name: 'Nora Scheuch'
   )
 
 player_nora = Player.create!(
   name: 'Nora Scheuch',
   image: 'https://avatars1.githubusercontent.com/u/29482385?v=4',
-  birth: Date.new(rand(1975..2003),rand(1..12), rand(1..26)),
+  birth: Date.new(rand(1975..1996),rand(1..12), rand(1..26)),
   citizenship: 'Germany 🇩🇪',
   height: rand(160..195),
   position: 'Defender',
@@ -600,13 +606,14 @@ puts 'Arbi ...'
 user_arbi = User.create!(
   email: Faker::Internet.email,
   password: 123456,
-  address: Faker::Address.full_address
+  address: Faker::Address.full_address,
+  name: 'Arbi Velaj'
   )
 
 player_arbi = Player.create!(
   name: 'Arbi Velaj',
   image: 'https://avatars2.githubusercontent.com/u/26385065?v=4',
-  birth: Date.new(rand(1975..2003),rand(1..12), rand(1..26)),
+  birth: Date.new(rand(1975..1996),rand(1..12), rand(1..26)),
   citizenship: 'Italy 🇮🇹',
   height: rand(160..195),
   position: 'Midfielder',
@@ -663,13 +670,14 @@ puts 'Alex ...'
 user_alex = User.create!(
   email: Faker::Internet.email,
   password: 123456,
-  address: Faker::Address.full_address
+  address: Faker::Address.full_address,
+  name: 'Alexander Dubovoy'
   )
 
 player_alex = Player.create!(
   name: 'Alexander Dubovoy',
   image: 'https://res.cloudinary.com/wagon/image/upload/c_fill,g_face,h_200,w_200/v1582630583/ky7b8bb3ogcx0lpdgkvd.jpg',
-  birth: Date.new(rand(1975..2003),rand(1..12), rand(1..26)),
+  birth: Date.new(rand(1975..1996),rand(1..12), rand(1..26)),
   citizenship: 'United States 🇺🇸',
   height: rand(160..195),
   position: 'Midfielder',
@@ -726,13 +734,14 @@ puts 'Claire ...'
 user_claire = User.create!(
   email: Faker::Internet.email,
   password: 123456,
-  address: Faker::Address.full_address
+  address: Faker::Address.full_address,
+  name: 'Claire Demont'
   )
 
 player_claire = Player.create!(
   name: 'Claire Demont',
   image: 'https://avatars3.githubusercontent.com/u/45850166?v=4',
-  birth: Date.new(rand(1975..2003),rand(1..12), rand(1..26)),
+  birth: Date.new(rand(1975..1996),rand(1..12), rand(1..26)),
   citizenship: 'France 🇫🇷',
   height: rand(160..195),
   position: 'Midfielder',
@@ -789,13 +798,14 @@ puts 'Zuza ...'
 user_zuza = User.create!(
   email: Faker::Internet.email,
   password: 123456,
-  address: Faker::Address.full_address
+  address: Faker::Address.full_address,
+  name: 'Zuza Żuber'
   )
 
 player_zuza = Player.create!(
   name: 'Zuza Żuber',
   image: 'https://res.cloudinary.com/wagon/image/upload/c_fill,g_face,h_200,w_200/v1570609465/a8kmugjdqlihecdk9cz8.jpg',
-  birth: Date.new(rand(1975..2003),rand(1..12), rand(1..26)),
+  birth: Date.new(rand(1975..1996),rand(1..12), rand(1..26)),
   citizenship: 'Poland 🇵🇱',
   height: rand(160..195),
   position: 'Midfielder',
@@ -852,13 +862,14 @@ puts 'Anthony ...'
 user_anthony = User.create!(
   email: Faker::Internet.email,
   password: 123456,
-  address: Faker::Address.full_address
+  address: Faker::Address.full_address,
+  name: 'Anthony Bandolon'
   )
 
 player_anthony = Player.create!(
   name: 'Anthony Bandolon',
   image: 'https://res.cloudinary.com/wagon/image/upload/c_fill,g_face,h_200,w_200/v1584532796/ohnfndhefemkjea708ag.jpg',
-  birth: Date.new(rand(1975..2003),rand(1..12), rand(1..26)),
+  birth: Date.new(rand(1975..1996),rand(1..12), rand(1..26)),
   citizenship: 'Germany 🇩🇪',
   height: rand(160..195),
   position: 'Midfielder',
@@ -915,13 +926,14 @@ puts 'Bruno ...'
 user_bruno = User.create!(
   email: Faker::Internet.email,
   password: 123456,
-  address: Faker::Address.full_address
+  address: Faker::Address.full_address,
+  name: 'Bruno Brunckhorst'
   )
 
 player_bruno = Player.create!(
   name: 'Bruno Brunckhorst',
   image: 'https://res.cloudinary.com/wagon/image/upload/c_fill,g_face,h_200,w_200/v1583184212/o1qfizldws5ocep0xt6c.jpg',
-  birth: Date.new(rand(1975..2003),rand(1..12), rand(1..26)),
+  birth: Date.new(rand(1975..1996),rand(1..12), rand(1..26)),
   citizenship: 'Germany 🇩🇪',
   height: rand(160..195),
   position: 'Midfielder',
@@ -972,13 +984,14 @@ puts 'Andy ...'
 user_andy = User.create!(
   email: Faker::Internet.email,
   password: 123456,
-  address: Faker::Address.full_address
+  address: Faker::Address.full_address,
+  name: 'Andrey Baranov'
   )
 
 player_andy = Player.create!(
   name: 'Andrey Baranov',
   image: 'https://avatars3.githubusercontent.com/u/12513436?v=4',
-  birth: Date.new(rand(1975..2003),rand(1..12), rand(1..26)),
+  birth: Date.new(rand(1975..1996),rand(1..12), rand(1..26)),
   citizenship: 'Russia 🇷🇺',
   height: rand(160..195),
   position: 'Striker',
@@ -1035,13 +1048,14 @@ puts 'Martin ...'
 user_martin = User.create!(
   email: Faker::Internet.email,
   password: 123456,
-  address: Faker::Address.full_address
+  address: Faker::Address.full_address,
+  name: 'Martin De Frutos'
   )
 
 player_martin = Player.create!(
   name: 'Martin De Frutos',
   image: 'https://res.cloudinary.com/wagon/image/upload/c_fill,g_face,h_200,w_200/v1541322516/ssjktftgsdicvy1cersj.jpg',
-  birth: Date.new(rand(1975..2003),rand(1..12), rand(1..26)),
+  birth: Date.new(rand(1975..1996),rand(1..12), rand(1..26)),
   citizenship: 'Spain 🇪🇸',
   height: rand(160..195),
   position: 'Striker',
@@ -1090,13 +1104,14 @@ puts 'Rich ...'
 user_rich = User.create!(
   email: Faker::Internet.email,
   password: 123456,
-  address: Faker::Address.full_address
+  address: Faker::Address.full_address,
+  name: "Rich O'Grady"
   )
 
 player_rich = Player.create!(
   name: "Rich O'Grady",
   image: 'https://res.cloudinary.com/wagon/image/upload/c_fill,g_face,h_200,w_200/v1513088338/lmmcdeakg1co39u2lfzz.jpg',
-  birth: Date.new(rand(1975..2003),rand(1..12), rand(1..26)),
+  birth: Date.new(rand(1975..1996),rand(1..12), rand(1..26)),
   citizenship: 'England 🏴󠁧󠁢󠁥󠁮󠁧󠁿',
   height: rand(160..195),
   position: 'Striker',
@@ -1158,13 +1173,14 @@ puts 'nael ...'
 user_nael = User.create!(
   email: Faker::Internet.email,
   password: 123456,
-  address: Faker::Address.full_address
+  address: Faker::Address.full_address,
+  name: "Nael Najjar"
   )
 
 player_nael = Player.create!(
   name: "Nael Najjar",
   image: 'https://res.cloudinary.com/dgwgea5k3/image/upload/v1591821323/8_egsyeh.jpg',
-  birth: Date.new(rand(1991..2003),rand(1..12), rand(1..26)),
+  birth: Date.new(rand(1991..1996),rand(1..12), rand(1..26)),
   citizenship: 'Germany 🇩🇪󠁧󠁢󠁥󠁮󠁧󠁿',
   height: rand(160..195),
   position: 'Striker',
@@ -1204,13 +1220,14 @@ puts 'tim ...'
 user_tim = User.create!(
   email: Faker::Internet.email,
   password: 123456,
-  address: Faker::Address.full_address
+  address: Faker::Address.full_address,
+  name: "Tim Richter"
   )
 
 player_tim = Player.create!(
   name: "Tim Richter",
   image: 'https://res.cloudinary.com/dgwgea5k3/image/upload/v1591821362/7_mujqu4.jpg',
-  birth: Date.new(rand(1991..2003),rand(1..12), rand(1..26)),
+  birth: Date.new(rand(1991..1996),rand(1..12), rand(1..26)),
   citizenship: 'Germany 🇩🇪󠁧󠁢󠁥󠁮󠁧󠁿',
   height: rand(160..195),
   position: 'Midfielder',
@@ -1250,13 +1267,14 @@ puts 'Alem ...'
 user_alem = User.create!(
   email: Faker::Internet.email,
   password: 123456,
-  address: Faker::Address.full_address
+  address: Faker::Address.full_address,
+  name: "Alem Koljic"
   )
 
 player_alem = Player.create!(
   name: "Alem Koljic",
   image: 'https://res.cloudinary.com/dgwgea5k3/image/upload/v1591821333/6_kb9n0s.jpg',
-  birth: Date.new(rand(1991..2003),rand(1..12), rand(1..26)),
+  birth: Date.new(rand(1991..1996),rand(1..12), rand(1..26)),
   citizenship: 'Slovakia 󠁧󠁢󠁥🇸🇰',
   height: rand(160..195),
   position: 'Midfielder',
@@ -1304,13 +1322,14 @@ puts 'Masse ...'
 user_masse = User.create!(
   email: Faker::Internet.email,
   password: 123456,
-  address: Faker::Address.full_address
+  address: Faker::Address.full_address,
+  name: "Massé Bell Bell"
   )
 
 player_masse = Player.create!(
   name: "Massé Bell Bell",
   image: 'https://res.cloudinary.com/dgwgea5k3/image/upload/v1591821340/5_vtjujz.jpg',
-  birth: Date.new(rand(1991..2003),rand(1..12), rand(1..26)),
+  birth: Date.new(rand(1991..1996),rand(1..12), rand(1..26)),
   citizenship: 'Cameroon 🇨🇲',
   height: rand(160..195),
   position: 'Midfielder',
@@ -1358,13 +1377,14 @@ puts 'Niklas ...'
 user_niklas = User.create!(
   email: Faker::Internet.email,
   password: 123456,
-  address: Faker::Address.full_address
+  address: Faker::Address.full_address,
+  name: "Niklas Künzel"
   )
 
 player_niklas = Player.create!(
   name: "Niklas Künzel",
   image: 'https://res.cloudinary.com/dgwgea5k3/image/upload/v1591821359/2_epggoc.jpg',
-  birth: Date.new(rand(1991..2003),rand(1..12), rand(1..26)),
+  birth: Date.new(rand(1991..1996),rand(1..12), rand(1..26)),
   citizenship: 'Germany 🇩🇪',
   height: rand(160..195),
   position: 'Midfielder',
@@ -1412,13 +1432,14 @@ puts 'pascal ...'
 user_pascal = User.create!(
   email: Faker::Internet.email,
   password: 123456,
-  address: Faker::Address.full_address
+  address: Faker::Address.full_address,
+  name: "Pascal Bielert"
   )
 
 player_pascal = Player.create!(
   name: "Pascal Bielert",
   image: 'https://res.cloudinary.com/dgwgea5k3/image/upload/v1591821349/4_bj2oko.jpg',
-  birth: Date.new(rand(1991..2003),rand(1..12), rand(1..26)),
+  birth: Date.new(rand(1991..1996),rand(1..12), rand(1..26)),
   citizenship: 'Germany 🇩🇪',
   height: rand(160..195),
   position: 'Goalkeeper',
@@ -1466,13 +1487,14 @@ puts 'max ...'
 user_max = User.create!(
   email: Faker::Internet.email,
   password: 123456,
-  address: Faker::Address.full_address
+  address: Faker::Address.full_address,
+  name: "Max Annemüller"
   )
 
 player_max = Player.create!(
   name: "Max Annemüller",
   image: 'https://res.cloudinary.com/dgwgea5k3/image/upload/v1591821355/3_w9jrlf.jpg',
-  birth: Date.new(rand(1991..2003),rand(1..12), rand(1..26)),
+  birth: Date.new(rand(1991..1996),rand(1..12), rand(1..26)),
   citizenship: 'Germany 🇩🇪',
   height: rand(160..195),
   position: 'Goalkeeper',
@@ -1512,13 +1534,14 @@ puts 'Julian ...'
 user_julian = User.create!(
   email: Faker::Internet.email,
   password: 123456,
-  address: Faker::Address.full_address
+  address: Faker::Address.full_address,
+  name: "Julian Bender"
   )
 
 player_julian = Player.create!(
   name: "Julian Bender",
   image: 'https://res.cloudinary.com/dgwgea5k3/image/upload/v1591821357/1_p037xc.jpg',
-  birth: Date.new(rand(1991..2003),rand(1..12), rand(1..26)),
+  birth: Date.new(rand(1991..1996),rand(1..12), rand(1..26)),
   citizenship: 'Germany 🇩🇪',
   height: rand(160..195),
   position: 'Defender',
@@ -1567,7 +1590,8 @@ puts 'Mahir ...'
 user_mahir = User.create!(
   email: "mahir@gmail.com",
   password: 123456,
-  address: Faker::Address.full_address
+  address: Faker::Address.full_address,
+  name: "Mahir Saglik"
   )
 
 player_mahir = Player.create!(
@@ -1629,7 +1653,8 @@ puts 'Stefano ...'
 user_stefano = User.create!(
   email: Faker::Internet.email,
   password: 123456,
-  address: Faker::Address.full_address
+  address: Faker::Address.full_address,
+  name: "Stefano Maier"
   )
 
 player_stefano = Player.create!(
