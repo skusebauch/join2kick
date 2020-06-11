@@ -133,13 +133,27 @@
                       <th><%= image_tag('starting_eleven.svg') %></th>
                     </tr>
                     <tr>
+                      <% out = {} %>
                     <% player.statistics.each do |statistic| %>
+                      <% league = statistic.tournament.league.to_sym %>
+                      <% if out.key?(league) %>
+                        <% out[league] = {game_qty: out[league][:game_qty] + statistic.game_qty,
+                                          goal_qty: out[league][:goal_qty] + statistic.goal_qty,
+                                          starting_eleven_avg_sum: out[league][:starting_eleven_avg_sum] + statistic.starting_eleven_avg,
+                                          starting_eleven_avg_count: out[league][:starting_eleven_avg_count] + 1} %>
+                      <% else %>
+                        <% out[league] = {game_qty: statistic.game_qty,
+                                        goal_qty: statistic.goal_qty,
+                                        starting_eleven_avg_sum: statistic.starting_eleven_avg,
+                                        starting_eleven_avg_count: 1} %>
+                      <% end %>
                       <td class="left"><%= statistic.tournament.league %></td>
                       <td><%= statistic.game_qty %></td>
                       <td><%= statistic.goal_qty %></td>
                       <td><%= statistic.starting_eleven_avg %> %</td>
                     </tr>
                     <% end %>
+                      <%= out %>
                   </table>
                 </div>
               </div>
