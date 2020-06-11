@@ -20,23 +20,34 @@
 
   <% @followers_posts.each do |post| %>
     <div class="posts">
-      <div class="likes">
-        <% pre_like = post.likes.find { |like| like.user_id == current_user.id } %>
-        <% if pre_like %>
-          <%= button_to 'Unlike', post_like_path(post, pre_like), method: :delete %>
-        <% else %>
-          <%= button_to 'Like', post_likes_path(post), method: :post %>
-        <% end %>
+      <div class='header-post'>
+        <div class='user'>
+          <%= image_tag(post.user.player.image, class: 'img-post') %>
+          <span><%= post.user.email %></span>
+        </div>
+        <div class='delete-btn'>
+          <%= link_to '<i class="fas fa-trash-alt"></i>'.html_safe, post_path(post), method: :delete, data: { confirm: "Are you sure?"} %>
+        </div>
       </div>
-      <p><%= post.likes.count %> <%= (post.likes.count) == 1 ? 'Like' : 'Likes'%></p>
-      <%= image_tag(post.user.player.image, class: 'img-post') %>
-      <%= post.user.email %>
-      <%= link_to '<i class="fas fa-trash-alt"></i>'.html_safe, post_path(post), method: :delete, data: { confirm: "Are you sure?"} %>
+      <div class='post-image'>
+        <%= image_tag('https://images.pexels.com/photos/47730/the-ball-stadion-football-the-pitch-47730.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260') %>
+      </div>
       <div class="post">
         <%= post.content %>
         <% if post.photo.attached? %>
           <%= cl_image_tag post.photo %>
         <% end %>
+      </div>
+      <div class="likes">
+      <p><%= post.likes.count %> <%= (post.likes.count) == 1 ? 'Like' : 'Likes'%></p>
+        <div class='like-btn'>
+          <% pre_like = post.likes.find { |like| like.user_id == current_user.id } %>
+            <% if pre_like %>
+              <%= button_to 'Unlike', post_like_path(post, pre_like), method: :delete %>
+            <% else %>
+              <%= button_to 'Like', post_likes_path(post), method: :post %>
+            <% end %>
+        </div>
       </div>
     </div>
   <% end %>
