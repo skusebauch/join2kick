@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_06_10_123923) do
+ActiveRecord::Schema.define(version: 2020_06_11_081724) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -71,6 +71,15 @@ ActiveRecord::Schema.define(version: 2020_06_10_123923) do
     t.index ["follower_id"], name: "index_follows_on_follower_id"
     t.index ["following_id", "follower_id"], name: "index_follows_on_following_id_and_follower_id", unique: true
     t.index ["following_id"], name: "index_follows_on_following_id"
+  end
+
+  create_table "likes", force: :cascade do |t|
+    t.bigint "post_id", null: false
+    t.bigint "user_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["post_id"], name: "index_likes_on_post_id"
+    t.index ["user_id"], name: "index_likes_on_user_id"
   end
 
   create_table "messages", force: :cascade do |t|
@@ -161,6 +170,8 @@ ActiveRecord::Schema.define(version: 2020_06_10_123923) do
   add_foreign_key "clubs", "users"
   add_foreign_key "conversations", "users", column: "receiver_id"
   add_foreign_key "conversations", "users", column: "sender_id"
+  add_foreign_key "likes", "posts"
+  add_foreign_key "likes", "users"
   add_foreign_key "messages", "conversations"
   add_foreign_key "messages", "users"
   add_foreign_key "players", "clubs"
