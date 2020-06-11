@@ -12,7 +12,9 @@
         <% else %>
             <%= cl_image_tag @user_conversation_with.player.image, class: "avatar-team-small-header" %>
         <% end %>
-        <i class="fas fa-circle"></i>
+        <div class="online-check">
+          <i class="fas fa-circle"></i>
+        </div>
         <div class="message-header-info">
           <div class="name-chat">
             <% if @user_conversation_with.player.nil? %>

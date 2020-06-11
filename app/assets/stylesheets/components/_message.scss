@@ -145,13 +145,16 @@
   display: flex;
   justify-content: flex-start;
   margin-bottom: 15px;
+}
+
+.online-check {
   i {
-    position: relative;
-    top: 31px;
-    right: 16px;
-    font-size: 8px;
-    color: green;
-  }
+  position: relative;
+  top: 19px;
+  right: 17px;
+  font-size: 8px;
+  color: green;
+}
 }
 .message-header-info {
   display:flex;
