@@ -16,7 +16,7 @@
             <% end %>
           </div>
           <div class="form-group" placeholder="Write an article...">
-            <input class="form-control" placeholder="Write an article..." name="post[content]" id="post_content">
+            <input class="form-control" placeholder="Write a post..." name="post[content]" id="post_content">
             </input>
           </div>
           <div class="write-article">
@@ -43,6 +43,7 @@
             <%= image_tag(post.player.image, class: 'img-post') %>
           <% end %>
           <span style="font-weight: bold; margin-left: 0px; " ><%= post.user.name %></span>
+          <small style="padding: 0px;"><%= post.created_at.strftime("%b %e at %l:%M%p") if post.created_at? %></small>
         </div>
         <div class='delete-btn'>
           <%= link_to '<i class="fas fa-ellipsis-h"></i>'.html_safe, post_path(post), method: :delete, data: { confirm: "Are you sure?"} %>
