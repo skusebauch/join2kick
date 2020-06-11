@@ -40,18 +40,18 @@
 #td-position-wish {
   font-weight: bold;
   opacity: 0.7;
-  width: 14%;
+  width: 70px;
 }
 
 #td-stats-wish {
   text-align: right;
-  width: 14%;
+  width: 70px;
   padding-right: 15px;
 }
 
 #td-stats-last-wish {
   text-align: right;
-  width: 14%;
+  width: 95px;
   padding-right: 15px;
 }
 
@@ -71,6 +71,7 @@
     color: #499AFF;
     font-size: 16px;
     z-index: 1000;
+    width: 46px;
     &:hover {
       opacity: 0.7;
     }
