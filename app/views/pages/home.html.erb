@@ -4,7 +4,7 @@
       <h1>Welcome to Join2Kick</h1>
       <h2>We bring clubs and <br> players together!</h2>
       <% if user_signed_in? %>
-        <%= link_to 'Get started'.html_safe, posts_path(current_user.club.nil? ? current_user.player.club : current_user.club), class: "button" %>
+        <%= link_to 'Get started'.html_safe, club_path(current_user.club.nil? ? current_user.player.club : current_user.club), class: "button" %>
       <% else %>
         <%= link_to 'Get started'.html_safe, new_user_registration_path, class: "button" %>
       <% end %>

@@ -41,6 +41,8 @@ class PlayersController < ApplicationController
         player.tournaments.include?(tournament)
       end
     end
+    @players = Player.where.not(club: Club.find(1))
+    # raise
     # authorize @players
   end
 

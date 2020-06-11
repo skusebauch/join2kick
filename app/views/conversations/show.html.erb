@@ -1,7 +1,7 @@
 <div class="container">
   <div class="conversation-box">
     <%= render 'conversations/conversations_container' %>
-    <div id="messages-container" data-conversation-id="<%= @conversation.id %>" style="width: 80%">
+    <div id="messages-container" style="width: 80%">
       <div class="message-header">
         <% if @user_conversation_with.player.nil? %>
           <% if @user_conversation_with.photo.attached? %>
@@ -32,7 +32,7 @@
           </div>
         </div>
       </div>
-      <div id="messages-wrapper" class="messages-wrapper">
+      <div id="messages-wrapper" data-conversation-id="<%= @conversation.id %>" class="messages-wrapper">
         <% @messages.each do |message| %>
           <div class="message-container">
             <i class="author">
