@@ -118,6 +118,13 @@
     color: #213757;
     list-style-type: none;
   }
+  i {
+      right: 26px;
+      position: relative;
+      top: 22px;
+      color: green;
+      font-size: 12px;
+  }
 }
 
 
@@ -138,6 +145,13 @@
   display: flex;
   justify-content: flex-start;
   margin-bottom: 15px;
+  i {
+    position: relative;
+    top: 31px;
+    right: 16px;
+    font-size: 8px;
+    color: green;
+  }
 }
 .message-header-info {
   display:flex;
