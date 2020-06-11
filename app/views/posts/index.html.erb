@@ -3,6 +3,7 @@
   <div class="inputform">
     <%= simple_form_for @post do |f| %>
       <%= f.input :content %>
+      <%= f.input :photo, as: :file %>
       <%= f.submit %>
     <% end %>
   </div>
@@ -19,11 +20,21 @@
 
   <% @followers_posts.each do |post| %>
     <div class="posts">
+      <% pre_like = post.likes.find { |like| like.user_id == current_user.id } %>
+      <% if pre_like %>
+        <%= button_to 'Unlike', post_like_path(post, pre_like), method: :delete %>
+      <% else %>
+        <%= button_to 'Like', post_likes_path(post), method: :post %>
+      <% end %>
+      <p><%= post.likes.count %> <%= (post.likes.count) == 1 ? 'Like' : 'Likes'%></p>
       <%= image_tag(post.user.player.image, class: 'img-post') %>
       <%= post.user.email %>
       <%= link_to '<i class="fas fa-trash-alt"></i>'.html_safe, post_path(post), method: :delete, data: { confirm: "Are you sure?"} %>
       <div class="post">
         <%= post.content %>
+        <% if post.photo.attached? %>
+          <%= cl_image_tag post.photo, crop: :fill %>
+        <% end %>
       </div>
     </div>
   <% end %>

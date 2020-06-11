@@ -4,12 +4,16 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
 
+  # Pictures
   has_one_attached :photo
   has_one :player
   has_one :club
 
+  # Posts and likes
   has_many :posts
+  has_many :likes, dependent: :destroy
 
+  # Messages
   has_many :messages, through: :conversations, dependent: :destroy
   has_many :conversations, through: :messages
 

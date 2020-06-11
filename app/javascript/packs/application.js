@@ -24,13 +24,17 @@ import { initFilter } from '../components/filter';
 // active star
 import { initStar } from '../components/star';
 
+import { initAgeRange } from '../components/age_range';
+
 document.addEventListener('turbolinks:load', () => {
   // Call your functions here, e.g:
   // initSelect2();
   initConversationCable();
   initFilter();
   initStar();
+  initAgeRange();
   // initRenderUser();
+
 });
 
 $(document).on('turbolinks:load', function () {

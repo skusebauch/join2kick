@@ -22,11 +22,11 @@
             <% end %>
           </div>
           <div class="star-chat">
-            <%# if @player_is_fav %>
-              <%#= link_to '<i class="fa fa-star" aria-hidden="true"></i>'.html_safe, player_wish_lists_path(@user_conversation_with.player), method: :post, style: "color: #499AFF" %>
-            <%# else %>
-              <%#= link_to '<i class="fa fa-star" aria-hidden="true"></i>'.html_safe, player_wish_lists_path(@user_conversation_with.player), method: :post, style: "color: rgba(0, 0, 0, 0.2)" %>
-            <%# end %>
+            <% if @player_is_fav %>
+              <%= link_to '<i class="fa fa-star" aria-hidden="true"></i>'.html_safe, player_wish_lists_path(@user_conversation_with.player, messages_id: @user_conversation_with.id, from_messages_show: true), method: :post, style: "color: #499AFF" %>
+            <% else %>
+              <%= link_to '<i class="fa fa-star" aria-hidden="true"></i>'.html_safe, player_wish_lists_path(@user_conversation_with.player, messages_id: @user_conversation_with.id, from_messages_show: true), method: :post, style: "color: rgba(0, 0, 0, 0.2)" %>
+            <% end %>
           </div>
         </div>
       </div>
