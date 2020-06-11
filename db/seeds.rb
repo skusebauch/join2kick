@@ -226,7 +226,8 @@ puts 'Sarah ...'
 user_sarah = User.create!(
   email: "sarah@test.de",
   password: 123456,
-  address: Faker::Address.full_address
+  address: Faker::Address.full_address,
+  name: 'Sarah Lafer'
   )
 
 player_sarah = Player.create!(
@@ -289,7 +290,8 @@ puts 'Lino ...'
 user_lino = User.create!(
   email: Faker::Internet.email,
   password: 123456,
-  address: Faker::Address.full_address
+  address: Faker::Address.full_address,
+  name: 'Lino Maurer'
   )
 
 player_lino = Player.create!(
@@ -338,7 +340,8 @@ puts 'Prateek ...'
 user_prateek = User.create!(
   email: Faker::Internet.email,
   password: 123456,
-  address: Faker::Address.full_address
+  address: Faker::Address.full_address,
+  name: 'Prateek Mahindra'
   )
 
 player_prateek = Player.create!(
@@ -393,7 +396,8 @@ puts 'Amelie ...'
 user_amelie = User.create!(
   email: Faker::Internet.email,
   password: 123456,
-  address: Faker::Address.full_address
+  address: Faker::Address.full_address,
+  name: 'Amélie Boudier'
   )
 
 player_amelie = Player.create!(
@@ -433,7 +437,8 @@ puts 'Olivier ...'
 user_olivier = User.create!(
   email: Faker::Internet.email,
   password: 123456,
-  address: Faker::Address.full_address
+  address: Faker::Address.full_address,
+  name: 'Olivier Girardot'
   )
 
 player_olivier = Player.create!(
@@ -543,7 +548,8 @@ puts 'Nora ...'
 user_nora = User.create!(
   email: Faker::Internet.email,
   password: 123456,
-  address: Faker::Address.full_address
+  address: Faker::Address.full_address,
+  name: 'Nora Scheuch'
   )
 
 player_nora = Player.create!(
@@ -600,7 +606,8 @@ puts 'Arbi ...'
 user_arbi = User.create!(
   email: Faker::Internet.email,
   password: 123456,
-  address: Faker::Address.full_address
+  address: Faker::Address.full_address,
+  name: 'Arbi Velaj'
   )
 
 player_arbi = Player.create!(
@@ -663,7 +670,8 @@ puts 'Alex ...'
 user_alex = User.create!(
   email: Faker::Internet.email,
   password: 123456,
-  address: Faker::Address.full_address
+  address: Faker::Address.full_address,
+  name: 'Alexander Dubovoy'
   )
 
 player_alex = Player.create!(
@@ -726,7 +734,8 @@ puts 'Claire ...'
 user_claire = User.create!(
   email: Faker::Internet.email,
   password: 123456,
-  address: Faker::Address.full_address
+  address: Faker::Address.full_address,
+  name: 'Claire Demont'
   )
 
 player_claire = Player.create!(
@@ -789,7 +798,8 @@ puts 'Zuza ...'
 user_zuza = User.create!(
   email: Faker::Internet.email,
   password: 123456,
-  address: Faker::Address.full_address
+  address: Faker::Address.full_address,
+  name: 'Zuza Żuber'
   )
 
 player_zuza = Player.create!(
@@ -852,7 +862,8 @@ puts 'Anthony ...'
 user_anthony = User.create!(
   email: Faker::Internet.email,
   password: 123456,
-  address: Faker::Address.full_address
+  address: Faker::Address.full_address,
+  name: 'Anthony Bandolon'
   )
 
 player_anthony = Player.create!(
@@ -915,7 +926,8 @@ puts 'Bruno ...'
 user_bruno = User.create!(
   email: Faker::Internet.email,
   password: 123456,
-  address: Faker::Address.full_address
+  address: Faker::Address.full_address,
+  name: 'Bruno Brunckhorst'
   )
 
 player_bruno = Player.create!(
@@ -972,7 +984,8 @@ puts 'Andy ...'
 user_andy = User.create!(
   email: Faker::Internet.email,
   password: 123456,
-  address: Faker::Address.full_address
+  address: Faker::Address.full_address,
+  name: 'Andrey Baranov'
   )
 
 player_andy = Player.create!(
@@ -1035,7 +1048,8 @@ puts 'Martin ...'
 user_martin = User.create!(
   email: Faker::Internet.email,
   password: 123456,
-  address: Faker::Address.full_address
+  address: Faker::Address.full_address,
+  name: 'Martin De Frutos'
   )
 
 player_martin = Player.create!(
@@ -1090,7 +1104,8 @@ puts 'Rich ...'
 user_rich = User.create!(
   email: Faker::Internet.email,
   password: 123456,
-  address: Faker::Address.full_address
+  address: Faker::Address.full_address,
+  name: "Rich O'Grady"
   )
 
 player_rich = Player.create!(
@@ -1158,7 +1173,8 @@ puts 'nael ...'
 user_nael = User.create!(
   email: Faker::Internet.email,
   password: 123456,
-  address: Faker::Address.full_address
+  address: Faker::Address.full_address,
+  name: "Nael Najjar"
   )
 
 player_nael = Player.create!(
@@ -1204,7 +1220,8 @@ puts 'tim ...'
 user_tim = User.create!(
   email: Faker::Internet.email,
   password: 123456,
-  address: Faker::Address.full_address
+  address: Faker::Address.full_address,
+  name: "Tim Richter"
   )
 
 player_tim = Player.create!(
@@ -1250,7 +1267,8 @@ puts 'Alem ...'
 user_alem = User.create!(
   email: Faker::Internet.email,
   password: 123456,
-  address: Faker::Address.full_address
+  address: Faker::Address.full_address,
+  name: "Alem Koljic"
   )
 
 player_alem = Player.create!(
@@ -1304,7 +1322,8 @@ puts 'Masse ...'
 user_masse = User.create!(
   email: Faker::Internet.email,
   password: 123456,
-  address: Faker::Address.full_address
+  address: Faker::Address.full_address,
+  name: "Massé Bell Bell"
   )
 
 player_masse = Player.create!(
@@ -1358,7 +1377,8 @@ puts 'Niklas ...'
 user_niklas = User.create!(
   email: Faker::Internet.email,
   password: 123456,
-  address: Faker::Address.full_address
+  address: Faker::Address.full_address,
+  name: "Niklas Künzel"
   )
 
 player_niklas = Player.create!(
@@ -1412,7 +1432,8 @@ puts 'pascal ...'
 user_pascal = User.create!(
   email: Faker::Internet.email,
   password: 123456,
-  address: Faker::Address.full_address
+  address: Faker::Address.full_address,
+  name: "Pascal Bielert"
   )
 
 player_pascal = Player.create!(
@@ -1466,7 +1487,8 @@ puts 'max ...'
 user_max = User.create!(
   email: Faker::Internet.email,
   password: 123456,
-  address: Faker::Address.full_address
+  address: Faker::Address.full_address,
+  name: "Max Annemüller"
   )
 
 player_max = Player.create!(
@@ -1512,7 +1534,8 @@ puts 'Julian ...'
 user_julian = User.create!(
   email: Faker::Internet.email,
   password: 123456,
-  address: Faker::Address.full_address
+  address: Faker::Address.full_address,
+  name: "Julian Bender"
   )
 
 player_julian = Player.create!(
@@ -1567,7 +1590,8 @@ puts 'Mahir ...'
 user_mahir = User.create!(
   email: "mahir@gmail.com",
   password: 123456,
-  address: Faker::Address.full_address
+  address: Faker::Address.full_address,
+  name: "Mahir Saglik"
   )
 
 player_mahir = Player.create!(
@@ -1629,7 +1653,8 @@ puts 'Stefano ...'
 user_stefano = User.create!(
   email: Faker::Internet.email,
   password: 123456,
-  address: Faker::Address.full_address
+  address: Faker::Address.full_address,
+  name: "Stefano Maier"
   )
 
 player_stefano = Player.create!(
