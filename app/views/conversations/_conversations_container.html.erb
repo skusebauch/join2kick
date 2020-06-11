@@ -17,6 +17,7 @@
         <% else %>
             <%= cl_image_tag user_conversation_with.player.image, class: "avatar-team-small" %>
         <% end %>
+        <i class="fas fa-circle"></i>
         <%= link_to user_conversation_with.player.nil? ? user_conversation_with.name : user_conversation_with.player.name , conversation_path(user_conversation_with) %>
       </div>
        <%#= link_to chatroom.name, '#', :onclick => 'initChatroomCable(4)' %>
