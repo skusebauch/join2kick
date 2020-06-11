@@ -1,21 +1,65 @@
 <div class="container">
-  <h3>Your Newsfeed</h3>
   <div class="inputform">
     <%= simple_form_for @post do |f| %>
-      <%= f.input :content %>
-      <%= f.input :photo, as: :file %>
-      <%= f.submit %>
+      <%#= f.input :content %>
+      <div class="header-posts-search">
+        <div class="write-bar">
+          <div class="header-photo-news">
+            <% if current_user.player.nil? %>
+              <% if current_user.photo.attached? %>
+                <%= image_tag photo.key %>
+              <% else %>
+                <%= image_tag "https://res.cloudinary.com/wagon/image/upload/c_fill,g_face,h_200,w_200/v1525092814/cq5zoucfrobsomypnwzy.jpg", class: "avatar-team-small" %>
+              <% end %>
+            <% else %>
+              <%= image_tag(player.image, class: 'img-post') %>
+            <% end %>
+          </div>
+          <div class="form-group" placeholder="Write an article...">
+            <input class="form-control" placeholder="Write a post..." name="post[content]" id="post_content">
+            </input>
+          </div>
+          <div class="write-article">
+            <i class="far fa-edit"></i>
+          </div>
+        </div>
+      </div>
+      <%#= f.input :photo, as: :file %>
+      <%#= f.submit %>
     <% end %>
   </div>
 
   <% @current_user_posts.each do |post| %>
-  <div class="o-posts">
-    <%= post.user.email %>
-    <%= link_to '<i class="fas fa-trash-alt"></i>'.html_safe, post_path(post), method: :delete, data: { confirm: "Are you sure?"} %>
-    <div class="o-post">
-    <%= post.content %>
+    <div class="posts">
+      <div class="header-post">
+        <div class="user">
+          <% if current_user.player.nil? %>
+            <% if post.user.photo.attached? %>
+              <%= image_tag post.photo.key %>
+            <% else %>
+              <%= image_tag "https://res.cloudinary.com/wagon/image/upload/c_fill,g_face,h_200,w_200/v1525092814/cq5zoucfrobsomypnwzy.jpg", class: "avatar-team-small" %>
+            <% end %>
+          <% else %>
+            <%= image_tag(post.player.image, class: 'img-post') %>
+          <% end %>
+          <span style="font-weight: bold; margin-left: 0px; " ><%= post.user.name %></span>
+          <small style="padding: 0px;"><%= post.created_at.strftime("%b %e at %l:%M%p") if post.created_at? %></small>
+        </div>
+        <div class='delete-btn'>
+          <%= link_to '<i class="fas fa-ellipsis-h"></i>'.html_safe, post_path(post), method: :delete, data: { confirm: "Are you sure?"} %>
+        </div>
+      </div>
+      <div class=post>
+        <div class="post-photo">
+          <% if post.photo.attached? %>
+            <%= cl_image_tag post.photo.key, class:'post-picture' %>
+          <% end %>
+        </div>
+        <div class="post-text">
+          <%= post.content %>
+        </div>
+      </div>
     </div>
-  </div>
   <% end %>
 
   <% @followers_posts.each do |post| %>
@@ -23,14 +67,8 @@
       <div class='header-post'>
         <div class='user'>
           <%= image_tag(post.user.player.image, class: 'img-post') %>
-          <span><%= post.user.email %></span>
+          <span style="font-weight: bold;"><%= post.user.name %></span>
         </div>
-        <div class='delete-btn'>
-          <%= link_to '<i class="fas fa-trash-alt"></i>'.html_safe, post_path(post), method: :delete, data: { confirm: "Are you sure?"} %>
-        </div>
-      </div>
-      <div class='post-image'>
-        <%= image_tag('https://images.pexels.com/photos/47730/the-ball-stadion-football-the-pitch-47730.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260') %>
       </div>
       <div class="post">
         <%= post.content %>
@@ -43,9 +81,9 @@
         <div class='like-btn'>
           <% pre_like = post.likes.find { |like| like.user_id == current_user.id } %>
             <% if pre_like %>
-              <%= button_to 'Unlike', post_like_path(post, pre_like), method: :delete %>
+              <%= link_to '<i class="fas fa-thumbs-up"></i>'.html_safe, post_like_path(post, pre_like), method: :delete %>
             <% else %>
-              <%= button_to 'Like', post_likes_path(post), method: :post %>
+              <%= link_to '<i class="far fa-thumbs-up"></i>'.html_safe, post_likes_path(post), method: :post %>
             <% end %>
         </div>
       </div>
