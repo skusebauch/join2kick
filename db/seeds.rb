@@ -233,7 +233,7 @@ user_sarah = User.create!(
 player_sarah = Player.create!(
   name: 'Sarah Lafer',
   image: 'https://res.cloudinary.com/wagon/image/upload/c_fill,g_face,h_200,w_200/v1556048247/ymehhwjerbyrghdubep5.jpg',
-  birth: Date.new(rand(1975..1996),rand(1..12), rand(1..26)),
+  birth: Date.new(rand(1985..1996),rand(1..12), rand(1..26)),
   citizenship: 'Austria 🇦🇹',
   height: rand(160..195),
   position: 'Goalkeeper',
@@ -297,7 +297,7 @@ user_lino = User.create!(
 player_lino = Player.create!(
   name: 'Lino Maurer',
   image: 'https://avatars0.githubusercontent.com/u/59058786?v=4',
-  birth: Date.new(rand(1975..1996),rand(1..12), rand(1..26)),
+  birth: Date.new(rand(1985..1996),rand(1..12), rand(1..26)),
   citizenship: 'Germany 🇩🇪',
   height: rand(160..195),
   position: 'Goalkeeper',
@@ -347,7 +347,7 @@ user_prateek = User.create!(
 player_prateek = Player.create!(
   name: 'Prateek Mahindra',
   image: 'https://avatars1.githubusercontent.com/u/59365013?v=4',
-  birth: Date.new(rand(1975..1996),rand(1..12), rand(1..26)),
+  birth: Date.new(rand(1985..1996),rand(1..12), rand(1..26)),
   citizenship: 'India 🇮🇳',
   height: rand(160..195),
   position: 'Defender',
@@ -403,7 +403,7 @@ user_amelie = User.create!(
 player_amelie = Player.create!(
   name: 'Amélie Boudier',
   image: 'https://avatars2.githubusercontent.com/u/42960360?v=4',
-  birth: Date.new(rand(1975..1996),rand(1..12), rand(1..26)),
+  birth: Date.new(rand(1985..1996),rand(1..12), rand(1..26)),
   citizenship: 'France 🇫🇷',
   height: rand(160..195),
   position: 'Defender',
@@ -444,7 +444,7 @@ user_olivier = User.create!(
 player_olivier = Player.create!(
   name: 'Olivier Girardot',
   image: 'https://avatars2.githubusercontent.com/u/32952612?v=4',
-  birth: Date.new(rand(1975..1996),rand(1..12), rand(1..26)),
+  birth: Date.new(rand(1985..1996),rand(1..12), rand(1..26)),
   citizenship: 'France 🇫🇷',
   height: rand(160..195),
   position: 'Defender',
@@ -555,7 +555,7 @@ user_nora = User.create!(
 player_nora = Player.create!(
   name: 'Nora Scheuch',
   image: 'https://avatars1.githubusercontent.com/u/29482385?v=4',
-  birth: Date.new(rand(1975..1996),rand(1..12), rand(1..26)),
+  birth: Date.new(rand(1985..1996),rand(1..12), rand(1..26)),
   citizenship: 'Germany 🇩🇪',
   height: rand(160..195),
   position: 'Defender',
@@ -613,7 +613,7 @@ user_arbi = User.create!(
 player_arbi = Player.create!(
   name: 'Arbi Velaj',
   image: 'https://avatars2.githubusercontent.com/u/26385065?v=4',
-  birth: Date.new(rand(1975..1996),rand(1..12), rand(1..26)),
+  birth: Date.new(rand(1985..1996),rand(1..12), rand(1..26)),
   citizenship: 'Italy 🇮🇹',
   height: rand(160..195),
   position: 'Midfielder',
@@ -677,7 +677,7 @@ user_alex = User.create!(
 player_alex = Player.create!(
   name: 'Alexander Dubovoy',
   image: 'https://res.cloudinary.com/wagon/image/upload/c_fill,g_face,h_200,w_200/v1582630583/ky7b8bb3ogcx0lpdgkvd.jpg',
-  birth: Date.new(rand(1975..1996),rand(1..12), rand(1..26)),
+  birth: Date.new(rand(1985..1996),rand(1..12), rand(1..26)),
   citizenship: 'United States 🇺🇸',
   height: rand(160..195),
   position: 'Midfielder',
@@ -741,7 +741,7 @@ user_claire = User.create!(
 player_claire = Player.create!(
   name: 'Claire Demont',
   image: 'https://avatars3.githubusercontent.com/u/45850166?v=4',
-  birth: Date.new(rand(1975..1996),rand(1..12), rand(1..26)),
+  birth: Date.new(rand(1985..1996),rand(1..12), rand(1..26)),
   citizenship: 'France 🇫🇷',
   height: rand(160..195),
   position: 'Midfielder',
@@ -805,7 +805,7 @@ user_zuza = User.create!(
 player_zuza = Player.create!(
   name: 'Zuza Żuber',
   image: 'https://res.cloudinary.com/wagon/image/upload/c_fill,g_face,h_200,w_200/v1570609465/a8kmugjdqlihecdk9cz8.jpg',
-  birth: Date.new(rand(1975..1996),rand(1..12), rand(1..26)),
+  birth: Date.new(rand(1985..1996),rand(1..12), rand(1..26)),
   citizenship: 'Poland 🇵🇱',
   height: rand(160..195),
   position: 'Midfielder',
@@ -869,7 +869,7 @@ user_anthony = User.create!(
 player_anthony = Player.create!(
   name: 'Anthony Bandolon',
   image: 'https://res.cloudinary.com/wagon/image/upload/c_fill,g_face,h_200,w_200/v1584532796/ohnfndhefemkjea708ag.jpg',
-  birth: Date.new(rand(1975..1996),rand(1..12), rand(1..26)),
+  birth: Date.new(rand(1985..1996),rand(1..12), rand(1..26)),
   citizenship: 'Germany 🇩🇪',
   height: rand(160..195),
   position: 'Midfielder',
@@ -933,7 +933,7 @@ user_bruno = User.create!(
 player_bruno = Player.create!(
   name: 'Bruno Brunckhorst',
   image: 'https://res.cloudinary.com/wagon/image/upload/c_fill,g_face,h_200,w_200/v1583184212/o1qfizldws5ocep0xt6c.jpg',
-  birth: Date.new(rand(1975..1996),rand(1..12), rand(1..26)),
+  birth: Date.new(rand(1985..1996),rand(1..12), rand(1..26)),
   citizenship: 'Germany 🇩🇪',
   height: rand(160..195),
   position: 'Midfielder',
@@ -991,7 +991,7 @@ user_andy = User.create!(
 player_andy = Player.create!(
   name: 'Andrey Baranov',
   image: 'https://avatars3.githubusercontent.com/u/12513436?v=4',
-  birth: Date.new(rand(1975..1996),rand(1..12), rand(1..26)),
+  birth: Date.new(rand(1985..1996),rand(1..12), rand(1..26)),
   citizenship: 'Russia 🇷🇺',
   height: rand(160..195),
   position: 'Striker',
@@ -1055,7 +1055,7 @@ user_martin = User.create!(
 player_martin = Player.create!(
   name: 'Martin De Frutos',
   image: 'https://res.cloudinary.com/wagon/image/upload/c_fill,g_face,h_200,w_200/v1541322516/ssjktftgsdicvy1cersj.jpg',
-  birth: Date.new(rand(1975..1996),rand(1..12), rand(1..26)),
+  birth: Date.new(rand(1985..1996),rand(1..12), rand(1..26)),
   citizenship: 'Spain 🇪🇸',
   height: rand(160..195),
   position: 'Striker',
@@ -1111,7 +1111,7 @@ user_rich = User.create!(
 player_rich = Player.create!(
   name: "Rich O'Grady",
   image: 'https://res.cloudinary.com/wagon/image/upload/c_fill,g_face,h_200,w_200/v1513088338/lmmcdeakg1co39u2lfzz.jpg',
-  birth: Date.new(rand(1975..1996),rand(1..12), rand(1..26)),
+  birth: Date.new(rand(1985..1996),rand(1..12), rand(1..26)),
   citizenship: 'England 🏴󠁧󠁢󠁥󠁮󠁧󠁿',
   height: rand(160..195),
   position: 'Striker',
@@ -1180,7 +1180,7 @@ user_nael = User.create!(
 player_nael = Player.create!(
   name: "Nael Najjar",
   image: 'https://res.cloudinary.com/dgwgea5k3/image/upload/v1591821323/8_egsyeh.jpg',
-  birth: Date.new(rand(1991..1996),rand(1..12), rand(1..26)),
+  birth: Date.new(rand(1985..1996),rand(1..12), rand(1..26)),
   citizenship: 'Germany 🇩🇪󠁧󠁢󠁥󠁮󠁧󠁿',
   height: rand(160..195),
   position: 'Striker',
@@ -1227,7 +1227,7 @@ user_tim = User.create!(
 player_tim = Player.create!(
   name: "Tim Richter",
   image: 'https://res.cloudinary.com/dgwgea5k3/image/upload/v1591821362/7_mujqu4.jpg',
-  birth: Date.new(rand(1991..1996),rand(1..12), rand(1..26)),
+  birth: Date.new(rand(1985..1996),rand(1..12), rand(1..26)),
   citizenship: 'Germany 🇩🇪󠁧󠁢󠁥󠁮󠁧󠁿',
   height: rand(160..195),
   position: 'Midfielder',
@@ -1274,7 +1274,7 @@ user_alem = User.create!(
 player_alem = Player.create!(
   name: "Alem Koljic",
   image: 'https://res.cloudinary.com/dgwgea5k3/image/upload/v1591821333/6_kb9n0s.jpg',
-  birth: Date.new(rand(1991..1996),rand(1..12), rand(1..26)),
+  birth: Date.new(rand(1985..1996),rand(1..12), rand(1..26)),
   citizenship: 'Slovakia 󠁧󠁢󠁥🇸🇰',
   height: rand(160..195),
   position: 'Midfielder',
@@ -1329,7 +1329,7 @@ user_masse = User.create!(
 player_masse = Player.create!(
   name: "Massé Bell Bell",
   image: 'https://res.cloudinary.com/dgwgea5k3/image/upload/v1591821340/5_vtjujz.jpg',
-  birth: Date.new(rand(1991..1996),rand(1..12), rand(1..26)),
+  birth: Date.new(rand(1985..1996),rand(1..12), rand(1..26)),
   citizenship: 'Cameroon 🇨🇲',
   height: rand(160..195),
   position: 'Midfielder',
@@ -1384,7 +1384,7 @@ user_niklas = User.create!(
 player_niklas = Player.create!(
   name: "Niklas Künzel",
   image: 'https://res.cloudinary.com/dgwgea5k3/image/upload/v1591821359/2_epggoc.jpg',
-  birth: Date.new(rand(1991..1996),rand(1..12), rand(1..26)),
+  birth: Date.new(rand(1985..1996),rand(1..12), rand(1..26)),
   citizenship: 'Germany 🇩🇪',
   height: rand(160..195),
   position: 'Midfielder',
@@ -1439,7 +1439,7 @@ user_pascal = User.create!(
 player_pascal = Player.create!(
   name: "Pascal Bielert",
   image: 'https://res.cloudinary.com/dgwgea5k3/image/upload/v1591821349/4_bj2oko.jpg',
-  birth: Date.new(rand(1991..1996),rand(1..12), rand(1..26)),
+  birth: Date.new(rand(1985..1996),rand(1..12), rand(1..26)),
   citizenship: 'Germany 🇩🇪',
   height: rand(160..195),
   position: 'Goalkeeper',
@@ -1494,7 +1494,7 @@ user_max = User.create!(
 player_max = Player.create!(
   name: "Max Annemüller",
   image: 'https://res.cloudinary.com/dgwgea5k3/image/upload/v1591821355/3_w9jrlf.jpg',
-  birth: Date.new(rand(1991..1996),rand(1..12), rand(1..26)),
+  birth: Date.new(rand(1985..1996),rand(1..12), rand(1..26)),
   citizenship: 'Germany 🇩🇪',
   height: rand(160..195),
   position: 'Goalkeeper',
@@ -1541,7 +1541,7 @@ user_julian = User.create!(
 player_julian = Player.create!(
   name: "Julian Bender",
   image: 'https://res.cloudinary.com/dgwgea5k3/image/upload/v1591821357/1_p037xc.jpg',
-  birth: Date.new(rand(1991..1996),rand(1..12), rand(1..26)),
+  birth: Date.new(rand(1985..1996),rand(1..12), rand(1..26)),
   citizenship: 'Germany 🇩🇪',
   height: rand(160..195),
   position: 'Defender',
