@@ -30,9 +30,9 @@
           </div>
         </div>
       </div>
-      <div class="messages-wrapper">
+      <div id="messages-wrapper" class="messages-wrapper">
         <% @messages.each do |message| %>
-          <div class="message-container" id="message-<%= message.id %>">
+          <div class="message-container">
             <i class="author">
               <span><%= message.user.player.nil? ? message.user.name : message.user.player.name %></span>
               <small><%= message.created_at.strftime("%a %b %e at %l:%M%p") if message.created_at? %></small>
@@ -44,9 +44,7 @@
 
       <div class="messages-form-container" style="display: flex; justify-content: center;">
         <div>
-          <%#= simple_form_for [ @conversation, @message_new ], remote: true do |f| %>
           <%= simple_form_for [ @conversation, @message_new ], url: conversation_messages_path(@conversation), remote: true do |f| %>
-          <%#= f.input :content, label: false, class: "message-input"; placeholder: "Message ##{@user_conversation_with.player.nil? ? @user_conversation_with.email : @user_conversation_with.player.name}" %>
           <div class="message-send">
             <div class="form-group text optional message_content">
               <textarea class="form-control text optional" placeholder='Write a message...' name="message[content]" id="message_content"></textarea>

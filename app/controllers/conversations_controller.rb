@@ -15,7 +15,6 @@ class ConversationsController < ApplicationController
     else
       @conversation = @conversation.first
       @messages = @conversation.messages # load all messages of selected conversation
-      # @messages = Message.where(conversation_id: params[:id]) # load all messages of selected conversation
       policy_scope(@messages)
     end
     authorize(@conversation)
