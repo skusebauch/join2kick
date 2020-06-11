@@ -20,12 +20,14 @@
 
   <% @followers_posts.each do |post| %>
     <div class="posts">
-      <% pre_like = post.likes.find { |like| like.user_id == current_user.id } %>
-      <% if pre_like %>
-        <%= button_to 'Unlike', post_like_path(post, pre_like), method: :delete %>
-      <% else %>
-        <%= button_to 'Like', post_likes_path(post), method: :post %>
-      <% end %>
+      <div class="likes">
+        <% pre_like = post.likes.find { |like| like.user_id == current_user.id } %>
+        <% if pre_like %>
+          <%= button_to 'Unlike', post_like_path(post, pre_like), method: :delete %>
+        <% else %>
+          <%= button_to 'Like', post_likes_path(post), method: :post %>
+        <% end %>
+      </div>
       <p><%= post.likes.count %> <%= (post.likes.count) == 1 ? 'Like' : 'Likes'%></p>
       <%= image_tag(post.user.player.image, class: 'img-post') %>
       <%= post.user.email %>
@@ -33,10 +35,9 @@
       <div class="post">
         <%= post.content %>
         <% if post.photo.attached? %>
-          <%= cl_image_tag post.photo, crop: :fill %>
+          <%= cl_image_tag post.photo %>
         <% end %>
       </div>
     </div>
   <% end %>
 </div>
-
