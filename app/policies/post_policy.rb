@@ -5,6 +5,10 @@ class PostPolicy < ApplicationPolicy
     end
   end
 
+  def destroy?
+    true
+  end
+
   def index?
     true
   end

@@ -6,7 +6,7 @@
     <div class="player-profile-info">
       <h2><%= @player.name %>, (<%= @player.age(@player.birth) %>)
         <% if @player_is_fav %>
-          <%= link_to '<i class="fa fa-star" aria-hidden="true"></i>'.html_safe, player_wish_lists_path(@player), method: :post, style: "color: rgba(0, 0, 0, 0.8)" %>
+          <%= link_to '<i class="fa fa-star" aria-hidden="true"></i>'.html_safe, player_wish_lists_path(@player), method: :post, style: "color: #499AFF" %>
         <% else %>
           <%= link_to '<i class="fa fa-star" aria-hidden="true"></i>'.html_safe, player_wish_lists_path(@player), method: :post, style: "color: rgba(0, 0, 0, 0.2)" %>
          <% end %>
@@ -21,7 +21,7 @@
 
     <div class="player-profile-details">
       <div class="player-profile-detail">
-        <p><strong>Date of birth</strong></p>
+        <p><strong>Clubname</strong></p>
         <p><%= @player.club.name %></p>
       </div>
       <div class="player-profile-detail">

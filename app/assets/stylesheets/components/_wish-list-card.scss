@@ -25,7 +25,7 @@
 // }
 
 .active-star {
-  color: #213757;
+  color: #499aff;
 }
 
 #wishlist-header {
@@ -68,11 +68,11 @@
   text-align: center;
   i {
     padding: 5px;
-    color: #192a42;
+    color: #499AFF;
     font-size: 16px;
     z-index: 1000;
     &:hover {
-      opacity: 0.6;
+      opacity: 0.7;
     }
   }
 }

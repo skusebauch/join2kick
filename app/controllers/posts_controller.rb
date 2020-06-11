@@ -8,6 +8,13 @@ class PostsController < ApplicationController
     @current_user_posts = current_user.posts
   end
 
+  def destroy
+    @post = Post.find(params[:id])
+    @post.destroy
+    redirect_to posts_path
+    authorize @post
+  end
+
   def create
     @post = Post.new(post_params)
     @post.user = current_user

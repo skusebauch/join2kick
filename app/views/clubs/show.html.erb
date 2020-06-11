@@ -9,7 +9,7 @@
             <% if @club.user.photo.attached? %>
               <%= cl_image_tag @club.user.photo.key , height: 100, width: 100, crop: :fill, class: "avatar-team" %>
             <% else %>
-              <%= image_tag "https://res.cloudinary.com/dgwgea5k3/image/upload/v1591359130/Unbenanndsfst-1_rukblo.jpg", class: "avatar-team" %>
+              <%= image_tag "https://res.cloudinary.com/wagon/image/upload/c_fill,g_face,h_200,w_200/v1525092814/cq5zoucfrobsomypnwzy.jpg", class: "avatar-team" %>
             <% end %>
            <%= link_to '<i class="far fa-edit"></i>'.html_safe, edit_user_registration_path %>
           </div>
@@ -51,9 +51,9 @@
           <h5 id="wishlist-header"> Wishlist </h5>
           <table class="wish-player-overview">
             <tr class="icons">
-              <th id="td-stats-wish"><%= image_tag('game_qty.svg') %> </th>
-              <th id="td-stats-wish"><%= image_tag('goals.svg') %></th>
-              <th id="td-stats-last-wish"><%= image_tag('starting_eleven.svg') %></th>
+              <th id="td-stats-wish"> </th>
+              <th id="td-stats-wish"></th>
+              <th id="td-stats-last-wish"></th>
               <th> </th>
             </tr>
             <% @wish_lists.last(5).each do |wish_list| %>
@@ -65,9 +65,9 @@
                   <td id="td-position-wish"> <%= wish_list.player.position %></td>
                   <% wish_list.player.statistics.each do |statistic| %>
                     <% if statistic.tournament.season_year == "2019/2020" && statistic.tournament.tournament_type == "championship" %>
-                      <td id="td-stats-wish"> <%= statistic.game_qty %> </td>
-                      <td id="td-stats-wish"> <%= statistic.goal_qty %> </td>
-                      <td id="td-stats-last-wish"> <%= statistic.starting_eleven_avg %> % </td>
+                      <td id="td-stats-wish"> <%= statistic.game_qty %> <%= image_tag('game_qty.svg') %> </td>
+                      <td id="td-stats-wish"> <%= statistic.goal_qty %> <%= image_tag('goals.svg') %> </td>
+                      <td id="td-stats-last-wish"> <%= statistic.starting_eleven_avg %> % <%= image_tag('starting_eleven.svg') %> </td>
                     <% end %>
                   <% end %>
                   <td id="delete"><%= link_to '<i class="fas fa-trash-alt"></i>'.html_safe, wish_list_path(wish_list), method: :delete, data: { confirm: "Are you sure?"} %></td>
