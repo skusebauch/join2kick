@@ -24,8 +24,8 @@
           </div>
         </div>
       </div>
-      <%#= f.input :photo, as: :file --- for demo %>
-      <%#= f.submit %>
+      <%= f.input :photo, as: :file %>
+      <%= f.submit %>
     <% end %>
   </div>
 
@@ -71,11 +71,15 @@
           <small style="padding: 0px;"><%= post.created_at.strftime("%b %e at %l:%M%p") if post.created_at? %></small>
         </div>
       </div>
-      <div class="post-photo" id="post-<%= post.id %>">
-        <% if post.photo.attached? %>
-          <%= cl_image_tag post.photo.key, class:'post-picture' %>
-        <%= post.content %>
-        <% end %>
+      <div class=post>
+        <div class="post-photo">
+          <% if post.photo.attached? %>
+            <%= cl_image_tag post.photo.key, class:'post-picture' %>
+          <% end %>
+          <div class="post-text">
+            <%= post.content %>
+          </div>
+        </div>
       </div>
       <div class="likes">
       <p><%= post.likes.count %> <%= (post.likes.count) == 1 ? 'Like' : 'Likes'%></p>
