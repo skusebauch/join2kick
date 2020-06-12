@@ -133,41 +133,33 @@
                       <th><%= image_tag('goals.svg') %></th>
                       <th><%= image_tag('starting_eleven.svg') %></th>
                     </tr>
-                    <tr>
                       <% out = {} %>
-                    <% player.statistics.each do |statistic| %>
-                      <% league = statistic.tournament.league.to_sym %>
-                      <% if out.key?(league) %>
-                        <% game_qty = out[league][:game_qty] + statistic.game_qty%>
-                        <% goal_qty = out[league][:goal_qty] + statistic.goal_qty%>
-                        <% starting_eleven_avg_sum = out[league][:starting_eleven_avg_sum] + statistic.starting_eleven_avg%>
-                        <% starting_eleven_avg_count = out[league][:starting_eleven_avg_count] + 1%>
-                        <% out[league] = { game_qty: game_qty,
-                                         goal_qty: goal_qty,
-                                         starting_eleven_avg_sum: starting_eleven_avg_sum,
-                                         starting_eleven_avg_count: starting_eleven_avg_count } %>
-
-                      <% else %>
-                        <% out[league] = { game_qty: statistic.game_qty,
-                                        goal_qty: statistic.goal_qty,
-                                        starting_eleven_avg_sum: statistic.starting_eleven_avg,
-                                        starting_eleven_avg_count: 1 } %>
-                        <%= league.to_s %>
-                        <%= out[league] %>
+                      <% player.statistics.each do |statistic| %>
+                        <% league = statistic.tournament.league %>
+                        <% if out.key?(league) %>
+                          <% game_qty = out[league][:game_qty] + statistic.game_qty %>
+                          <% goal_qty = out[league][:goal_qty] + statistic.goal_qty %>
+                          <% starting_eleven_avg_sum = out[league][:starting_eleven_avg_sum] + statistic.starting_eleven_avg %>
+                          <% starting_eleven_avg_count = out[league][:starting_eleven_avg_count] + 1 %>
+                          <% out[league] = { game_qty: game_qty,
+                                             goal_qty: goal_qty,
+                                             starting_eleven_avg_sum: starting_eleven_avg_sum,
+                                             starting_eleven_avg_count: starting_eleven_avg_count } %>
+                        <% else %>
+                          <% out[league] = { game_qty: statistic.game_qty,
+                                             goal_qty: statistic.goal_qty,
+                                             starting_eleven_avg_sum: statistic.starting_eleven_avg,
+                                             starting_eleven_avg_count: 1 } %>
+                        <% end %>
                       <% end %>
-                      <%#= out %>
-                      <%# out.each do |key, value| %>
-                        <td class="left"><%#= key %></td>
-                        <td>1<%#= statistic.game_qty %></td>
-                        <td>2<%#= statistic.goal_qty %></td>
-                        <td>3<%#= statistic.starting_eleven_avg %> %</td>
-                      <%# end %>
-                      <!--<td class="left"><%#= statistic.tournament.league %></td>
-                      <td><%#= statistic.game_qty %></td>
-                      <td><%#= statistic.goal_qty %></td>
-                      <td><%#= statistic.starting_eleven_avg %> %</td> -->
+                      <% out.each do |leage_key, league_values| %>
+                    <tr>
+                      <td class="left"><%= leage_key %></td>
+                      <td><%= league_values[:game_qty] %></td>
+                      <td><%= league_values[:goal_qty] %></td>
+                      <td><%= league_values[:starting_eleven_avg_sum] / league_values[:starting_eleven_avg_count] %> %</td>
                     </tr>
-                    <% end %>
+                      <% end %>
                   </table>
                 </div>
               </div>
