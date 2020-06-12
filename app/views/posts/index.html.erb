@@ -30,7 +30,7 @@
   </div>
 
   <% @current_user_posts.each do |post| %>
-    <div class="posts">
+    <div class="posts" id="post-<%= post.id %>">
       <div class="header-post">
         <div class="user">
           <% if current_user.player.nil? %>
@@ -63,7 +63,7 @@
   <% end %>
 
   <% @followers_posts.each do |post| %>
-    <div class="posts">
+    <div class="posts" id="post-<%= post.id %>">
       <div class='header-post'>
         <div class='user'>
           <%= image_tag(post.user.player.image, class: 'img-post') %>
@@ -71,9 +71,9 @@
         </div>
       </div>
       <div class="post" id="post-<%= post.id %>">
-        <%= post.content %>
         <% if post.photo.attached? %>
-          <%= cl_image_tag post.photo %>
+          <%= cl_image_tag post.photo.key, class:'post-picture' %>
+        <%= post.content %>
         <% end %>
       </div>
       <div class="likes">

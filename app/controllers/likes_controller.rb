@@ -11,7 +11,7 @@ class LikesController < ApplicationController
       @like = Like.create(user_id: current_user.id, post_id: @post.id)
       authorize(@like)
     end
-      redirect_to posts_path(anchor: "post-#{@post.id - 1}")
+      redirect_to posts_path(anchor: "post-#{@post.id}")
   end
 
   def find_like
@@ -30,7 +30,7 @@ class LikesController < ApplicationController
     @like.destroy
      authorize(@like)
   end
-  redirect_to posts_path(anchor: "post-#{@post.id - 1}")
+  redirect_to posts_path(anchor: "post-#{@post.id}")
   end
 
   private
