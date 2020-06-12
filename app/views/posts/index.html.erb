@@ -24,8 +24,8 @@
           </div>
         </div>
       </div>
-      <%= f.input :photo, as: :file %>
-      <%= f.submit %>
+      <%#= f.input :photo, as: :file --- for demo %>
+      <%#= f.submit %>
     <% end %>
   </div>
 
@@ -67,10 +67,11 @@
       <div class='header-post'>
         <div class='user'>
           <%= image_tag(post.user.player.image, class: 'img-post') %>
-          <span style="font-weight: bold;"><%= post.user.name %></span>
+          <span style="font-weight: bold; margin-left: 0px; " ><%= post.user.name %></span>
+          <small style="padding: 0px;"><%= post.created_at.strftime("%b %e at %l:%M%p") if post.created_at? %></small>
         </div>
       </div>
-      <div class="post" id="post-<%= post.id %>">
+      <div class="post-photo" id="post-<%= post.id %>">
         <% if post.photo.attached? %>
           <%= cl_image_tag post.photo.key, class:'post-picture' %>
         <%= post.content %>
