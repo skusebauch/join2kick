@@ -70,7 +70,7 @@
           <span style="font-weight: bold;"><%= post.user.name %></span>
         </div>
       </div>
-      <div class="post">
+      <div class="post" id="post-<%= post.id %>">
         <%= post.content %>
         <% if post.photo.attached? %>
           <%= cl_image_tag post.photo %>
