@@ -126,22 +126,7 @@
             <div class="player-card-total-stat">
               <div class="table-datas">
                 <div class="table-data">
-                  <table>
-                    <tr>
-                      <th> </th>
-                      <th><%= image_tag('game_qty.svg') %></th>
-                      <th><%= image_tag('goals.svg') %></th>
-                      <th><%= image_tag('starting_eleven.svg') %></th>
-                    </tr>
-                    <tr>
-                    <% player.statistics.each do |statistic| %>
-                      <td class="left"><%= statistic.tournament.league %></td>
-                      <td><%= statistic.game_qty %></td>
-                      <td><%= statistic.goal_qty %></td>
-                      <td><%= statistic.starting_eleven_avg %> %</td>
-                    </tr>
-                    <% end %>
-                  </table>
+                  <%= render 'player_card_total_stat_table', player: player %>
                 </div>
               </div>
             </div>
@@ -152,6 +137,3 @@
     </div>
   </div>
 </div>
-
-
-
