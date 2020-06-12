@@ -215,6 +215,548 @@ ClubTournament.create!(
 #   )
 # end
 
+
+
+puts ''
+puts 'Creating Free Agent Player ...'
+
+puts ''
+puts 'nael ...'
+
+user_nael = User.create!(
+  email: Faker::Internet.email,
+  password: 123456,
+  address: Faker::Address.full_address,
+  name: "Nael Najjar"
+  )
+
+player_nael = Player.create!(
+  name: "Nael Najjar",
+  image: 'https://res.cloudinary.com/dgwgea5k3/image/upload/v1591821323/8_egsyeh.jpg',
+  birth: Date.new(rand(1985..1996),rand(1..12), rand(1..26)),
+  citizenship: 'Germany 🇩🇪󠁧󠁢󠁥󠁮󠁧󠁿',
+  height: rand(160..195),
+  position: 'Striker',
+  skill: ['Shooting'],
+  address: "Rudi-Dutschke-Straße 26, 10969 Berlin",
+  club: club_ksv_kassel,
+  user: user_nael
+  )
+
+Statistic.create!(
+  game_qty: 24,
+  goal_qty: 13,
+  starting_eleven_avg: 90,
+  tournament: hessenliga,
+  player: player_nael
+  )
+
+Statistic.create!(
+  game_qty: 2,
+  goal_qty: 1,
+  starting_eleven_avg: 100,
+  tournament: dfb_pokal,
+  player: player_nael
+  )
+
+Statistic.create!(
+  game_qty: 4,
+  goal_qty: 2,
+  starting_eleven_avg: 100,
+  tournament: hessenpokal,
+  player: player_nael
+  )
+
+puts ''
+puts 'tim ...'
+
+user_tim = User.create!(
+  email: Faker::Internet.email,
+  password: 123456,
+  address: Faker::Address.full_address,
+  name: "Tim Richter"
+  )
+
+player_tim = Player.create!(
+  name: "Tim Richter",
+  image: 'https://res.cloudinary.com/dgwgea5k3/image/upload/v1591821362/7_mujqu4.jpg',
+  birth: Date.new(rand(1985..1996),rand(1..12), rand(1..26)),
+  citizenship: 'Germany 🇩🇪󠁧󠁢󠁥󠁮󠁧󠁿',
+  height: rand(160..195),
+  position: 'Midfielder',
+  skill: ['Endurance', 'Technique'],
+  address: "Rudi-Dutschke-Straße 26, 10969 Berlin",
+  club: club_ksv_kassel,
+  user: user_tim
+  )
+
+Statistic.create!(
+  game_qty: 24,
+  goal_qty: 10,
+  starting_eleven_avg: 95,
+  tournament: hessenliga,
+  player: player_tim
+  )
+
+Statistic.create!(
+  game_qty: 20,
+  goal_qty: 14,
+  starting_eleven_avg: 100,
+  tournament: dfb_pokal,
+  player: player_tim
+  )
+
+Statistic.create!(
+  game_qty: 8,
+  goal_qty: 5,
+  starting_eleven_avg: 100,
+  tournament: hessenpokal,
+  player: player_tim
+  )
+
+puts ''
+puts 'Alem ...'
+
+user_alem = User.create!(
+  email: Faker::Internet.email,
+  password: 123456,
+  address: Faker::Address.full_address,
+  name: "Alem Koljic"
+  )
+
+player_alem = Player.create!(
+  name: "Alem Koljic",
+  image: 'https://res.cloudinary.com/dgwgea5k3/image/upload/v1591821333/6_kb9n0s.jpg',
+  birth: Date.new(rand(1985..1996),rand(1..12), rand(1..26)),
+  citizenship: 'Slovakia 󠁧󠁢󠁥🇸🇰',
+  height: rand(160..195),
+  position: 'Midfielder',
+  skill: ['Endurance', 'Technique'],
+  address: "Rudi-Dutschke-Straße 26, 10969 Berlin",
+  club: club_ksv_kassel,
+  user: user_alem
+  )
+
+Statistic.create!(
+  game_qty: 24,
+  goal_qty: 13,
+  starting_eleven_avg: 95,
+  tournament: hessenliga,
+  player: player_alem
+  )
+
+Statistic.create!(
+  game_qty: 60,
+  goal_qty: 33,
+  starting_eleven_avg: 90,
+  tournament: last_hessenliga,
+  player: player_alem
+  )
+
+Statistic.create!(
+  game_qty: 8,
+  goal_qty: 5,
+  starting_eleven_avg: 100,
+  tournament: dfb_pokal,
+  player: player_alem
+  )
+
+Statistic.create!(
+  game_qty: 20,
+  goal_qty: 10,
+  starting_eleven_avg: 100,
+  tournament: hessenpokal,
+  player: player_alem
+  )
+
+puts ''
+puts 'Masse ...'
+
+user_masse = User.create!(
+  email: Faker::Internet.email,
+  password: 123456,
+  address: Faker::Address.full_address,
+  name: "Massé Bell Bell"
+  )
+
+player_masse = Player.create!(
+  name: "Massé Bell Bell",
+  image: 'https://res.cloudinary.com/dgwgea5k3/image/upload/v1591821340/5_vtjujz.jpg',
+  birth: Date.new(rand(1985..1996),rand(1..12), rand(1..26)),
+  citizenship: 'Cameroon 🇨🇲',
+  height: rand(160..195),
+  position: 'Midfielder',
+  skill: ['Endurance', 'Technique'],
+  address: "Rudi-Dutschke-Straße 26, 10969 Berlin",
+  club: club_ksv_kassel,
+  user: user_masse
+  )
+
+Statistic.create!(
+  game_qty: 24,
+  goal_qty: 12,
+  starting_eleven_avg: 75,
+  tournament: hessenliga,
+  player: player_masse
+  )
+
+Statistic.create!(
+  game_qty: 34,
+  goal_qty: 18,
+  starting_eleven_avg: 85,
+  tournament: last_hessenliga,
+  player: player_masse
+  )
+
+Statistic.create!(
+  game_qty: 9,
+  goal_qty: 2,
+  starting_eleven_avg: 95,
+  tournament: dfb_pokal,
+  player: player_masse
+  )
+
+Statistic.create!(
+  game_qty: 40,
+  goal_qty: 32,
+  starting_eleven_avg: 97,
+  tournament: hessenpokal,
+  player: player_masse
+  )
+
+puts ''
+puts 'Niklas ...'
+
+user_niklas = User.create!(
+  email: Faker::Internet.email,
+  password: 123456,
+  address: Faker::Address.full_address,
+  name: "Niklas Künzel"
+  )
+
+player_niklas = Player.create!(
+  name: "Niklas Künzel",
+  image: 'https://res.cloudinary.com/dgwgea5k3/image/upload/v1591821359/2_epggoc.jpg',
+  birth: Date.new(rand(1985..1996),rand(1..12), rand(1..26)),
+  citizenship: 'Germany 🇩🇪',
+  height: rand(160..195),
+  position: 'Midfielder',
+  skill: ['Endurance', 'Technique'],
+  address: "Rudi-Dutschke-Straße 26, 10969 Berlin",
+  club: club_ksv_kassel,
+  user: user_niklas
+  )
+
+Statistic.create!(
+  game_qty: 24,
+  goal_qty: 20,
+  starting_eleven_avg: 75,
+  tournament: hessenliga,
+  player: player_niklas
+  )
+
+Statistic.create!(
+  game_qty: 75,
+  goal_qty: 34,
+  starting_eleven_avg: 86,
+  tournament: last_hessenliga,
+  player: player_niklas
+  )
+
+Statistic.create!(
+  game_qty: 12,
+  goal_qty: 6,
+  starting_eleven_avg: 90,
+  tournament: dfb_pokal,
+  player: player_niklas
+  )
+
+Statistic.create!(
+  game_qty: 50,
+  goal_qty: 23,
+  starting_eleven_avg: 83,
+  tournament: hessenpokal,
+  player: player_niklas
+  )
+
+puts ''
+puts 'pascal ...'
+
+user_pascal = User.create!(
+  email: Faker::Internet.email,
+  password: 123456,
+  address: Faker::Address.full_address,
+  name: "Pascal Bielert"
+  )
+
+player_pascal = Player.create!(
+  name: "Pascal Bielert",
+  image: 'https://res.cloudinary.com/dgwgea5k3/image/upload/v1591821349/4_bj2oko.jpg',
+  birth: Date.new(rand(1985..1996),rand(1..12), rand(1..26)),
+  citizenship: 'Germany 🇩🇪',
+  height: rand(160..195),
+  position: 'Goalkeeper',
+  skill: ['Reflex'],
+  address: "Rudi-Dutschke-Straße 26, 10969 Berlin",
+  club: club_ksv_kassel,
+  user: user_pascal
+  )
+
+Statistic.create!(
+  game_qty: 15,
+  goal_qty: 0,
+  starting_eleven_avg: 100,
+  tournament: hessenliga,
+  player: player_pascal
+  )
+
+Statistic.create!(
+  game_qty: 1,
+  goal_qty: 0,
+  starting_eleven_avg: 90,
+  tournament: dfb_pokal,
+  player: player_pascal
+  )
+
+Statistic.create!(
+  game_qty: 10,
+  goal_qty: 0,
+  starting_eleven_avg: 100,
+  tournament: hessenpokal,
+  player: player_pascal
+  )
+
+Statistic.create!(
+  game_qty: 75,
+  goal_qty: 0,
+  starting_eleven_avg: 85,
+  tournament: last_verbandsliga,
+  player: player_pascal
+  )
+
+puts ''
+puts 'max ...'
+
+user_max = User.create!(
+  email: Faker::Internet.email,
+  password: 123456,
+  address: Faker::Address.full_address,
+  name: "Max Annemüller"
+  )
+
+player_max = Player.create!(
+  name: "Max Annemüller",
+  image: 'https://res.cloudinary.com/dgwgea5k3/image/upload/v1591821355/3_w9jrlf.jpg',
+  birth: Date.new(rand(1985..1996),rand(1..12), rand(1..26)),
+  citizenship: 'Germany 🇩🇪',
+  height: rand(160..195),
+  position: 'Goalkeeper',
+  skill: ['Reflex'],
+  address: "Rudi-Dutschke-Straße 26, 10969 Berlin",
+  club: club_ksv_kassel,
+  user: user_max
+  )
+
+Statistic.create!(
+  game_qty: 5,
+  goal_qty: 0,
+  starting_eleven_avg: 100,
+  tournament: hessenliga,
+  player: player_max
+  )
+
+Statistic.create!(
+  game_qty: 5,
+  goal_qty: 0,
+  starting_eleven_avg: 100,
+  tournament: hessenpokal,
+  player: player_max
+  )
+
+Statistic.create!(
+  game_qty: 12,
+  goal_qty: 0,
+  starting_eleven_avg: 73,
+  tournament: last_verbandsliga,
+  player: player_max
+  )
+
+puts ''
+puts 'Julian ...'
+
+user_julian = User.create!(
+  email: Faker::Internet.email,
+  password: 123456,
+  address: Faker::Address.full_address,
+  name: "Julian Bender"
+  )
+
+player_julian = Player.create!(
+  name: "Julian Bender",
+  image: 'https://res.cloudinary.com/dgwgea5k3/image/upload/v1591821357/1_p037xc.jpg',
+  birth: Date.new(rand(1985..1996),rand(1..12), rand(1..26)),
+  citizenship: 'Germany 🇩🇪',
+  height: rand(160..195),
+  position: 'Defender',
+  skill: ['Passing', 'Shooting'],
+  address: "Rudi-Dutschke-Straße 26, 10969 Berlin",
+  club: club_ksv_kassel,
+  user: user_julian
+  )
+
+Statistic.create!(
+  game_qty: 18,
+  goal_qty: 4,
+  starting_eleven_avg: 100,
+  tournament: hessenliga,
+  player: player_julian
+  )
+
+Statistic.create!(
+  game_qty: 24,
+  goal_qty: 6,
+  starting_eleven_avg: 76,
+  tournament: last_hessenliga,
+  player: player_julian
+  )
+
+
+Statistic.create!(
+  game_qty: 1,
+  goal_qty: 0,
+  starting_eleven_avg: 100,
+  tournament: dfb_pokal,
+  player: player_julian
+  )
+
+Statistic.create!(
+  game_qty: 12,
+  goal_qty: 3,
+  starting_eleven_avg: 88,
+  tournament: hessenpokal,
+  player: player_julian
+  )
+
+puts ''
+puts 'Mahir ...'
+
+user_mahir = User.create!(
+  email: "mahir@gmail.com",
+  password: 123456,
+  address: Faker::Address.full_address,
+  name: "Mahir Saglik"
+  )
+
+player_mahir = Player.create!(
+  name: "Mahir Saglik",
+  image: 'https://res.cloudinary.com/dgwgea5k3/image/upload/v1591821351/10_e1of8e.jpg',
+  birth: Date.new(2001, 9, 20),
+  citizenship: 'Turkey 🇹🇷',
+  height: 195,
+  position: 'Defender',
+  skill: ['Strong', 'Tactic'],
+  address: "Rudi-Dutschke-Straße 26, 10969 Berlin",
+  club: club_ksv_kassel,
+  user: user_mahir
+  )
+
+Statistic.create!(
+  game_qty: 24,
+  goal_qty: 3,
+  starting_eleven_avg: 95,
+  tournament: hessenliga,
+  player: player_mahir
+  )
+
+Statistic.create!(
+  game_qty: 28,
+  goal_qty: 8,
+  starting_eleven_avg: 87,
+  tournament: last_hessenliga,
+  player: player_mahir
+  )
+
+Statistic.create!(
+  game_qty: 3,
+  goal_qty: 0,
+  starting_eleven_avg: 100,
+  tournament: dfb_pokal,
+  player: player_mahir
+  )
+
+Statistic.create!(
+  game_qty: 12,
+  goal_qty: 1,
+  starting_eleven_avg: 93,
+  tournament: hessenpokal,
+  player: player_mahir
+  )
+
+Statistic.create!(
+  game_qty: 30,
+  goal_qty: 4,
+  starting_eleven_avg: 100,
+  tournament: last_verbandsliga,
+  player: player_mahir
+  )
+
+puts ''
+puts 'Stefano ...'
+
+user_stefano = User.create!(
+  email: Faker::Internet.email,
+  password: 123456,
+  address: Faker::Address.full_address,
+  name: "Stefano Maier"
+  )
+
+player_stefano = Player.create!(
+  name: "Stefano Maier",
+  image: 'https://res.cloudinary.com/dgwgea5k3/image/upload/v1591821340/9_utbb5i.jpg',
+  birth: Date.new(1998, 10, 12),
+  citizenship: 'Germany 🇩🇪',
+  height: 191,
+  position: 'Defender',
+  skill: ['Strong', 'Tactic'],
+  address: "Rudi-Dutschke-Straße 26, 10969 Berlin",
+  club: club_ksv_kassel,
+  user: user_stefano
+  )
+
+Statistic.create!(
+  game_qty: 22,
+  goal_qty: 4,
+  starting_eleven_avg: 85,
+  tournament: hessenliga,
+  player: player_stefano
+  )
+
+Statistic.create!(
+  game_qty: 26,
+  goal_qty: 3,
+  starting_eleven_avg: 75,
+  tournament: last_hessenliga,
+  player: player_stefano
+  )
+
+Statistic.create!(
+  game_qty: 7,
+  goal_qty: 2,
+  starting_eleven_avg: 93,
+  tournament: hessenpokal,
+  player: player_stefano
+  )
+
+Statistic.create!(
+  game_qty: 24,
+  goal_qty: 1,
+  starting_eleven_avg: 88,
+  tournament: last_verbandsliga,
+  player: player_stefano
+  )
+
+
+
 puts ''
 puts 'Creating FC LeWagon Players ...'
 
@@ -1164,543 +1706,7 @@ Statistic.create!(
 
 ###############
 
-puts ''
-puts 'Creating Free Agent Player ...'
 
-puts ''
-puts 'nael ...'
-
-user_nael = User.create!(
-  email: Faker::Internet.email,
-  password: 123456,
-  address: Faker::Address.full_address,
-  name: "Nael Najjar"
-  )
-
-player_nael = Player.create!(
-  name: "Nael Najjar",
-  image: 'https://res.cloudinary.com/dgwgea5k3/image/upload/v1591821323/8_egsyeh.jpg',
-  birth: Date.new(rand(1985..1996),rand(1..12), rand(1..26)),
-  citizenship: 'Germany 🇩🇪󠁧󠁢󠁥󠁮󠁧󠁿',
-  height: rand(160..195),
-  position: 'Striker',
-  skill: ['Shooting'],
-  address: "Rudi-Dutschke-Straße 26, 10969 Berlin",
-  club: club_ksv_kassel,
-  user: user_nael
-  )
-
-Statistic.create!(
-  game_qty: 24,
-  goal_qty: 13,
-  starting_eleven_avg: 90,
-  tournament: hessenliga,
-  player: player_nael
-  )
-
-Statistic.create!(
-  game_qty: 2,
-  goal_qty: 1,
-  starting_eleven_avg: 100,
-  tournament: dfb_pokal,
-  player: player_nael
-  )
-
-Statistic.create!(
-  game_qty: 4,
-  goal_qty: 2,
-  starting_eleven_avg: 100,
-  tournament: hessenpokal,
-  player: player_nael
-  )
-
-puts ''
-puts 'tim ...'
-
-user_tim = User.create!(
-  email: Faker::Internet.email,
-  password: 123456,
-  address: Faker::Address.full_address,
-  name: "Tim Richter"
-  )
-
-player_tim = Player.create!(
-  name: "Tim Richter",
-  image: 'https://res.cloudinary.com/dgwgea5k3/image/upload/v1591821362/7_mujqu4.jpg',
-  birth: Date.new(rand(1985..1996),rand(1..12), rand(1..26)),
-  citizenship: 'Germany 🇩🇪󠁧󠁢󠁥󠁮󠁧󠁿',
-  height: rand(160..195),
-  position: 'Midfielder',
-  skill: ['Endurance', 'Technique'],
-  address: "Rudi-Dutschke-Straße 26, 10969 Berlin",
-  club: club_ksv_kassel,
-  user: user_tim
-  )
-
-Statistic.create!(
-  game_qty: 24,
-  goal_qty: 10,
-  starting_eleven_avg: 95,
-  tournament: hessenliga,
-  player: player_tim
-  )
-
-Statistic.create!(
-  game_qty: 20,
-  goal_qty: 14,
-  starting_eleven_avg: 100,
-  tournament: dfb_pokal,
-  player: player_tim
-  )
-
-Statistic.create!(
-  game_qty: 8,
-  goal_qty: 5,
-  starting_eleven_avg: 100,
-  tournament: hessenpokal,
-  player: player_tim
-  )
-
-puts ''
-puts 'Alem ...'
-
-user_alem = User.create!(
-  email: Faker::Internet.email,
-  password: 123456,
-  address: Faker::Address.full_address,
-  name: "Alem Koljic"
-  )
-
-player_alem = Player.create!(
-  name: "Alem Koljic",
-  image: 'https://res.cloudinary.com/dgwgea5k3/image/upload/v1591821333/6_kb9n0s.jpg',
-  birth: Date.new(rand(1985..1996),rand(1..12), rand(1..26)),
-  citizenship: 'Slovakia 󠁧󠁢󠁥🇸🇰',
-  height: rand(160..195),
-  position: 'Midfielder',
-  skill: ['Endurance', 'Technique'],
-  address: "Rudi-Dutschke-Straße 26, 10969 Berlin",
-  club: club_ksv_kassel,
-  user: user_alem
-  )
-
-Statistic.create!(
-  game_qty: 24,
-  goal_qty: 13,
-  starting_eleven_avg: 95,
-  tournament: hessenliga,
-  player: player_alem
-  )
-
-Statistic.create!(
-  game_qty: 60,
-  goal_qty: 33,
-  starting_eleven_avg: 90,
-  tournament: last_hessenliga,
-  player: player_alem
-  )
-
-Statistic.create!(
-  game_qty: 8,
-  goal_qty: 5,
-  starting_eleven_avg: 100,
-  tournament: dfb_pokal,
-  player: player_alem
-  )
-
-Statistic.create!(
-  game_qty: 20,
-  goal_qty: 10,
-  starting_eleven_avg: 100,
-  tournament: hessenpokal,
-  player: player_alem
-  )
-
-puts ''
-puts 'Masse ...'
-
-user_masse = User.create!(
-  email: Faker::Internet.email,
-  password: 123456,
-  address: Faker::Address.full_address,
-  name: "Massé Bell Bell"
-  )
-
-player_masse = Player.create!(
-  name: "Massé Bell Bell",
-  image: 'https://res.cloudinary.com/dgwgea5k3/image/upload/v1591821340/5_vtjujz.jpg',
-  birth: Date.new(rand(1985..1996),rand(1..12), rand(1..26)),
-  citizenship: 'Cameroon 🇨🇲',
-  height: rand(160..195),
-  position: 'Midfielder',
-  skill: ['Endurance', 'Technique'],
-  address: "Rudi-Dutschke-Straße 26, 10969 Berlin",
-  club: club_ksv_kassel,
-  user: user_masse
-  )
-
-Statistic.create!(
-  game_qty: 24,
-  goal_qty: 12,
-  starting_eleven_avg: 75,
-  tournament: hessenliga,
-  player: player_masse
-  )
-
-Statistic.create!(
-  game_qty: 34,
-  goal_qty: 18,
-  starting_eleven_avg: 85,
-  tournament: last_hessenliga,
-  player: player_masse
-  )
-
-Statistic.create!(
-  game_qty: 9,
-  goal_qty: 2,
-  starting_eleven_avg: 95,
-  tournament: dfb_pokal,
-  player: player_masse
-  )
-
-Statistic.create!(
-  game_qty: 40,
-  goal_qty: 32,
-  starting_eleven_avg: 97,
-  tournament: hessenpokal,
-  player: player_masse
-  )
-
-puts ''
-puts 'Niklas ...'
-
-user_niklas = User.create!(
-  email: Faker::Internet.email,
-  password: 123456,
-  address: Faker::Address.full_address,
-  name: "Niklas Künzel"
-  )
-
-player_niklas = Player.create!(
-  name: "Niklas Künzel",
-  image: 'https://res.cloudinary.com/dgwgea5k3/image/upload/v1591821359/2_epggoc.jpg',
-  birth: Date.new(rand(1985..1996),rand(1..12), rand(1..26)),
-  citizenship: 'Germany 🇩🇪',
-  height: rand(160..195),
-  position: 'Midfielder',
-  skill: ['Endurance', 'Technique'],
-  address: "Rudi-Dutschke-Straße 26, 10969 Berlin",
-  club: club_ksv_kassel,
-  user: user_niklas
-  )
-
-Statistic.create!(
-  game_qty: 24,
-  goal_qty: 20,
-  starting_eleven_avg: 75,
-  tournament: hessenliga,
-  player: player_niklas
-  )
-
-Statistic.create!(
-  game_qty: 75,
-  goal_qty: 34,
-  starting_eleven_avg: 86,
-  tournament: last_hessenliga,
-  player: player_niklas
-  )
-
-Statistic.create!(
-  game_qty: 12,
-  goal_qty: 6,
-  starting_eleven_avg: 90,
-  tournament: dfb_pokal,
-  player: player_niklas
-  )
-
-Statistic.create!(
-  game_qty: 50,
-  goal_qty: 23,
-  starting_eleven_avg: 83,
-  tournament: hessenpokal,
-  player: player_niklas
-  )
-
-puts ''
-puts 'pascal ...'
-
-user_pascal = User.create!(
-  email: Faker::Internet.email,
-  password: 123456,
-  address: Faker::Address.full_address,
-  name: "Pascal Bielert"
-  )
-
-player_pascal = Player.create!(
-  name: "Pascal Bielert",
-  image: 'https://res.cloudinary.com/dgwgea5k3/image/upload/v1591821349/4_bj2oko.jpg',
-  birth: Date.new(rand(1985..1996),rand(1..12), rand(1..26)),
-  citizenship: 'Germany 🇩🇪',
-  height: rand(160..195),
-  position: 'Goalkeeper',
-  skill: ['Reflex'],
-  address: "Rudi-Dutschke-Straße 26, 10969 Berlin",
-  club: club_ksv_kassel,
-  user: user_pascal
-  )
-
-Statistic.create!(
-  game_qty: 15,
-  goal_qty: 0,
-  starting_eleven_avg: 100,
-  tournament: hessenliga,
-  player: player_pascal
-  )
-
-Statistic.create!(
-  game_qty: 1,
-  goal_qty: 0,
-  starting_eleven_avg: 90,
-  tournament: dfb_pokal,
-  player: player_pascal
-  )
-
-Statistic.create!(
-  game_qty: 10,
-  goal_qty: 0,
-  starting_eleven_avg: 100,
-  tournament: hessenpokal,
-  player: player_pascal
-  )
-
-Statistic.create!(
-  game_qty: 75,
-  goal_qty: 0,
-  starting_eleven_avg: 85,
-  tournament: last_verbandsliga,
-  player: player_pascal
-  )
-
-puts ''
-puts 'max ...'
-
-user_max = User.create!(
-  email: Faker::Internet.email,
-  password: 123456,
-  address: Faker::Address.full_address,
-  name: "Max Annemüller"
-  )
-
-player_max = Player.create!(
-  name: "Max Annemüller",
-  image: 'https://res.cloudinary.com/dgwgea5k3/image/upload/v1591821355/3_w9jrlf.jpg',
-  birth: Date.new(rand(1985..1996),rand(1..12), rand(1..26)),
-  citizenship: 'Germany 🇩🇪',
-  height: rand(160..195),
-  position: 'Goalkeeper',
-  skill: ['Reflex'],
-  address: "Rudi-Dutschke-Straße 26, 10969 Berlin",
-  club: club_ksv_kassel,
-  user: user_max
-  )
-
-Statistic.create!(
-  game_qty: 5,
-  goal_qty: 0,
-  starting_eleven_avg: 100,
-  tournament: hessenliga,
-  player: player_max
-  )
-
-Statistic.create!(
-  game_qty: 5,
-  goal_qty: 0,
-  starting_eleven_avg: 100,
-  tournament: hessenpokal,
-  player: player_max
-  )
-
-Statistic.create!(
-  game_qty: 12,
-  goal_qty: 0,
-  starting_eleven_avg: 73,
-  tournament: last_verbandsliga,
-  player: player_max
-  )
-
-puts ''
-puts 'Julian ...'
-
-user_julian = User.create!(
-  email: Faker::Internet.email,
-  password: 123456,
-  address: Faker::Address.full_address,
-  name: "Julian Bender"
-  )
-
-player_julian = Player.create!(
-  name: "Julian Bender",
-  image: 'https://res.cloudinary.com/dgwgea5k3/image/upload/v1591821357/1_p037xc.jpg',
-  birth: Date.new(rand(1985..1996),rand(1..12), rand(1..26)),
-  citizenship: 'Germany 🇩🇪',
-  height: rand(160..195),
-  position: 'Defender',
-  skill: ['Passing', 'Shooting'],
-  address: "Rudi-Dutschke-Straße 26, 10969 Berlin",
-  club: club_ksv_kassel,
-  user: user_julian
-  )
-
-Statistic.create!(
-  game_qty: 18,
-  goal_qty: 4,
-  starting_eleven_avg: 100,
-  tournament: hessenliga,
-  player: player_julian
-  )
-
-Statistic.create!(
-  game_qty: 24,
-  goal_qty: 6,
-  starting_eleven_avg: 76,
-  tournament: last_hessenliga,
-  player: player_julian
-  )
-
-
-Statistic.create!(
-  game_qty: 1,
-  goal_qty: 0,
-  starting_eleven_avg: 100,
-  tournament: dfb_pokal,
-  player: player_julian
-  )
-
-Statistic.create!(
-  game_qty: 12,
-  goal_qty: 3,
-  starting_eleven_avg: 88,
-  tournament: hessenpokal,
-  player: player_julian
-  )
-
-puts ''
-puts 'Mahir ...'
-
-user_mahir = User.create!(
-  email: "mahir@gmail.com",
-  password: 123456,
-  address: Faker::Address.full_address,
-  name: "Mahir Saglik"
-  )
-
-player_mahir = Player.create!(
-  name: "Mahir Saglik",
-  image: 'https://res.cloudinary.com/dgwgea5k3/image/upload/v1591821351/10_e1of8e.jpg',
-  birth: Date.new(2001, 9, 20),
-  citizenship: 'Turkey 🇹🇷',
-  height: 195,
-  position: 'Defender',
-  skill: ['Strong', 'Tactic'],
-  address: "Rudi-Dutschke-Straße 26, 10969 Berlin",
-  club: club_ksv_kassel,
-  user: user_mahir
-  )
-
-Statistic.create!(
-  game_qty: 24,
-  goal_qty: 3,
-  starting_eleven_avg: 95,
-  tournament: hessenliga,
-  player: player_mahir
-  )
-
-Statistic.create!(
-  game_qty: 28,
-  goal_qty: 8,
-  starting_eleven_avg: 87,
-  tournament: last_hessenliga,
-  player: player_mahir
-  )
-
-Statistic.create!(
-  game_qty: 3,
-  goal_qty: 0,
-  starting_eleven_avg: 100,
-  tournament: dfb_pokal,
-  player: player_mahir
-  )
-
-Statistic.create!(
-  game_qty: 12,
-  goal_qty: 1,
-  starting_eleven_avg: 93,
-  tournament: hessenpokal,
-  player: player_mahir
-  )
-
-Statistic.create!(
-  game_qty: 30,
-  goal_qty: 4,
-  starting_eleven_avg: 100,
-  tournament: last_verbandsliga,
-  player: player_mahir
-  )
-
-puts ''
-puts 'Stefano ...'
-
-user_stefano = User.create!(
-  email: Faker::Internet.email,
-  password: 123456,
-  address: Faker::Address.full_address,
-  name: "Stefano Maier"
-  )
-
-player_stefano = Player.create!(
-  name: "Stefano Maier",
-  image: 'https://res.cloudinary.com/dgwgea5k3/image/upload/v1591821340/9_utbb5i.jpg',
-  birth: Date.new(1998, 10, 12),
-  citizenship: 'Germany 🇩🇪',
-  height: 191,
-  position: 'Defender',
-  skill: ['Strong', 'Tactic'],
-  address: "Rudi-Dutschke-Straße 26, 10969 Berlin",
-  club: club_ksv_kassel,
-  user: user_stefano
-  )
-
-Statistic.create!(
-  game_qty: 22,
-  goal_qty: 4,
-  starting_eleven_avg: 85,
-  tournament: hessenliga,
-  player: player_stefano
-  )
-
-Statistic.create!(
-  game_qty: 26,
-  goal_qty: 3,
-  starting_eleven_avg: 75,
-  tournament: last_hessenliga,
-  player: player_stefano
-  )
-
-Statistic.create!(
-  game_qty: 7,
-  goal_qty: 2,
-  starting_eleven_avg: 93,
-  tournament: hessenpokal,
-  player: player_stefano
-  )
-
-Statistic.create!(
-  game_qty: 24,
-  goal_qty: 1,
-  starting_eleven_avg: 88,
-  tournament: last_verbandsliga,
-  player: player_stefano
-  )
 
 puts ''
 puts 'Finished!'
