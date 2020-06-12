@@ -12,7 +12,7 @@
                 <%= image_tag "https://res.cloudinary.com/wagon/image/upload/c_fill,g_face,h_200,w_200/v1525092814/cq5zoucfrobsomypnwzy.jpg", class: "avatar-team-small" %>
               <% end %>
             <% else %>
-              <%= image_tag(player.image, class: 'img-post') %>
+              <%= image_tag(current_user.player.image, class: 'img-post') %>
             <% end %>
           </div>
           <div class="form-group" placeholder="Write an article...">
@@ -40,7 +40,7 @@
               <%= image_tag "https://res.cloudinary.com/wagon/image/upload/c_fill,g_face,h_200,w_200/v1525092814/cq5zoucfrobsomypnwzy.jpg", class: "avatar-team-small" %>
             <% end %>
           <% else %>
-            <%= image_tag(post.player.image, class: 'img-post') %>
+            <%= image_tag(post.user.player.image, class: 'img-post') %>
           <% end %>
           <span style="font-weight: bold; margin-left: 0px; " ><%= post.user.name %></span>
           <small style="padding: 0px;"><%= post.created_at.strftime("%b %e at %l:%M%p") if post.created_at? %></small>
