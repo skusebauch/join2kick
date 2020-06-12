@@ -66,7 +66,7 @@
     <div class="posts" id="post-<%= post.id %>">
       <div class='header-post'>
         <div class='user'>
-          <%= image_tag(post.user.player.image, class: 'img-post') %>
+          <%= image_tag(post.user.player.image, class: 'avatar-team-small') %>
           <span style="font-weight: bold; margin-left: 0px; " ><%= post.user.name %></span>
           <small style="padding: 0px;"><%= post.created_at.strftime("%b %e at %l:%M%p") if post.created_at? %></small>
         </div>
