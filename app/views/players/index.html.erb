@@ -152,14 +152,14 @@
                                              starting_eleven_avg_count: 1 } %>
                         <% end %>
                       <% end %>
-                      <% out.each do |leage_key, league_values| %>
+                    <% out.each do |leage_key, league_values| %>
                     <tr>
                       <td class="left"><%= leage_key %></td>
                       <td><%= league_values[:game_qty] %></td>
                       <td><%= league_values[:goal_qty] %></td>
                       <td><%= league_values[:starting_eleven_avg_sum] / league_values[:starting_eleven_avg_count] %> %</td>
                     </tr>
-                      <% end %>
+                    <% end %>
                   </table>
                 </div>
               </div>
